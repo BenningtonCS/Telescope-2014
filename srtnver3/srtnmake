@@ -21,7 +21,7 @@ LIBS=`pkg-config gtk+-2.0 --libs`
 #gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_pci_fftw.c  disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c fftw2.c -lm  -lfftw3f
 
 # compile for dongle + c-coded  FFT 
-gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_four.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  librtlsdr.c tuner_r820t.c -lm `pkg-config --libs --cflags libusb-1.0`
+gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_four.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  librtlsdr.c tuner_r820t.c -lm `pkg-config --libs --cflags gtk+-2.0 libusb-1.0`
 
 cp a.out srtn
 
