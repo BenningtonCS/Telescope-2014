@@ -1,0 +1,12 @@
+void button_helphome_clicked(void);
+void button_helpmode_clicked(void);
+void button_helpnpoint_clicked(void);
+void button_helpbeamsw_clicked(void);
+void button_helpfreq_clicked(void);
+void button_helpoffset_clicked(void);
+void button_helprecord_clicked(void);
+void button_helpcmdfl_clicked(void);
+void button_helpcal_clicked(void);
+void button_helpexit_clicked(void);
+void load_help(char*);
+void exit_help(void);

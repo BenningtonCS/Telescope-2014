@@ -1,0 +1,28 @@
+#!/bin/bash
+CFLAGS=`pkg-config gtk+-2.0 --cflags`
+LIBS=`pkg-config gtk+-2.0 --libs`
+# vspectra.c dongle + amd FFT
+# vspectra_pci.c SDAS-4020 + amd FFT
+# vspectra_fftw.c dongle + fftW for intel
+# vspectra_pci_fftw.c SDAS-4020 + fftW for intel
+# vspectra_four.c dongle + c-coded FFT (which is slower)
+ 
+
+# compile for dongle + amd FFT 
+#gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  amdfft.c  librtlsdr.c tuner_r820t.c -lm  -lacml /usr/lib/libgfortran.a `pkg-config --libs --cflags libusb-1.0` 
+
+# compile for DAS-4020 + amd FFT 
+#gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_pci.c  disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  amdfft.c -lm  -lacml /usr/lib/libgfortran.a
+
+# compile for dongle + intel FFT
+#gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_fftw.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  fftw2.c librtlsdr.c tuner_r820t.c -lm -lfftw3f  `pkg-config --libs --cflags libusb-1.0`
+
+# compile for DAS-4020 + intel FFT 
+#gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_pci_fftw.c  disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c fftw2.c -lm  -lfftw3f
+
+# compile for dongle + c-coded  FFT 
+gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra_four.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  librtlsdr.c tuner_r820t.c -lm `pkg-config --libs --cflags libusb-1.0`
+
+cp a.out srtn
+
+rm a.out

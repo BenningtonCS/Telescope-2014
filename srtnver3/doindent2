@@ -1,0 +1,9 @@
+#!/bin/csh -f
+#foreach a (main.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  amdfft.c)
+#foreach a (main.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  amdfft.c  librtlsdr.c tuner_r820t.c)
+foreach a (amdfft.c cal.c cat.c cmdfl.c disp.c fftw2.c four.c geom.c librtlsdr.c main.c map.c outfile.c plot.c sport.c srthelp.c time.c tuner_r820t.c velspec.c vspectra.c vspectra_fftw.c vspectra_four.c vspectra_pci.c vspectra_pci_fftw.c)
+#foreach a (main.c)
+indent -kr -ts0 -l110 $a -o temp 
+cat temp |tr "\011" " " |tr "\015" " " >! temp.c
+cp temp.c $a
+end

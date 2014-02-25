@@ -1,0 +1,7 @@
+: azel 50 25
+: calibrate
+: record
+:50
+: roff
+: stow
+

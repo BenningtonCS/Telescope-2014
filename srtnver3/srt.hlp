@@ -1,0 +1,176 @@
+###Help Data File for the SRT Help window
+### Original by Eric Evarts in 2005
+### Each set of information is started with ##command_name
+### Each set is ended with ##
+
+##home
+Welcome to the SRT Help Window
+
+Please click on the buttons above to get more information about the features of the SRT software.
+srt.cat keywords:
+
+STATION 
+AZLIMITS 
+ELLIMITS
+NOISECAL
+TCAL
+CALMODE
+SIMULATE ANTENNA  RECEIVER FFT
+MAINTENANCE
+PLOTSEC
+NBSW
+NBLOCK
+NUMPOLY
+BEAMWIDTH
+TOLERANCE
+CASSIMOUNT - no longer supported
+H180MOUNT - no longer supported
+ALFASPID
+AZCOUNTS
+ELCOUNTS
+AZELPORT
+COMMAND - command file name
+TSYS
+FREQUENCY
+RESTFREQ - for vlsr calculations
+FREQCORR - frequency correction for dongle in MHz
+BANDWIDTH 
+NUMFREQ
+DATADIR - data directory - defaults to directory with the executable
+COUNTPERSTEP 
+RECORD - number of periods per output add [SPEC] to include spectrum 
+NODISPLAY
+NOPRINTOUT
+DEBUG
+SPEED_UP
+SOU - source ra dec epoch
+GALACTIC - lat long
+AZEL 
+RFISIGMA - level at which to report RFI default = 6 
+RFI 
+also see comments in srt.cat
+
+##
+
+##mode
+The SRT operates in a total power mode. The bandpass is normalized by clicking the cal botton.
+NPOINT does 5x5 point scan to find peak power and pointing offsets. BEAMSW can be used for sources
+which have suitable reference spectra on either side of the source. the beam throw equals the BEAMWIDTH 
+set in srt.cat. NBSW sets the number of integration periods in each beam position. 
+
+##
+
+##npoint
+NPoint
+
+pointing adjustment:
+run npoint on the sun and subtract the azimuth offset from the start of the azimuth limit
+subtract the elevation offset from the starting elevation limit
+
+screen saver:
+the screen saver may cause the srt program to stall
+possible solutions are:
+a) minimize srt program when not using
+b) turn off screen saver
+
+error calculations:
+the noise in each spectral bin for a single response from
+the receiver (a single line in the output file) is given
+by tsys / sqrt(resolution * intg. period)
+the resolution for the digital receiver is equal to the spacing.
+However in many cases the errors are determined by systematic effects. 
+For example the errors in a beamswitch continuum observation are estimated from the variance in the data from many on/offs
+##
+
+##beamsw
+Beam Switch - click on beamsw to start and stop
+
+##
+
+##freq
+Frequency - optional arguments are bandwidth and number of frequencies
+
+##
+
+##offset
+Offset - click on offset and enter az el offets in degrees
+with space between entries
+
+##
+
+##record
+Record - click on record to start and stop 
+RECORD 10 SPEC in srt.cat sets interval to 10 averaging periods where SPEC
+records spectrum. Without the keyword SPEC on the power is recorded
+
+##
+
+##cmdfl
+Command file rules:
+(default filename srt.cmd)
+
+1] reads one line at a time skipping blank lines, and lines which start with * and lines with past times
+2] stops at and executes any line with current or future time time format:
+line starts with yyyy:ddd:hh:mm:ss and is followed by cmd
+alternate format:   LST:hh:mm:ss   cmd
+current time format:   :   cmd
+current time plus n seconds format:   :n   cmd
+each line MUST start with time or :  or * for comment
+
+command keywords:
+items in [ ] are optional
+sourcename,mode,radec,azel,galactic,offset,stow,calibrate,noisecal,record,freq,roff
+ sourcename (any name in catalog) [mode]
+ mode n(for 25_point scan)    b(for beamswitch)
+ radec hh:mm:ss  [sign]dd:mm:ss [epoch] [mode]
+ azel az_deg el_deg
+ galactic glat_deg glon_deg
+ offset azoff_deg eloff_deg
+ stow
+ calibrate 
+ record [optional filename]
+ roff (turns off record)
+ freq frequency [bandwidth]num 
+Note that 25_point scan runs only once while beamswitch until next cmd
+For example:
+:  Sun
+:60
+:600 Sun n
+:  stow
+goes to the sun,waits 60 seconds,does 25 point
+and after 600 seconds goes to stow
+Note that the seconds to wait is right next to the ":"
+and otherwise there is a space before the command
+
+ A command file can be checked by running in simulate mode  -see help on cmdline options
+another name for a command file can be entered by clicking
+on the text area.
+##
+
+##cal
+Calibration - various modes are available enter desired mode
+in srt.cat file using CALMODE keyword. Suggest CALMODE 2 or 3
+The basic method is to get the system temperature from the "Y-factor"
+
+   Y-factor = power_on_hot_load / power_on_cold_load
+                = (tsys + hot_temperature) / (tsys + cold_temperature)
+
+   solving   tsys = (hot_temperature - y*cold_temperature) / (y-1)
+
+   power_on_hot_load  = with absorber over the feed  or pointing at the trees
+   power_on_cold_load = looking at cold sky
+   hot_temperature = ambient ~ 290 K
+   cold_temperature = 3 K from CMB
+
+Since the LNA noise temperature is very stable is in not really necessary
+to get the system temperature every time you point the telescope. What is
+needed is to get the power looking at an absorber or pointing at the trees fairly
+frequently and the the gain of the LNA + amplifiers + dongle change with time.
+CALMODE 3 is appropriate if you can point at the trees. In this case just click
+on cal and the software will divide by a reference spectrum and convert the power to kelvin
+assuming the power while still pointed at the trees corresponds to Tsys + Tcal. 
+CALMODE 2 does the same by waits for the operator to hit enter when the absorber
+has been placed over the feed.
+
+
+##
