@@ -155,9 +155,10 @@ void vspectra(void)
 }
 
 // Initilizes and Opens the RTL Dongle
+// NOTE Here, I believe mode refers to simulated mode(0?) or dongle mode(1?) - Erick
 void Init_Device(int mode)
 {
-    int r;
+    int r;          //NOTE Used to interact with rtlsdr, may be reference to the dongle? - Erick
     int i = 0;
     int gain = 496;             //496;//0;//125;//386;
     /*
@@ -174,6 +175,7 @@ void Init_Device(int mode)
     char vendor[256], product[256], serial[256];
     d1.dongle = 1;
 
+    // If running not as a simulation, tune the device to the specified frequency
     if (mode) {
         r = rtlsdr_set_center_freq(dev, frequency);
         if (r < 0)
@@ -183,12 +185,16 @@ void Init_Device(int mode)
         return;
     }
 
+    // Get the total number of supported devices connected to the machine
     device_count = rtlsdr_get_device_count();
+    // If no supported device is found
     if (!device_count) {
         fprintf(stderr, "No supported devices found.\n");
         exit(1);
     }
 
+    // Print the vendor name, product name, and serial number for all found 
+    // devices to console
     if (d1.printout)
         printf("Found %d device(s):\n", device_count);
     for (i = 0; i < device_count; i++) {
@@ -197,9 +203,11 @@ void Init_Device(int mode)
             printf("  %d:  %s, %s, SN: %s\n", i, vendor, product, serial);
     }
 
+    // Inform user of which device is being used
     if (d1.printout)
         printf("Using device %d: %s\n", dev_index, rtlsdr_get_device_name(dev_index));
 
+    /* Open the device */
     r = rtlsdr_open(&dev, dev_index);
     if (r < 0) {
         fprintf(stderr, "Failed to open rtlsdr device #%d.\n", dev_index);
@@ -218,7 +226,7 @@ void Init_Device(int mode)
     else if (d1.printout)
         printf("Tuned to %u Hz.\n", frequency);
 
-    if (0 == gain) {
+    if (gain == 0) {
         /* Enable automatic gain */
         r = rtlsdr_set_tuner_gain_mode(dev, 0);
         if (r < 0)
@@ -236,6 +244,6 @@ void Init_Device(int mode)
     }
 
     r = rtlsdr_reset_buffer(dev);
-//    printf("Reset Status: %u \n", r);
+    printf("Reset Status: %u \n", r); // Was commented out -- enabled to see what it did.
 
 }
