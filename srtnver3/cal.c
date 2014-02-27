@@ -23,7 +23,7 @@ void cal(int mode)
   // command cal
 {
     int k;
-    int ix, iy, midxr, ixe;
+    int ix, iy, midxr;
     char txt[80];
     double av, max, maxf, p, a;
     float wtt[NSPEC];
@@ -93,7 +93,7 @@ void cal(int mode)
     }
 
     ix = midx * 1.55;
-    ixe = midx * 0.4;
+    //int ixe = midx * 0.4;
     midxr = midx * 2 - ix;
 
     sprintf(txt, "calibration in progress");

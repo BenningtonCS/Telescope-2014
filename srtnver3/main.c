@@ -64,10 +64,8 @@ int main(int argc, char *argv[])
     GtkWidget *window;
     GtkWidget *button_clear, *button_azel, *button_freq, *button_offset;
     GtkWidget *button_help;
-    GdkColor color;
-    int i, ii, mode;
+    int i, mode;
     int yr, da, hr, mn, sc;
-    double secstart;
     char buf[64];
     GdkGeometry geometry;
     GdkWindowHints geo_mask;
@@ -198,6 +196,7 @@ int main(int argc, char *argv[])
         Init_Device(0);
 
     if (d1.displ) {
+        GdkColor color;
         gtk_init(&argc, &argv);
         window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
         geometry.min_width = 500;
@@ -310,7 +309,7 @@ int main(int argc, char *argv[])
         gtk_widget_show(window);
         clearpaint();
     }
-    ii = 0;
+    //int ii = 0;
     if (d1.printout) {
         toyrday(d1.secs, &yr, &da, &hr, &mn, &sc);
         printf("%4d:%03d:%02d:%02d:%02d %3s ", yr, da, hr, mn, sc, d1.timsource);
@@ -318,7 +317,8 @@ int main(int argc, char *argv[])
     zerospectra(0);
     for (i = 0; i < d1.nfreq; i++)
         bspec[i] = 1;
-    secstart = d1.nsecstart = -1;
+    //double secstart = -1;
+    d1.nsecstart = -1;
     d1.secs = readclock();
     while (d1.run) {
         zerospectra(1);
@@ -560,7 +560,7 @@ void aver(void)
 double gauss(void)
 {
     double v1, v2, r, fac, aamp, vv1;
-    static int j;
+    //static int j;
     v1 = r = 0.0;
     while (r > 1.0 || r == 0.0) {
         v1 = 2.0 * (rand() / 2147483648.0) - 1.0;
@@ -570,6 +570,6 @@ double gauss(void)
     fac = sqrt(-2.0 * log(r) / r);
     vv1 = v1 * fac;
     aamp = vv1;
-    j = 1;
+    //j = 1;
     return (aamp);
 }

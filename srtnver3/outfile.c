@@ -21,12 +21,12 @@ void outfile(void)
     float freqsep, sigma;
     GdkColor color;
     static FILE *file1 = NULL;
-    static int n;
+    //static int n;
     if (!d1.record)
         return;
     if (d1.foutstatus == 0)     // set filename
     {
-        n = 0;
+        //n = 0;
         toyrday(d1.secs, &yr, &da, &hr, &mn, &sc);
         d1.rday = da;
         if (d1.filname[0] == 0)

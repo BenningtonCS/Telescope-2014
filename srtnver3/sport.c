@@ -407,10 +407,11 @@ void azel(double az, double el)
 
 int rot2(double *az, double *el, int cmd, char *resp)
 {
-    int usbdev, status, i, rstatus;
+    int usbdev, status, rstatus;
     char command[13];
 // for perm add to dialout group
-    i = rstatus = 0;
+    //int i = 0;
+    rstatus = 0;
 //  system("stty -F /dev/ttyUSB0 600 cs8 -cstopb -parenb -icanon min 1 time 1");
     if (cmd == -1) {
         system("stty -F /dev/ttyUSB0 600 raw -echo time 2");

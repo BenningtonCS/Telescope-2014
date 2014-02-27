@@ -167,7 +167,7 @@ void vplot(void)
   // plot the spectrum
 {
     char txt[80], fnam[80];
-    int i, j, jmax, k, np, j1, j2, n3, npoint, yr, da, hr, mn, sc;
+    int i, j, k, np, j1, j2, n3, npoint, yr, da, hr, mn, sc;
     double xx, yy, dmax, ddmax, dmin, slope, dd, ddd, totpp, scale, sigma, freq, fstart, fstop, vstart, vstop,
         xoffset;
     double freqsep, x1, x2, y1, y2, wid, sx, sy, yoffset, x, y, xp, yp, av, avx, avy, avxx, avxy, psx1, psx2,
@@ -201,7 +201,7 @@ void vplot(void)
 // printf("np %d %d\n",np,(int) (d1.f1 * d1.nfreq));
     j1 = np * 0.0;
     j2 = np * 1.0;
-    jmax = 0;
+    //int jmax = 0;
     npoint = 2048;
     av = avx = avy = avxx = avxy = 0.0;
     for (j = 0; j < np; j++) {
@@ -226,7 +226,7 @@ void vplot(void)
         dd = pp[j];
         if (dd > dmax) {
             dmax = dd;
-            jmax = j;
+            //jmax = j;
         }
         if (dd < dmin)
             dmin = dd;
