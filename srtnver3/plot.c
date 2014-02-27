@@ -1,3 +1,12 @@
+/*****************************************************************************
+ *
+ *  file name:      plot.c
+ *  
+ *  description:    ?? plots something, probably on GUI (one of the graphs or 
+ *                  FFTs)
+ *
+ *****************************************************************************/
+
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <stdio.h>

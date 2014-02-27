@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      main.c
+ *  
+ *  description:    main function of program
+ *
+ *****************************************************************************/
+
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <stdio.h>

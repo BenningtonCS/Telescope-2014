@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      geom.c
+ *  
+ *  description:    ?? Possibly handles the logic for spherical geometry
+ *
+ *****************************************************************************/
+
 #include <stdio.h>
 #include <math.h>
 #include "d1cons.h"

@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      time.c
+ *  
+ *  description:    ?? Functions dealing with time, timing, time manipulation
+ *
+ *****************************************************************************/
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>

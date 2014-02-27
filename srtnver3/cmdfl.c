@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      cmdfl.c
+ *  
+ *  description:    ?? Parses a file for commands and executes the commands
+ *
+ *****************************************************************************/
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>

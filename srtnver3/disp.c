@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      disp.c
+ *  
+ *  description:    ?? Something to do with the GUI
+ *
+ *****************************************************************************/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>

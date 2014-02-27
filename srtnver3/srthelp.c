@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      srthelp.c
+ *  
+ *  description:    ?? Define/Load the contents of the help in the GUI
+ *
+ *****************************************************************************/
+
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <stdio.h>

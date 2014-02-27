@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      amdfft.c
+ *  
+ *  description:    ?? Fast-Fourrier Transform for AMD architecture
+ *
+ *****************************************************************************/
+
 #include "acml.h"
 #include <stdio.h>
 #include <stdlib.h>

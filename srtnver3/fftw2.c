@@ -1,3 +1,11 @@
+/*****************************************************************************
+ *
+ *  file name:      fftw2.c
+ *  
+ *  description:    ?? Something relating to Fast Fourrier Transforms
+ *
+ *****************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <fftw3.h>
