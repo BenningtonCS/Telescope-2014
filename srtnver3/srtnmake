@@ -13,6 +13,8 @@ sudo cp rtl-sdr.rules /lib/udev/rules.d/40-rtl-sdr.rules
 sudo restart udev
 
 
+./getIP.sh
+
 # compile for dongle + amd FFT 
 #gcc -W -Wall -O3 $CFLAGS $LIBS main.c vspectra.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c  amdfft.c  librtlsdr.c tuner_r820t.c -lm  -lacml /usr/lib/libgfortran.a `pkg-config --libs --cflags libusb-1.0` 
 
