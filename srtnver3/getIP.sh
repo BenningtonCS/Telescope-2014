@@ -12,7 +12,7 @@ manualStation(){
 	local lat=$2
 	local long=$3
 
-	echo "STATION $2 $3 $1" | tr -d '\r' >> srt.cat; echo "Station added to srt.cat."
+	echo "STATION $2 $3 $1" | tr -d '\r' >> srt.cat; echo "> Station added to srt.cat."
 }
 
 
