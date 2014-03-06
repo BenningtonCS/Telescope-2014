@@ -1,5 +1,3 @@
-IP address : 204.77.151.201
-Country : UNITED STATES 
-City : BENNINGTON
-Latitude : 42.87702
-Longitude : -73.1898
+ BENNINGTON
+ 42.87702
+ -73.1898
