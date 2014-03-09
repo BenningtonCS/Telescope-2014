@@ -2,7 +2,7 @@
  *
  *  file name:      sport.c
  *  
- *  description:    ??
+ *  description:    ?? control antenna movement
  *
  *****************************************************************************/
 
