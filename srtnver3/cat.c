@@ -37,6 +37,8 @@ int catfile(void)
         // If the first character in a line is a * or #, do not read the line (commented out)
         if (buf[0] != '*' && buf[0] != '#') {
 
+            // Space at end of keyword forces match
+
             if (kmatch(buf, "ALFASPID")) {
                 d1.rod = 0;
                 d1.azcounts_per_deg = 1.0; // for SPID
@@ -185,7 +187,7 @@ int catfile(void)
             if (kmatch(buf, "SPEED_UP ")) {
                 sscanf(buf, "%*s %d", &d1.speed_up);
             }
-            if (kmatch(buf, "STATION ")) { // space forces exact match
+            if (kmatch(buf, "STATION ")) { 
                 sscanf(buf, "%*s %lf %lf %24s %lf", &d1.lat, &d1.lon, d1.statnam, &d1.hgt);
                 d1.lat = d1.lat * PI / 180.0;
                 d1.lon = d1.lon * PI / 180.0;

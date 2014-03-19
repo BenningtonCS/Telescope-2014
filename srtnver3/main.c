@@ -86,32 +86,32 @@ int main(int argc, char *argv[])
 
 
 //    d1.azelport = 0x3f8;        // com1 default for old SRT 
-    d1.azelsim = 0;
+    d1.azelsim = 0;             // simulate antenna
     d1.azoff = 0.0;
     d1.beamw = 5.0;
     d1.bsw = 0;
     d1.bw = 0;                  // set to 2.4 for TV dongle 10 MHz for ADC card in init
     d1.calcons = 1.0;
     d1.caldone = 0;
-    d1.calmode = 0;
+    d1.calmode = 0;             // cal mode set in srt.cat, default to 0
     d1.calon = 0;
     d1.calpwr = 0;
     d1.clearint = 0;
-    d1.cmdfl = 0;
+    d1.cmdfl = 0;               // 0 if no command file, 1 if command file exists
     d1.comerr = 0;
-    d1.debug = 0;
+    d1.debug = 0;               // 0 disables debug messages, 1 enanbles debug messages. Default 0.
     d1.delay = 0;
-    d1.displ = 1;
+    d1.displ = 1;               // 0 disables creating a display window, 1 enables creating a display window. Default 1
     d1.docal = 0;
     d1.dongle = 0;              // set to zero initially - set to 1 in Init_Device if dongle
     d1.drift = 0;
     d1.eloff = 0.0;
     d1.entry1 = d1.entry2 = d1.entry3 = d1.entry5 = d1.entry6 = d1.entry8 = 0;
-    d1.fbw = 0;                 // set in init or srt.cat
-    d1.fftsim = 0;
-    d1.freq = 1420.4;           // default
+    d1.fbw = 0;                 // bandwidth set in init or srt.cat
+    d1.fftsim = 0;              // simulates fast fourrier transform
+    d1.freq = 1420.4;           // set frequency to listen to, default 1420.4
     d1.freqchng = 0;
-    d1.freqcorr = 0;            // frequency correction for L.O. may be needed for TV dongle
+    d1.freqcorr = 0;            // freq correction for dongle in MHz (frequency correction for L.O. may be needed for TV dongle)
     d1.fstatus = 0;
     d1.helpwindow = 0;
     d1.hgt = 0;
@@ -127,13 +127,13 @@ int main(int argc, char *argv[])
     d1.plot = 0;
     d1.plotsec = 1;
     d1.ppos = 0;
-    d1.printout = 1;
+    d1.printout = 1;            // 0 disables messages printed to console, 1 enables messages printed to console. Default 1
     d1.pwroff = 0.0;
-    d1.radiosim = 0;
-    d1.record = 0;
+    d1.radiosim = 0;            // simulate reciever
+    d1.record = 0;              //
     d1.record_int_sec = 0;
     d1.restfreq = 1420.406;     /* H-line restfreq */
-    d1.rfisigma = 6;            // level for RFI reporting to screen
+    d1.rfisigma = 6;            // level at which to report RFI to screen. Default = 6 
     d1.run = 1;
     d1.scan = 0;
     d1.secs = readclock();
