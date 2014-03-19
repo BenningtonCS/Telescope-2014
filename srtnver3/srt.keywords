@@ -1,0 +1,421 @@
+-----------------------------------------------------------------
+
+This file describes the keywords used in the srt.cat config file:
+
+-----------------------------------------------------------------
+
+
+--------------------
+ALFASPID - obsolete?
+--------------------
+
+ALFASPID
+
+
+--------------------
+AZCOUNTS
+--------------------
+
+
+--------------------
+AZEL 
+--------------------
+
+AZEL <> <> <>
+
+AZEL  50 60 azel
+AZEL 120 7 calabs
+
+
+--------------------
+AZELPORT
+--------------------
+
+
+--------------------
+AZLIMITS 
+--------------------
+
+AZLIMITS <> <>
+
+AZLIMITS 21 355
+
+
+--------------------
+BANDWIDTH 
+--------------------
+is actual bandwith plotted it must be < 10 MHz for PCI card and 2.4 MHz for dongle
+
+BANDWIDTH <>
+
+BANDWIDTH 2.0
+
+
+--------------------
+BEAMWIDTH
+--------------------
+
+BEAMWIDTH <>
+
+BEAMWIDTH 5
+
+
+--------------------
+CALMODE
+--------------------
+CALMODE 0 for calcheck, 2 for bandpass only, 20 for manual vane cal
+CALMODE 2 assumes TCAL value i.e. use 290 if bandpass looking at absorber or bushes use 3 for sky but be sure you are not looking at H-line i.e. use way out of Galactic plane
+CALMODE 2 also assumes TSYS value i.e. put value of TSYS measured manually on cold sky into srt.cat 
+CALMODE 3 same as CALMODE 2 but doesn't need entry to confirm
+
+CALMODE <>
+
+CALMODE 20  
+CALMODE 3
+
+
+--------------------
+CASSIMOUNT - no longer supported
+--------------------
+
+
+--------------------
+COMMAND - command file name
+--------------------
+
+COMMAND <>
+
+COMMAND galacticHsurvey.txt
+
+
+--------------------
+COUNTPERSTEP 
+--------------------
+obsolete?
+
+COUNTPERSTEP <>
+
+COUNTPERSTEP 10
+
+
+--------------------
+DATADIR - data directory - defaults to directory with the executable
+--------------------
+
+DATADIR <>
+
+DATADIR /home/aeer/srt/
+
+
+--------------------
+DEBUG
+--------------------
+
+DEBUG
+
+
+--------------------
+ELCOUNTS
+--------------------
+
+
+--------------------
+ELLIMITS
+--------------------
+
+ELLIMITS <> <>
+
+ELLIMITS -2 89.0
+
+
+--------------------
+FREQCORR - frequency correction for dongle in MHz
+--------------------
+the dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz value can be determined using signal generator or standard H-line calibration region
+
+FREQCORR <>
+
+FREQCORR -0.05   // TV dongle correction
+
+
+--------------------
+FREQUENCY
+--------------------
+
+FREQUENCY <>
+
+FREQUENCY 1420.406
+FREQUENCY 1420.4
+
+
+--------------------
+GALACTIC - lat long
+--------------------
+
+GALACTIC <> <> <>
+
+GALACTIC 132 -1 S7
+GALACTIC 207 -15 S8
+GALACTIC 117 -2.1 CASA
+GALACTIC 30 0 H1CLOUD2
+GALACTIC 0 0 G0
+GALACTIC 30 0 G30
+GALACTIC 60 0 G60
+GALACTIC 90 0 G90
+GALACTIC 180 0 G180
+GALACTIC 210 0 G210
+GALACTIC 240 0 G240
+GALACTIC 270 0 G270
+GALACTIC 300 0 G300
+GALACTIC 330 0 G330
+GALACTIC 10 0 G10
+GALACTIC 20 0 G20
+GALACTIC 40 0 G40
+GALACTIC 50 0 G50
+GALACTIC 70 0 G70
+GALACTIC 80 0 G80
+
+
+--------------------
+H180MOUNT - no longer supported
+--------------------
+obsolete?
+
+H180MOUNT
+
+
+--------------------
+MAINTENANCE
+--------------------
+
+MAINTENANCE
+
+
+--------------------
+NBLOCK
+--------------------
+
+NBLOCK <>
+
+NBLOCK 1   // number of blocks per update - can be reduced for Beagle board with slow display for PCI it is hardwired to 20
+
+
+--------------------
+NBSW
+--------------------
+
+NBSW <>
+
+NBSW 10
+
+
+--------------------
+NODISPLAY
+--------------------
+
+NODISPLAY
+
+
+--------------------
+NOISECAL
+--------------------
+obsolete?
+
+NOISECAL <>
+
+NOISECAL 70
+
+
+--------------------
+NOPRINTOUT
+--------------------
+
+NOPRINTOUT
+
+
+--------------------
+NUMFREQ
+--------------------
+
+NUMFREQ <>
+
+NUMFREQ 16
+NUMFREQ 1024   // good choise for ADC card
+NUMFREQ 256    // good choice for dongle
+
+
+--------------------
+NUMPOLY
+--------------------
+
+NUMPOLY <>
+
+NUMPOLY 15  // use default value of 25 for dongle
+
+
+--------------------
+PLOTSEC
+--------------------
+obsolete?
+
+PLOTSEC <>
+
+PLOTSEC 10
+
+
+--------------------
+RECORD - number of periods per output add [SPEC] to include spectrum 
+--------------------
+
+RECORD <> <>
+
+RECORD 10 SPEC
+RECORD 10
+
+
+--------------------
+RESTFREQ - for vlsr calculations
+--------------------
+
+RESTFREQ <>
+
+RESTFREQ 1420.401
+
+
+--------------------
+RFI 
+--------------------
+* RFI
+* an optional width can be specified but if it is 
+* larger than the resolution no data will remain for this channel
+* if a width is not specified only one of the 4096 raw frequency channesl
+* will be deleted. If NUMFREQ is 1024 there are up to 3 raw channels that
+* can be deleted without loosing all the information for that channel in the
+* final spectrum. 
+
+RFI <> <>
+
+RFI 1420.609 0.004
+RFI 1420.000 0.01
+RFI 1420.82 0.01
+
+
+--------------------
+RFISIGMA - level at which to report RFI default = 6 
+--------------------
+
+RFISIGMA <>
+
+RFISIGMA 20   // level for which channels with RFI will be flagged default is 6
+
+
+--------------------
+SIMULATE 
+--------------------
+SIMULATE ANTENNA
+SIMULATE RECEIVER
+SIMULATE FFT
+
+
+--------------------
+SOU - source ra dec epoch
+--------------------
+source ra, dec, name, epoch  - default eopoch is j2000
+
+SOU 23 21 12  58 44 00 Cass
+SOU 00 00 00  00 00 00 Sun
+SOU 00 00 00  00 00 00 Moon
+SOU 19 57 45  40 36 00 Cygnus
+SOU 17 45 40 -29 00 28 SgrA
+SOU 20 44 33.9 39 55 54 NMLcyg
+SOU 18 34 52 -05 26 37 OH26.5
+SOU 07 20 53 -25 40 24 VYCma
+SOU 05 35 17 -05 23 28 Orion
+SOU 19 20 38 14 14 34 Hcloud
+SOU 00 42 44 41 16 09 Andr
+SOU 01 33 50 30 39 37 Trigl
+SOU 5 44 50 -1 41 0 S8RA 1950
+SOU 19 59 59 29 54 15 test2
+SOU 15 28 58 -2 15 0 S6 1950
+SOU 17 48 46 -34 25 0 S9 1950
+SOU 02 23 17 61 38 54 W3 1950    // strongest OH line 1665.4 MHz -44 km/s 
+
+
+--------------------
+SPEED_UP
+--------------------
+SPEED_UP 400 
+SPEED_UP -18     // negative value advances time hours 
+
+
+--------------------
+STATION 
+--------------------
+latitude longitude west in degrees
+
+STATION 42.87702 -73.1898 Bennington
+
+
+--------------------
+TCAL
+--------------------
+/ 290 is the default absorber or bushes
+
+TCAL 290    // should equal ambient load
+
+
+--------------------
+TOLERANCE
+--------------------
+
+
+--------------------
+TSYS
+--------------------
+previously measured system temperature on cold sky
+
+TSYS 171   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* old obselete keywords below some of which may be used
+* again in future updates
+*COUNTPERSTEP 10
+*NEWMOUNT 11 14.53 2 130 30   // Mike's new mount
+*H180MOUNT
+*ALFASPID
+*NOISECAL 70
+*PLOTSEC 10
+
+
+
