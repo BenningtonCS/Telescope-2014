@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
     d1.hgt = 0;
     d1.limiterr = 0;
     d1.mainten = 0;
-    d1.nblk = 5;                // number of blocks in vspectra
+    d1.nblock = 5;              // number of blocks in vspectra
     d1.nbsw = 1;
     d1.nfreq = NSPEC;
     d1.noisecal = 0;

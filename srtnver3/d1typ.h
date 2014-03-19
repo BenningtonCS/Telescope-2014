@@ -38,7 +38,7 @@ typedef struct
   int nsecstart;
   int secstop, clearint, fstatus, radiosim, azelsim, mainten, azcount, elcount, domap, xmark, map, mancal, south, ptoler, countperstep,
     azelport, drift, scan, stow, slew, sourn, bsw, nbsw, bswint, calon, calmode, docal, caldone, rod, stopproc, comerr, limiterr, 
-    cmdfl, cmdfline, year, nblk, nsam, unitid, run,wid,whgt,vwid,vwhgt,numon,numoff,psw,entry1,entry2,entry3,entry5,entry6,entry8,
+    cmdfl, cmdfline, year, nblock, nsam, unitid, run,wid,whgt,vwid,vwhgt,numon,numoff,psw,entry1,entry2,entry3,entry5,entry6,entry8,
     helpwindow,vwindow,plot,obsn,nrfi,dongle,npoly;
   int fftsim;
   unsigned int seed;

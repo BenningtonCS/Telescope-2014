@@ -119,7 +119,7 @@ int catfile(void)
                 d1.mainten = 1;
             }
             if (kmatch(buf, "NBLOCK ")) {
-                sscanf(buf, "%*s %d", &d1.nblk);
+                sscanf(buf, "%*s %d", &d1.nblock);
             }
             if (kmatch(buf, "NBSW ")) {
                 sscanf(buf, "%*s %d", &d1.nbsw);

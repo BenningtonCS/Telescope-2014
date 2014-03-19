@@ -56,7 +56,7 @@ void vspectra(void)
     d1.lofreq = 0;              // not used but needs to be set to zero to flag the use of the dongle 
     d1.efflofreq = d1.freq - d1.bw * 0.5;
 
-    num = d1.nblk;                    //was 20   // was 100
+    num = d1.nblock;                    //was 20   // was 100
     nsam = NSAM;
     d1.nsam = NSAM * num;
     //double avsig = 0;
