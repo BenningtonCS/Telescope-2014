@@ -4,13 +4,13 @@ typedef struct
   double av;              //
   double avc;             //
   double azoff;           //
-  double azcounts_per_deg;//
+  double azcounts_per_deg;// -----DOES NOT APPEAR TO BE USED? (OBSOLETE?)-----
   double azlim1;          //
   double azlim2;          //
   double aznow;           // current azimuth
   double azcmd;           //
   double avbsw;           //
-  double azprev;          //
+  double azprev;          // previous azimuth
   int azelsim;            // simulates antenna
   int azcount;            //
   int azelport;           //
@@ -21,29 +21,29 @@ typedef struct
   int bsw;                //
   int bswint;             //
 
-  double calcons;         //
+  double calcons;         // -----DOES NOT APPEAR TO BE USED?-----
   double calpwr;          //
-  int clearint            //
-  int countperstep;       //
+  int clearint            // flag that when set will clear integration
+  int countperstep;       // -----DOES NOT APPEAR TO BE USED? (OBSOLETE?)-----
   int calon;              //
-  int calmode;            //
-  int caldone;            //
-  int comerr;             //
-  int cmdfl;              //
-  int cmdfline;           //
-  char cmdfnam[256];      //
-  char catnam[64];        //
+  int calmode;            // Flag to set calibration mode
+  int caldone;            // ??????? Flag indicating whether calibration is complete or not
+  int comerr;             // ??????? communication error flag (for communicating with rotor?)
+  int cmdfl;              // flag indicating presence/absence of command file
+  int cmdfline;           // ??????? the current line beign read in the command file
+  char cmdfnam[256];      // name of command file
+  char catnam[64];        // name of config file (srt.cat)
 
   double dmax;            //
   double delay;           //
-  int displ;              //
-  int debug;              //
+  int displ;              // flag enabling or disabling windowed display
+  int debug;              // flag enabling or disabling debug messages
   int domap;              //
   int drift;              //
   int docal;              //
-  int dongle;             //
-  int devices;            //
-  char datadir[256];      //
+  int dongle;             // flag denoting presence or absence of dongle device
+  int devices;            // -----DOES NOT APPEAR TO BE USED?-----
+  char datadir[256];      // name of data directory, defaults to directory with the executable
 
   double efflofreq;       //
   double eloff;           //
@@ -51,7 +51,7 @@ typedef struct
   double ellim1;          //
   double ellim2;          //
   double elnow;           // current elevation
-  double elprev;          //
+  double elprev;          // previous elevation
   double elcmd;           //
   int elcount;            //
   int entry1;             //
@@ -66,7 +66,7 @@ typedef struct
   double fc;              //
   double f2;              //
   double fbw;             // bandwidth set in srt.cat
-  double freqcorr;        //
+  double freqcorr;        // value of frequency correction for dongle in MHz
   int foutstatus;         //
   int freqchng;           //
   int fstatus;            //
@@ -76,9 +76,9 @@ typedef struct
   double glat;            //
   double glon;            //
 
-  double hgt;             //
-  int helpwindow;         //
-  char hlpnam[64];        //
+  double hgt;             // -----DOES NOT APPEAR TO BE USED?-----
+  int helpwindow;         // flag describing whether help window is open or not
+  char hlpnam[64];        // stores the name of the help file (srt.hlp)
 
   double integ;           //
   double integ2;          //
@@ -170,8 +170,8 @@ typedef struct
   int vwhgt;              //
   int vwindow;            //
 
-  int wid;                //
-  int whgt;               //
+  int wid;                // ??????? width of the window
+  int whgt;               // ??????? height of the window
 
   int xmark;              //
 
