@@ -1,5 +1,63 @@
 * sample d1.cat file
 * first word is key word
+*
+*
+* Temporary Keyword Usage Guide:
+*
+* STATION <latitude> <longitude (west in degrees)> <station name>
+*	Used to set location of the radiotelescope
+*
+* 	example: STATION 42.9 -73.2 BENNINGTON
+*
+*
+* SOU <source ra> <dec> <name> <epoch (default: j2000)
+*	Used to define a source?
+*
+*	example: SOU 05 35 17 -05 23 28 Orion
+*			 SOU 17 48 46 -34 25 0 S9 1950
+*
+*
+* CALMODE <calibration flag>
+*	flags:	0 	- for calcheck
+*			2 	- for bandpass only
+*			20 	- for manual vane cal
+*			290	- if bandpass looking at absorber or bushes
+*			3 	- same as 2 but doesnt need entry to confirm, use for sky (NOT looking at H-line (ie. way out of Galactic plane)) 
+*
+* TCAL
+*
+*
+* FREQCORR
+*	Set the frequency - the dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz
+*	The value can be determined by using a signal generator or standard H-line calibration region.
+*
+*
+*
+* BANDWIDTH
+*	The actual bandwidth plotted. Must be < 10 MHz for PCI card and 2.4 MHz for dongle.
+*
+*
+* TSYS
+*	Previously measured system temperature on cold sky
+*
+*
+* SIMULATE ANTENNA
+*	Simulates antenna motion
+*
+*
+* SIMULATE RECEIVER
+*	Simulates received data
+*
+*
+* SIMULATE FFT
+*	Simulates fast-fourrier transform
+*
+*
+* COMMAND <file name>
+* 	Set the command file to read commands from
+*
+*
+*
 * STATION: latitude longitude west in degrees
 * SOU: source ra, dec, name, epoch  - default eopoch is j2000
 * CALMODE 0 for calcheck, 2 for bandpass only, 20 for manual vane cal
@@ -12,16 +70,16 @@
 * value can be determined using signal generator or standard H-line calibration region
 * BANDWIDTH is actual bandwith plotted it must be < 10 MHz for PCI card and 2.4 MHz for dongle
 * TSYS previously measured system temperature on cold sky
-SIMULATE ANTENNA
+*SIMULATE ANTENNA
 *CALMODE 20  
 CALMODE 3
-* SIMULATE RECEIVER
+*SIMULATE RECEIVER
 *SIMULATE FFT
 *SPEED_UP 400 
 *SPEED_UP -18     // negative value advances time hours 
 *MAINTENANCE
-*DEBUG
-*COMMAND galacticHsurvey.txt
+DEBUG
+*COMMAND cmd.txt
 *SOU 23 21 12  58 44 00 Cass
 SOU 00 00 00  00 00 00 Sun
 SOU 00 00 00  00 00 00 Moon
@@ -63,7 +121,7 @@ GALACTIC 80 0 G80
 AZEL 120 7 calabs
 
 
-*NOPRINTOUT
+NOPRINTOUT
 *NODISPLAY
 BEAMWIDTH 5
 NBSW 10
@@ -105,9 +163,10 @@ NBLOCK 1   // number of blocks per update - can be reduced for Beagle board with
 *COUNTPERSTEP 10
 *NEWMOUNT 11 14.53 2 130 30   // Mike's new mount
 *H180MOUNT
-*ALFASPID
+ALFASPID
 *NOISECAL 70
 *PLOTSEC 10
 
 
 STATION 42.87702 -73.1898 BENNINGTON
+

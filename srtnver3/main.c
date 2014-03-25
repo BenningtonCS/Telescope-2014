@@ -169,6 +169,7 @@ int main(int argc, char *argv[])
             printf("initializing antenna controller\n");
         i = rot2(&d1.aznow, &d1.elnow, -1, buf); // initialize
         i = rot2(&d1.aznow, &d1.elnow, 1, buf); // read
+        //printf("done calling rot2()\n");
         if (i < 0) {
             printf("Couldn't talk to antenna controller\n");
             return 0;

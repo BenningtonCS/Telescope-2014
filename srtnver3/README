@@ -62,5 +62,5 @@ This new release does not support the old Cassicorp antenna controller but I hav
 the old code (sportold.c) which might be useful for anyone who wants to write code
 for this old controller.
  
-  aeer 26 Nov 2013
+  aeer 26 Nov 2013++
 
