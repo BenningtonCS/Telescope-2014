@@ -67,7 +67,7 @@ void vspectra(void)
         fft_init(blsiz2, ream, comm, &info);
     }
 
-    num = d1.nblk;              //was 20   // was 100
+    num = d1.nblock;              //was 20   // was 100
     nsam = NSAM;
     d1.nsam = NSAM * num;
     avsig = 0;
