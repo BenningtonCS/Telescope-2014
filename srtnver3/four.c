@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#define PI 3.1415926536
+#include "d1cons.h"
 
 
 void Four(double *fft_r, double *fft_i, int nn)
@@ -41,7 +41,7 @@ void Four(double *fft_r, double *fft_i, int nn)
     while (n > mmax) {
         istep = mmax << 1;
 
-        theta = -(6.28318530717959 / mmax);
+        theta = -(TWOPI / mmax);
         wtemp = sin(0.5 * theta);
         wpr = -2.0 * wtemp * wtemp;
         wpi = sin(theta);
