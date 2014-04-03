@@ -326,6 +326,7 @@ gint Repaint(void)
                           drawing_area->style->black_gc, x1, y2 + midy * 0.05, txt, strlen(txt));
         }
 
+        // Draw the four lines that make up a box
         gdk_draw_line(pixmap, drawing_area->style->black_gc, x1, y1, x2, y1);
         gdk_draw_line(pixmap, drawing_area->style->black_gc, x1, y2, x2, y2);
         gdk_draw_line(pixmap, drawing_area->style->black_gc, x1, y1, x1, y2);

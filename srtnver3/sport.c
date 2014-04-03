@@ -2,7 +2,7 @@
  *
  *  file name:      sport.c
  *  
- *  description:    ?? control antenna movement
+ *  description:    ?? control antenna movement   sport = serial port
  *
  *****************************************************************************/
 
