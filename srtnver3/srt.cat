@@ -10,7 +10,7 @@
 * 	example: STATION 42.9 -73.2 BENNINGTON
 *
 *
-* SOU <source ra> <dec> <name> <epoch (default: j2000)
+* SOU <source ra> <dec> <name> <epoch (default: j2000)>
 *	Used to define a source?
 *
 *	example: SOU 05 35 17 -05 23 28 Orion
@@ -55,6 +55,13 @@
 *
 * COMMAND <file name>
 * 	Set the command file to read commands from
+*
+*
+*
+*
+*   FROM srt.hlp :
+*RECORD 10 SPEC in srt.cat sets interval to 10 averaging periods where SPEC
+*records spectrum. Without the keyword SPEC on the power is recorded
 *
 *
 *

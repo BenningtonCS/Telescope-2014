@@ -7,7 +7,72 @@
 Welcome to the SRT Help Window
 
 Please click on the buttons above to get more information about the features of the SRT software.
+
+-------------------------------
 srt.cat keywords:
+-------------------------------
+
+
+
+
+
+ Temporary Keyword Usage Guide:
+
+ STATION <latitude> <longitude (west in degrees)> <station name>
+	Used to set location of the radiotelescope
+
+ 	example: STATION 42.9 -73.2 BENNINGTON
+
+
+ SOU <source ra> <dec> <name> <epoch (default: j2000)>
+	Used to define a source?
+
+	example: SOU 05 35 17 -05 23 28 Orion
+			 SOU 17 48 46 -34 25 0 S9 1950
+
+
+ CALMODE <calibration flag>
+	flags:	0 	- for calcheck
+			2 	- for bandpass only
+			20 	- for manual vane cal
+			290	- if bandpass looking at absorber or bushes
+			3 	- same as 2 but doesnt need entry to confirm, use for sky (NOT looking at H-line (ie. way out of Galactic plane)) 
+
+ TCAL
+
+
+ FREQCORR
+	Set the frequency - the dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz
+	The value can be determined by using a signal generator or standard H-line calibration region.
+
+
+
+ BANDWIDTH
+	The actual bandwidth plotted. Must be < 10 MHz for PCI card and 2.4 MHz for dongle.
+
+
+ TSYS
+	Previously measured system temperature on cold sky
+
+
+ SIMULATE ANTENNA
+	Simulates antenna motion
+
+
+ SIMULATE RECEIVER
+	Simulates received data
+
+
+ SIMULATE FFT
+	Simulates fast-fourrier transform
+
+
+ COMMAND <file name>
+ 	Set the command file to read commands from
+
+
+
+
 
 STATION 
 AZLIMITS 
@@ -48,14 +113,13 @@ GALACTIC - lat long
 AZEL 
 RFISIGMA - level at which to report RFI default = 6 
 RFI 
-also see comments in srt.cat
 
 ##
 
 ##mode
 The SRT operates in a total power mode. The bandpass is normalized by clicking the cal botton.
 NPOINT does 5x5 point scan to find peak power and pointing offsets. BEAMSW can be used for sources
-which have suitable reference spectra on either side of the source. the beam throw equals the BEAMWIDTH 
+which have suitable reference spectra on either side of the source. The beam throw equals the BEAMWIDTH 
 set in srt.cat. NBSW sets the number of integration periods in each beam position. 
 
 ##
@@ -94,7 +158,7 @@ Frequency - optional arguments are bandwidth and number of frequencies
 
 ##offset
 Offset - click on offset and enter az el offets in degrees
-with space between entries
+with a space between entries
 
 ##
 
@@ -107,7 +171,7 @@ records spectrum. Without the keyword SPEC on the power is recorded
 
 ##cmdfl
 Command file rules:
-(default filename srt.cmd)
+(default filename cmd.txt)
 
 1] reads one line at a time skipping blank lines, and lines which start with * and lines with past times
 2] stops at and executes any line with current or future time time format:
