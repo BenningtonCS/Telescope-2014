@@ -1,92 +1,56 @@
-* sample d1.cat file
-* first word is key word
+*******************************************************************************
+* srt.cat file : for keyword/usage instructions, see srt.hlp
+* -----------------------------------------------------------------------------
 *
+* In this file, '*' at the beginning of the line denotes that the line is
+* commented out. Only lines starting with no '*' will be read.
 *
-* Temporary Keyword Usage Guide:
-*
-* STATION <latitude> <longitude (west in degrees)> <station name>
-*	Used to set location of the radiotelescope
-*
-* 	example: STATION 42.9 -73.2 BENNINGTON
-*
-*
-* SOU <source ra> <dec> <name> <epoch (default: j2000)>
-*	Used to define a source?
-*
-*	example: SOU 05 35 17 -05 23 28 Orion
-*			 SOU 17 48 46 -34 25 0 S9 1950
-*
-*
-* CALMODE <calibration flag>
-*	flags:	0 	- for calcheck
-*			2 	- for bandpass only
-*			20 	- for manual vane cal
-*			290	- if bandpass looking at absorber or bushes
-*			3 	- same as 2 but doesnt need entry to confirm, use for sky (NOT looking at H-line (ie. way out of Galactic plane)) 
-*
-* TCAL
-*
-*
-* FREQCORR
-*	Set the frequency - the dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz
-*	The value can be determined by using a signal generator or standard H-line calibration region.
-*
-*
-*
-* BANDWIDTH
-*	The actual bandwidth plotted. Must be < 10 MHz for PCI card and 2.4 MHz for dongle.
-*
-*
-* TSYS
-*	Previously measured system temperature on cold sky
-*
-*
-* SIMULATE ANTENNA
-*	Simulates antenna motion
-*
-*
-* SIMULATE RECEIVER
-*	Simulates received data
-*
-*
-* SIMULATE FFT
-*	Simulates fast-fourrier transform
-*
-*
-* COMMAND <file name>
-* 	Set the command file to read commands from
-*
-*
-*
-*
-*   FROM srt.hlp :
-*RECORD 10 SPEC in srt.cat sets interval to 10 averaging periods where SPEC
-*records spectrum. Without the keyword SPEC on the power is recorded
-*
-*
-*
-* STATION: latitude longitude west in degrees
-* SOU: source ra, dec, name, epoch  - default eopoch is j2000
-* CALMODE 0 for calcheck, 2 for bandpass only, 20 for manual vane cal
-* CALMODE 2 assumes TCAL value i.e. use 290 if bandpass looking at absorber or bushes use 3 for sky but be sure
-* you are not looking at H-line i.e. use way out of Galactic plane
-* CALMODE 2 also assumes TSYS value i.e. put value of TSYS measured manually on cold sky into srt.cat 
-* CALMODE 3 same as CALMODE 2 but doesn't need entry to confirm
-* TCAL       // 290 is the default absorber or bushes
-* FREQCORR the dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz
-* value can be determined using signal generator or standard H-line calibration region
-* BANDWIDTH is actual bandwith plotted it must be < 10 MHz for PCI card and 2.4 MHz for dongle
-* TSYS previously measured system temperature on cold sky
+*******************************************************************************
+
+
+***************************************
+* Simulate
+***************************************
+
 *SIMULATE ANTENNA
-*CALMODE 20  
-CALMODE 3
 *SIMULATE RECEIVER
 *SIMULATE FFT
-*SPEED_UP 400 
-*SPEED_UP -18     // negative value advances time hours 
+
+***************************************
+* Program Settings
+***************************************
+
 *MAINTENANCE
-DEBUG
-*COMMAND cmd.txt
+*DEBUG
+NOPRINTOUT
+*NODISPLAY
+
+***************************************
+* Frequency
+***************************************
+
+*FREQUENCY 1420.406
+FREQUENCY 1420.4
+
+RESTFREQ 1420.401
+
+FREQCORR -0.05   // TV dongle correction
+
+*NUMFREQ 16
+*NUMFREQ 1024   // good choice for ADC card
+NUMFREQ 256    // good choice for dongle
+
+***************************************
+* Calibration
+***************************************
+
+*CALMODE 20  
+CALMODE 3
+
+***************************************
+* Define Objects
+***************************************
+
 *SOU 23 21 12  58 44 00 Cass
 SOU 00 00 00  00 00 00 Sun
 SOU 00 00 00  00 00 00 Moon
@@ -104,6 +68,7 @@ SOU 01 33 50 30 39 37 Trigl
 SOU 15 28 58 -2 15 0 S6 1950
 SOU 17 48 46 -34 25 0 S9 1950
 *SOU 02 23 17 61 38 54 W3 1950    // strongest OH line 1665.4 MHz -44 km/s 
+
 GALACTIC 132 -1 S7
 GALACTIC 207 -15 S8
 *GALACTIC 117 -2.1 CASA
@@ -124,49 +89,93 @@ GALACTIC 40 0 G40
 GALACTIC 50 0 G50
 GALACTIC 70 0 G70
 GALACTIC 80 0 G80
+
+***************************************
+* Command File
+***************************************
+
+*COMMAND cmd.txt
+
+***************************************
+* AZ/EL
+***************************************
+
 *AZEL  50 60 azel
 AZEL 120 7 calabs
 
-
-NOPRINTOUT
-*NODISPLAY
-BEAMWIDTH 5
-NBSW 10
 AZLIMITS 21 355
 ELLIMITS -2 89.0
-TSYS 171    
-TCAL 290    // should equal ambient load
+
+***************************************
+* Record Data
+***************************************
+
 *DATADIR /home/aeer/srt/
+
 RECORD 10 SPEC
 *RECORD 10
-*NUMFREQ 16
-*NUMFREQ 1024   // good choise for ADC card
-NUMFREQ 256    // good choice for dongle
-*FREQUENCY 1420.406
-BANDWIDTH 2.0
-FREQUENCY 1420.4
-RESTFREQ 1420.401
-FREQCORR -0.05   // TV dongle correction
-NBLOCK 1   // number of blocks per update - can be reduced for Beagle board with slow display for PCI it is hardwired to 20
-*NUMPOLY 15  // use default value of 25 for dongle
 
+***************************************
 * RFI
+***************************************
 * an optional width can be specified but if it is 
 * larger than the resolution no data will remain for this channel
-* if a width is not specified only one of the 4096 raw frequency channesl
+* if a width is not specified only one of the 4096 raw frequency channels
 * will be deleted. If NUMFREQ is 1024 there are up to 3 raw channels that
 * can be deleted without loosing all the information for that channel in the
 * final spectrum. 
 
-*RFI 1420.609 0.004
 
+*RFI 1420.609 0.004
 *RFI 1420.000 0.01
 *RFI 1420.82 0.01
 
 *RFISIGMA 20   // level for which channels with RFI will be flagged default is 6
 
-* old obselete keywords below some of which may be used
-* again in future updates
+***************************************
+* Location
+***************************************
+
+STATION 42.87702 -73.1898 BENNINGTON
+
+***************************************
+* Bandwidth
+***************************************
+
+BANDWIDTH 2.0
+
+***************************************
+* Beamwidth
+***************************************
+
+BEAMWIDTH 5
+
+***************************************
+* Speed
+***************************************
+
+*SPEED_UP 400 
+*SPEED_UP -18     // negative value advances time hours 
+
+***************************************
+* System Temperature
+***************************************
+
+TSYS 171
+
+***************************************
+* Other
+***************************************
+
+NBSW 10
+TCAL 290    // should equal ambient load
+NBLOCK 1   // number of blocks per update - can be reduced for Beagle board with slow display for PCI it is hardwired to 20
+*NUMPOLY 15  // use default value of 25 for dongle
+
+***************************************
+* Obsolete Keywords
+***************************************
+
 *COUNTPERSTEP 10
 *NEWMOUNT 11 14.53 2 130 30   // Mike's new mount
 *H180MOUNT
@@ -175,5 +184,5 @@ ALFASPID
 *PLOTSEC 10
 
 
-STATION 42.87702 -73.1898 BENNINGTON
+
 
