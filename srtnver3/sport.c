@@ -256,7 +256,6 @@ void azel(double az, double el)
                     gtk_widget_modify_bg(button_stow, GTK_STATE_NORMAL, &color);
 
 //                            if (!d1.plot) {
-                    printf("\nREPAINTING IN SPORT.C\n");
                     Repaint();
 //                            }
 
@@ -410,7 +409,6 @@ void azel(double az, double el)
 
 int rot2(double *az, double *el, int cmd, char *resp)
 {
-    printf("starting rot2\n");
     int usbdev, status, rstatus;
     char command[14];
 // for perm add to dialout group
@@ -418,37 +416,24 @@ int rot2(double *az, double *el, int cmd, char *resp)
     rstatus = 0;
 //  system("stty -F /dev/ttyUSB0 600 cs8 -cstopb -parenb -icanon min 1 time 1");
     if (cmd == -1) {
-        //printf("cmd == -1\n Calling system()\n");
         system("stty -F /dev/ttyUSB0 600 raw -echo time 2");
         return 0;
     }
-    //printf("cmd != -1\n");
     usbdev = 0;                 // cmd  0x0f=stop 0x1f=status 0x2f=set
-    //printf("calling open()\n");
     usbdev = open("/dev/ttyUSB0", O_RDWR, O_NONBLOCK);
-//  printf("usbdev %d\n",usbdev);
     cmd = cmd * 16 + 0xf;
-    //printf("calling sprintf()\n");
     sprintf(command, "W%04d%c%04d%c%c ", (int) *az + 360, 1, (int) *el + 360, 1, cmd);
-    printf("W%04d%c%04d%c%c\n ", (int) *az + 360, 1, (int) *el + 360, 1, cmd);
 //  for(i=0;i<13;i++) printf("isend=%d ch=%2x\n",i,command[i]);
-    //printf("calling write()\n");
     status = write(usbdev, command, 13);
-//  printf("write status %d\n",status);
-    //printf("sleeping\n");
     sleep(1);
-    //printf("done sleeping\n");
     printf("%x\n", cmd);
     if (cmd == 0x1f) {
-        //printf("calling read\n");
         rstatus = read(usbdev, resp, 12);
-        //printf("done calling read\n");
 //  printf("read status %d\n",rstatus);
 //  for(i=0;i<12;i++) printf("irec=%d ch=%2x\n",i,resp[i]);
         *az = resp[1] * 100 + resp[2] * 10 + resp[3] - 360;
         *el = resp[6] * 100 + resp[7] * 10 + resp[8] - 360;
     }
-    //printf("calling close\n");
     close(usbdev);
     if (rstatus != 12)
         return -1;

@@ -270,7 +270,6 @@ gint Repaint(void)
     gdk_draw_text(pixmap, fixed_font, drawing_area->style->black_gc, midx * 1.2,
                   midy * 0.69, txt, strlen(txt));
     for (iav = 0; iav < 3; iav++) {
-        //printf("iav = %d\n", iav);
         max = 1e-6;
         min = 1e99;
         istart = 0;
@@ -286,15 +285,12 @@ gint Repaint(void)
             if (iav == 2)
                 c = aavspec[i];
             if (c > max){
-                printf("\nmax set\n");
                 max = c;
             }
             if (c < min){
-                printf("\nmin set\n");
                 min = c;
             }
         }
-        printf("iav %d max %f min %f\n",iav,max,min);
         yst = midy * 0.0 + iav * midy * 0.32;
         xst = midx + midx * 0.1;
         x1 = xst;
@@ -302,13 +298,9 @@ gint Repaint(void)
         y1 = yst;
         y2 = y1 + midy * 0.25;
         if (iav && pwr >= 0.0) {
-            printf("ddt = %f\n", ddt);
             ddt = d1.tsys * (max - min) / max;
-            printf("max = %f, min = %f\n", max, min);
-            printf("ddt = %f\n", ddt);
             if (d1.bsw){
                 ddt = (max - min);
-                printf("ddt = %f\n", ddt);
                 }
             if (d1.tsys > 0.0) {
                 if (!d1.bsw || iav == 1) {
@@ -337,7 +329,6 @@ gint Repaint(void)
         if (iav < 2)
             min = 0;
         for (i = istart; i < istop; i++) {
-            //printf("i = %d\n", i);
             if (iav == 0)
                 x2 = xst + i * midx * xsz / d1.nfreq;
             if (iav > 0)
