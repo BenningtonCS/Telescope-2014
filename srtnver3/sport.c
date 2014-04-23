@@ -426,7 +426,6 @@ int rot2(double *az, double *el, int cmd, char *resp)
 //  for(i=0;i<13;i++) printf("isend=%d ch=%2x\n",i,command[i]);
     status = write(usbdev, command, 13);
     sleep(1);
-    printf("%x\n", cmd);
     if (cmd == 0x1f) {
         rstatus = read(usbdev, resp, 12);
 //  printf("read status %d\n",rstatus);
