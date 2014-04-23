@@ -8,111 +8,413 @@ Welcome to the SRT Help Window
 
 Please click on the buttons above to get more information about the features of the SRT software.
 
+===============================
+srt.cat keyword usage guide:
+===============================
+
+
+
+
+
 -------------------------------
-srt.cat keywords:
+AZEL
 -------------------------------
 
+AZEL <azimuth> <elevation> <source name>
+-Used to define a source
+
+example: AZEL 120 7 calabs 
 
 
-
-
- Temporary Keyword Usage Guide:
-
- STATION <latitude> <longitude (west in degrees)> <station name>
-	Used to set location of the radiotelescope
-
- 	example: STATION 42.9 -73.2 BENNINGTON
-
-
- SOU <source ra> <dec> <name> <epoch (default: j2000)>
-	Used to define a source?
-
-	example: SOU 05 35 17 -05 23 28 Orion
-			 SOU 17 48 46 -34 25 0 S9 1950
-
-
- CALMODE <calibration flag>
-	flags:	0 	- for calcheck
-			2 	- for bandpass only
-			20 	- for manual vane cal
-			290	- if bandpass looking at absorber or bushes
-			3 	- same as 2 but doesnt need entry to confirm, use for sky (NOT looking at H-line (ie. way out of Galactic plane)) 
-
- TCAL
-
-
- FREQCORR
-	Set the frequency - the dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz
-	The value can be determined by using a signal generator or standard H-line calibration region.
-
-
-
- BANDWIDTH
-	The actual bandwidth plotted. Must be < 10 MHz for PCI card and 2.4 MHz for dongle.
-
-
- TSYS
-	Previously measured system temperature on cold sky
-
-
- SIMULATE ANTENNA
-	Simulates antenna motion
-
-
- SIMULATE RECEIVER
-	Simulates received data
-
-
- SIMULATE FFT
-	Simulates fast-fourrier transform
-
-
- COMMAND <file name>
- 	Set the command file to read commands from
-
-
-
-
-
-STATION 
+-------------------------------
 AZLIMITS 
-ELLIMITS
-NOISECAL
-TCAL
-CALMODE
-SIMULATE ANTENNA  RECEIVER FFT
-MAINTENANCE
-PLOTSEC
-NBSW
-NBLOCK
-NUMPOLY
+-------------------------------
+
+AZLIMITS <low limit> <high limit>
+-Set the limits for the azimuth
+
+example: AZLIMITS 21 355
+
+
+-------------------------------
+BANDWIDTH
+-------------------------------
+
+BANDWIDTH <value>
+-The actual bandwidth plotted. 
+
+example: BANDWIDTH 2.0
+
+Notes:
+* Must be < 10 MHz for PCI card and 2.4 MHz for dongle.
+
+
+-------------------------------
 BEAMWIDTH
-TOLERANCE
-CASSIMOUNT - no longer supported
-H180MOUNT - no longer supported
-ALFASPID
-AZCOUNTS
-ELCOUNTS
-AZELPORT
-COMMAND - command file name
-TSYS
-FREQUENCY
-RESTFREQ - for vlsr calculations
-FREQCORR - frequency correction for dongle in MHz
-BANDWIDTH 
-NUMFREQ
-DATADIR - data directory - defaults to directory with the executable
-COUNTPERSTEP 
-RECORD - number of periods per output add [SPEC] to include spectrum 
-NODISPLAY
-NOPRINTOUT
+-------------------------------
+
+BEAMWIDTH <value>
+
+example: BEAMWIDTH 5
+
+
+-------------------------------
+CALMODE
+-------------------------------
+
+CALMODE <calibration flag>
+flags:	0 	- for calcheck
+		2 	- for bandpass only
+		20 	- for manual vane cal
+		290	- if bandpass looking at absorber or bushes
+		3 	- same as 2 but doesnt need entry to confirm
+
+Notes: 
+* CALMODE 2 assumes TCAL value i.e. use 290 if bandpass looking at absorber or bushes use 3 for sky but be sure you are not looking at H-line i.e. use way out of Galactic plane
+* CALMODE 2 also assumes TSYS value i.e. put value of TSYS measured manually on cold sky into srt.cat 
+
+
+-------------------------------
+COMMAND
+-------------------------------
+
+COMMAND <file name>
+-Set the command file to read commands from
+
+example: COMMAND cmd.txt
+
+
+-------------------------------
+DATADIR 
+-------------------------------
+
+DATADIR <directory path>
+-Set the directory to which data will be saved - defaults to directory containing the executable.
+
+example: *DATADIR /home/aeer/srt/
+
+
+-------------------------------
 DEBUG
-SPEED_UP
-SOU - source ra dec epoch
-GALACTIC - lat long
-AZEL 
-RFISIGMA - level at which to report RFI default = 6 
+-------------------------------
+
+-Flag to enable debug mode, allowing debug messages to be printed to console
+
+
+-------------------------------
+ELLIMITS
+-------------------------------
+
+ELLIMITS <low limit> <high limit>
+-Set the limits for the elevation 
+
+example: ELLIMITS -2 89.0
+
+
+-------------------------------
+FREQCORR
+-------------------------------
+
+FREQCORR <value in MHz>
+-Frequency correction for dongle in MHz
+
+example: FREQCORR -0.05
+
+Notes:
+* The dongle crystal is typically about 30ppm off frequency or about 40 kHz error at 1420 MHz.
+* The value can be determined by using a signal generator or standard H-line calibration region.
+
+
+-------------------------------
+FREQUENCY
+-------------------------------
+
+FREQUENCY <value>
+-Set the observing frequency (in MHz)
+
+example: FREQUENCY 1420.4
+
+
+-------------------------------
+GALACTIC 
+-------------------------------
+
+GALACTIC <latitude> <longitude> <source name>
+-Used to define a source
+
+example: GALACTIC 132 -1 S7
+
+
+-------------------------------
+MAINTENANCE
+-------------------------------
+
+-Flag for when telescope is in maintenance
+
+
+-------------------------------
+NBLOCK
+-------------------------------
+
+NBLOCK <value>
+-The number of blocks per update
+
+example: NBLOCK 1
+
+Notes:
+* Can be reduced for Beagle board with slow display.
+* For PCI it is hardwired to 20.
+
+
+-------------------------------
+NBSW
+-------------------------------
+
+NBSW <value>
+
+example: NBSW 10
+
+
+-------------------------------
+NODISPLAY
+-------------------------------
+
+-Flag for disabling the GUI display
+
+
+-------------------------------
+NOPRINTOUT
+-------------------------------
+
+-Flag for disabling the program from printing out to console
+
+
+-------------------------------
+NUMFREQ
+-------------------------------
+
+NUMFREQ <value>
+-Number of raw frequency channels
+
+example: NUMFREQ 256 
+
+Notes: 
+* If NUMFREQ is 1024, there are up to 3 raw channels that can be deleted without loosing all the information for that channel in the final spectrum. 
+* A value of 1024 is a good choice for ADC card.
+* A value of 256 is a good choice for dongle.
+
+
+-------------------------------
+NUMPOLY
+-------------------------------
+
+NUMPOLY <value>
+
+example: NUMPOLY 25
+
+Notes:
+* Use default value of 25 for dongle.
+
+
+-------------------------------
+RECORD 
+-------------------------------
+
+RECORD <number of periods per output> [SPEC]
+-Records the data to a file
+
+example: RECORD 10
+		 RECORD 10 SPEC
+
+Notes:
+* Adding SPEC to the end will record the spectrum (second example).
+* Withough the keyword SPEC (first example), the power is recorded.
+
+
+-------------------------------
+RESTFREQ
+-------------------------------
+
+RESTFREQ <value>
+-Set the rest frequency for the H-line
+
+example: RESTFREQ 1420.401
+
+Notes:
+* For vlsr calculations
+
+
+-------------------------------
 RFI 
+-------------------------------
+
+RFI <frequency> <width>
+
+example: RFI 1420.609 0.004
+
+NOTES:
+* An optional width can be specified but if it is larger than the resolution no data will remain for this channel. If a width is not specified only one of the 4096 raw frequency channels will be deleted. If NUMFREQ is 1024 there are up to 3 raw channels that can be deleted without loosing all the information for that channel in the final spectrum. 
+
+
+-------------------------------
+RFISIGMA
+-------------------------------
+
+RFISIGMA <value>
+-Level at which to report RFI (default = 6)
+
+example: RFISIGMA 20
+
+
+-------------------------------
+SIMULATE ANTENNA
+-------------------------------
+
+-Simulates antenna motion (rotator motion)
+
+
+-------------------------------
+SIMULATE FFT
+-------------------------------
+
+-Simulates fast-fourrier transform
+
+
+-------------------------------
+SIMULATE RECEIVER
+-------------------------------
+
+-Simulates received data (i.e. from dongle)
+
+
+-------------------------------
+SOU
+-------------------------------
+
+SOU <source ra> <dec> <source name> <epoch (default: j2000)>
+-Used to define a source
+
+example: SOU 05 35 17 -05 23 28 Orion
+		 SOU 17 48 46 -34 25 0 S9 1950
+
+
+-------------------------------
+SPEED_UP
+-------------------------------
+
+SPEED_UP <value>
+
+example: SPEED_UP 400 
+
+Notes:
+* Negative values advances time hours
+
+
+-------------------------------
+STATION
+-------------------------------
+
+STATION <latitude> <longitude (west in degrees)> <station name>
+-Used to set location of the radiotelescope
+
+example: STATION 42.9 -73.2 Bennington
+
+
+-------------------------------
+TCAL
+-------------------------------
+
+-TCAL 290 is the default absorber or bushes
+
+
+-------------------------------
+TSYS
+-------------------------------
+
+TSYS <temperature>
+-Previously measured system temperature on cold sky
+
+example: TSYS 171
+
+
+-------------------------------
+COUNTPERSTEP
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+NEWMOUNT 
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+H180MOUNT
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+ALFASPID
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+NOISECAL
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+PLOTSEC
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+TOLERANCE
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+CASSIMOUNT 
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+AZCOUNTS
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+ELCOUNTS
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+AZELPORT
+-------------------------------
+
+Obsolete (No longer supported)
+
+-------------------------------
+COUNTPERSTEP 
+-------------------------------
+
+Obsolete (No longer supported)
+
+
+
+
+
+
+
 
 ##
 
