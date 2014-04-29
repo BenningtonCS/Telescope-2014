@@ -1,3 +1,50 @@
+///////////////////////////////////////////////////////////////////////////////////////
+///																					///
+///							Small Radio Telescope Readme							///
+///																					///
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+=======================================
+Summary
+=======================================
+
+
+The Small Radio Telescope (SRT) project was started at MIT Haystack Observatory under the 
+guidance of Alan Rogers. This version branched from version 3 of his SRT source, provided
+on the MIT Haystack Observatory website : http://www.haystack.mit.edu/edu/undergrad/srt/
+
+In the Version History section of the Readme, the notes for versions 1, 2, and 3 were directly
+copies from the Readme file from version 1, 2, and 3 of the source, respectively. 
+
+
+=======================================
+Documentation
+=======================================
+
+Documentation for the build process, parts list, software installation, and hardware hints were
+compiled on the GitHub wiki which this source was hosted on : https://github.com/BenningtonCS/Telescope-2014/wiki
+
+
+The configuration file, srt.cat, contains keywords and values, which allow you to set parameters for 
+the SRT software. A keyword usage and reference guide can be found in the srt.hlp file (which is also the
+file that populates the 'Help' window in the program.)
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+///																					///
+///								Version History										///
+///																					///
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+=======================================
+SRTN v3		(from MIT HAYSTACK website)
+=======================================
+
 newsrtsource_ver3 tar ball includes c-code for the "new" SRT
 using:
        1] DAS-4020 PCI bus ADC card and in this case
@@ -63,4 +110,115 @@ the old code (sportold.c) which might be useful for anyone who wants to write co
 for this old controller.
  
   aeer 26 Nov 2013++
+
+
+
+=======================================
+SRTN v3		(from MIT HAYSTACK website)
+=======================================
+
+
+newsrtsource_ver2 tar ball includes c-code for the "new" SRT
+using:
+       1] DAS-4020 PCI bus ADC card and in this case
+you need to install the driver PCI-DAS4020-12.1.21.tgz
+
+       2] DVB-T dongle with Rafael R820T tuner and Realtek RTL2832U
+uses c code mostly from RTLSDR
+
+       3] software FFT
+
+       4] fast FFT for amd or intel processors
+
+       5] FDI/USB code for AlfaRadio rot2 SPID antenna controller
+
+The software is compiled using gcc by the bash script srtnmake
+Uncomment the gcc line which matches your available hardware
+Note that the libraries specified on this line need to be installed
+for the compilation to complete without errors
+
+
+Added notes:
+
+1]  DAS-4020 PCI bus ADC card
+
+Go through the pci-das4020-12/README file 
+
+Then edit ADC_BUFF_PHY_SIZE accordingly in a2dc.h, to set the DMA
+Buffer Size FOR EACH BOARD  and if a2dc.h is not edited
+
+/* Note:  Edit these values for your particular system.  See README  */
+#define ADC_BUFF_PHY_SIZE   0x0200000  // Physical size of the ADCs buffer
+#define ADC_BUFF_PAGE_SIZE  0x0200000  /* must be a multiple of PAGE_SIZE and HALF_FIFO_SIZE and 
+                                          greater than or equal to PAGE_SIZE.
+                                          changed to 0x0200000 AEER
+2] amd FFT
+
+The following files library files may be required (and are included)
+if the ones on the PC are not compatible:
+
+libacml.so
+libgfortran.a
+
+3] Intel FFT
+
+Obtain fftw from www.fftw.org download fftw-3.3.3.tar.gz
+and install using float precision
+
+4] In order to run as user 
+
+a) FDI/USB make user member of dialout group
+b) DAS-4020 copy over udev rules
+c) install the udev rules file rtl-sdr.rules 
+  
+5] old Cassicorp antenna controller
+This new release does not support the old Cassicorp antenna controller but I have included
+the old code (sportold.c) which might be useful for anyone who wants to write code
+for this old controller.
+ 
+  aeer 15 August 2013
+
+
+
+=======================================
+SRTN v1		(from MIT HAYSTACK website)
+=======================================
+
+These are files needed to compile an executable to run the "New" SRT
+
+see http://www.haystack.mit.edu/edu/undergrad/srt/index.html
+
+there is a script  named srtnmake to compile:
+
+
+#!/bin/bash
+CFLAGS=`pkg-config gtk+-2.0 --cflags`
+LIBS=`pkg-config gtk+-2.0 --libs`
+gcc -W -Wall -O3 $CFLAGS $LIBS main.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c  amdfft.c -lm  -lacml /usr/lib/libgfortran.a 
+cp a.out srtn
+
+The drivers for the ADC card  are in  PCI-DAS4020-12.1.21.tgz
+
+This code is "preliminary" and currently only supports the old SRT controller
+for antenna control.
+
+The FFT runs on an AMD CPU and this software needs libgfortran.a and libacml.so (as there maybe problems
+with the fortran library on the PC.) The fortran is only needed for AMDs cfft1d called in amdfft.c
+60-mcc.rules is needed for the ADC card as well as the drivers in PCI-DAS4020-12.1.21.tgz
+
+I hope that when and if someone decides to build the New srt receiver (which itself needs no software)
+and decides to use the DAS4020-12 PCI ADC card and antenna mount controller from Alpha or rfhamdesign
+I will be available to help with hardware and software issues. At present Haystack has no funds to support
+further SRT development and so any assistance will have to be on a "best effort" basis.
+
+Alan Rogers - 15 August 2012
+
+
+
+
+
+
+
+
+
 
