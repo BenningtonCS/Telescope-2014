@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Parts List}{3}
+\contentsline {section}{\numberline {3}Tools List}{3}
+\contentsline {section}{\numberline {4}Installing SRTN Software}{3}
+\contentsline {subsection}{\numberline {4.1}Ubuntu}{3}
+\contentsline {subsection}{\numberline {4.2}CentOS}{3}
+\contentsline {subsection}{\numberline {4.3}Arch}{3}
+\contentsline {section}{\numberline {5}RAS SPID Rotator}{3}
+\contentsline {subsection}{\numberline {5.1}Setup}{3}
+\contentsline {subsection}{\numberline {5.2}Wiring}{3}
+\contentsline {subsection}{\numberline {5.3}Controller Settings}{3}
+\contentsline {section}{\numberline {6}Building Components}{3}
+\contentsline {subsection}{\numberline {6.1}LNA}{3}
+\contentsline {subsection}{\numberline {6.2}Feed}{3}
+\contentsline {subsection}{\numberline {6.3}Roof Mount}{3}
+\contentsline {subsection}{\numberline {6.4}Dish}{3}
