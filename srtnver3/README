@@ -1,8 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 ///																					///
-///							Small Radio Telescope Readme							///
+///		Small Radio Telescope Readme
 ///																					///
 ///////////////////////////////////////////////////////////////////////////////////////
+
+=======================================
+VERSION : v3.1
+=======================================
 
 
 =======================================
@@ -31,12 +35,40 @@ the SRT software. A keyword usage and reference guide can be found in the srt.hl
 file that populates the 'Help' window in the program.)
 
 
+=======================================
+Building
+=======================================
+
+To build the source, you will need to install the libraries:
+
++ gtk+-2.0
++ libusb-1.0
+
+With these libraries installed, running  `./srtnmake' in the srtnver3 directory should build the program, named srtn.
+More detailed instructions can be found on the wiki page: https://github.com/BenningtonCS/Telescope-2014/wiki
+and also in .pdf found in the documentation folder.
+
+
+=======================================
+Changelog
+=======================================
+
+--- v3.1 ---
+
++ update compile script in makefile to allow Ubuntu to build source
++ added some comments (including header comments)
++ reformatted/organized some of the code
++ improved documentation on srt.cat keywords and usage
++ changed size of buffer arrays in plot.c and sport.c which caused seg faults on Ubuntu
+
+
+
 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
 ///																					///
-///								Version History										///
+///	       MIT Version History	
 ///																					///
 ///////////////////////////////////////////////////////////////////////////////////////
 
