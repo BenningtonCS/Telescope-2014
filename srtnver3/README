@@ -53,7 +53,7 @@ and also in .pdf found in the documentation folder.
 Changelog
 =======================================
 
---- v3.1 ---
+--- v3.1 --- 27 May 2014
 
 + update compile script in makefile to allow Ubuntu to build source
 + added some comments (including header comments)
