@@ -88,6 +88,9 @@ Haystack Small Radio Telescope Project
 
 This manual serves as a guide following the work done at Bennington College during the spring of 2014 to build and operate a radiotelescope, following the procedure layed out by MIT Haystack and their Small Radio Telescope (SRT) project. This manual contains information regarding both the hardware and software components of the project which should allow for a simple and successful build and operation of a SRT.
 
+
+\newpage
+
 \section{Parts List}
 
 
@@ -113,7 +116,7 @@ DC Jack & 1 & CUI Inc & \$1.00 \\ \hline
 F-Type Plug & 1 & Bomar Interconnect/ Winchester Electronics & \$4.16\\ \hline
 \end{tabular}
 
-\subsection{Feed}
+\subsection{Feed \& LNA}
 
 \begin{tabular}{| p{6cm} | c | p{5cm} | l | c |}
 \hline
@@ -133,6 +136,19 @@ SMA-M to SMA-M Coupler & 1 & & \$7.49\\ \hline
 \end{tabular}
 
 
+\subsection{Mount}
+
+\begin{tabular}{| p{6cm} | c | c | l | c |}
+\hline
+\textbf{Part} & \textbf{Qty.} & \textbf{Manufacturer} & \textbf{Cost} \\ \hline \hline
+1/4" (3' x 2') cold rolled steel plate & 1 & & Found scrap metal \\ \hline	
+2 1/2" (11') long steel pipe & 1 & &  Found scrap metal \\ \hline
+1/8" 2" (6') angle iron	 & 1 & &  Found scrap metal \\ \hline
+Black spray paint & 1-3 & Any & \$4 - \$12 \\ \hline
+\end{tabular}
+
+
+\newpage
 
 \section{Tools List}
 
@@ -173,13 +189,46 @@ Pen/Marker & mark hole locations pre-drilling\\ \hline
 
 \subsection{Building the Mount}
 
+\begin{tabular}{| l | p{10cm} |}
+\hline
+\textbf{Tool} & \textbf{Description} \\ \hline \hline
+Safety glasses & Eye protection for grinding \\ \hline
+Welding Gloves & Hand protection \\ \hline
+Welding helmets & Eye protection \\ \hline
+Respirators & To mitigate inhalation of steel dust \\ \hline
+MIG welder & For welding all the components together \\ \hline
+Grinders with various heads & a steel brush head for cleaning surfaces to be welded and a carbide head for fabrication \\ \hline
+Hydraulic metal Band saw & For cutting the pipe \\ \hline
+Plasma Cutter & For cutting steel sheeting \\ \hline
+C Clamps & For holding components while welding \\ \hline
+Large roofing square & Useful for making sure things are perpendicular \\ \hline
+\end{tabular}
+
+
 \subsection{Attaching Arms}
+
+\begin{tabular}{| l | p{10cm} |}
+\hline
+\textbf{Tool} & \textbf{Description} \\ \hline \hline
+Rivet gun & For attaching cake pan receiver to arms \\ \hline
+Band Saw & For making custom L brackets to attach cake pan to dish arms \\ \hline
+Drill Press & For making custom L brackets to attach cake pan to dish arms \\ \hline
+5mm crescent wrench & For tightening arm to dish fasteners \\ \hline
+Flexible tape measure & For spacing arms evenly around a dish \\ \hline
+\end{tabular}
+
 
 \subsection{Mounting Dish}
 
+\begin{tabular}{| l | p{10cm} |}
+\hline
+\textbf{Tool} & \textbf{Description} \\ \hline \hline
+Socket Wrench + socket set & For bolting the rotor to the mount and the dish to the rotor \\ \hline
+Ladder & Somewhere to stand while tightening fasteners \\ \hline
+Tap and die & For minor adjustments to mounting plate if customized holes are required \\ \hline
+\end{tabular}
 
-
-
+\newpage
 \section{Installing SRTN Software}
 
 The original SRT source can be found on the MIT Haystack Observatory website, here: http://www.haystack.mit.edu/edu/undergrad/srt/ . This source appears to work with ArchLinux and CentOS, and reportedly works on REHL (Red Hat Enterprise Linux). The source will not work immediately with Ubuntu, however a modified version of the source can be found here: https://github.com/BenningtonCS/Telescope-2014 , which will work on Ubuntu, as well as CentOS and ArchLinux (It may work with other linux-based operating systems, however, those listed are the only ones we have tested so far). 
@@ -478,15 +527,253 @@ This will require a reboot before the effects can be seen.
 \$ sudo reboot
 
 
-
-\section{RAS SPID Rotator}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{RAS SPID Rotor}
 
 \subsection{Setup}
 
+
+
 \subsection{Wiring}
+
+
+The document that came with the rotator can be found here for additional information on the rotator and wiring it.
+
+\subsubsection{Tools Needed}
+\begin{itemize}
+\item Screwdriver (Phillips)
+\item Utility Knife
+\item Adjustable Wrench
+\item Small Screwdrivers (Phillips \& Flathead)
+\item Soldering Iron
+\item Solder
+\item Electrical Tape
+\item Wire Strippers
+\end{itemize}
+
+\subsubsection{Instructions}
+
+The rotator we used was an Alpha Spid RAS rotor (http://www.spid.alpha.pl/english/11.php). These instructions are a guide to accessing the power/control terminals to the rotator in order to control it with our rotor controller (http://www.spid.alpha.pl/english/05.php). \\ \\
+On the rotor, there is a plate with two screws and two waterproofed wire outputs (see pictures below). On the face next to the plate should be a sticker detailing the EL AZ wiring.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/01.jpeg}
+\end{center}
+
+First, unscrew/remove the two waterproof outlets using the adjustable wrench and unscrew the two screws on the plate.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/02.jpeg}
+
+\includegraphics[scale=0.10]{wiring/03.jpeg}
+\end{center}
+
+
+Note that the edge of the plate may be painted over, so use a utility knife to edge the plate. The first time you remove the plate, it may be difficult, so, using the back of a screwdriver, tap around the corners of the plate to loosen it. \\
+Using a screwdriver (or some other means of leverage), insert one end into a hole left from unscrewing the waterproof outlet, and carefully pry off the plate. This may take some time since the plate has a tight fit initially.
+
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/04.jpeg}
+\end{center}
+
+
+Underneath the plate are two wiring terminals, one for AZ and one for EL. (See the sticker on the rotor to determine which terminal corresponds to AZ and which corresponds to EL).
+
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/05.jpeg}
+\end{center}
+
+
+For testing purposes, a set of test cables were made, approx. 75 cm long. (Later, these wires were replaced with more permanent ones to fit our mounting strategy). Our test cables consisted of four cables, each cable containing two wires, so there were two cables per terminal, or four wires per terminal. The ends of the wires were stripped and tinned.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/06.jpeg}
+\end{center}
+
+The ends of the wires were secured in their respective rotator terminal.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/07.jpeg}
+\end{center}
+
+The free end was then soldered to a head which connects to the controller. When doing this, note the order of the wires. On the head, the pins are labeled 1-4, which will correspond sequentially to the wires coming from the terminal. Electrical tape was wrapped around the wire near the connection to ensure each pin and wire were isolated from one another. Stripping a small amount of wire on this end may diminish the need to wrap the connection in electrical tape.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/08.jpeg}
+\end{center}
+
+The head was re-assembled and connected to the controller.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/09.jpeg}
+\end{center}
+
+Once everything was secure and connected, the power supply and controller were turned on, with the mouse attached to the controller.
+
+\begin{center}
+\includegraphics[scale=0.10]{wiring/10.jpeg}
+\end{center}
+
+Adjusting the the controller to be in 'A' (automatic mode), we were able to control the rotor with the mouse.
+
+
+
+
+
+
+
 
 \subsection{Controller Settings}
 
+Full documentation can be found: \\ ( http://www.spid.alpha.pl/download/AlfaSpid\_Rotator\_RAS\_EN.doc ).\\ Much of this documentation was pulled directly from the source linked above.
+
+\subsubsection{RAS SPID rot2 Settings}
+
+In our setup, we are using the RAS SPID rot2 Rotator. We want to have our settings such that PS (program simulation) is configured to SP. If the mode is not SP, the controller will not work. With the rotor we are using (1 degree per pulse accuracy), we also want our rotor transmission, P, to be set to 1.0. To have the computer software or mouse control the rotor, the mode will need to be set to A (automatic). For more detailed information, see the "Controller Setup" section, below.
+
+\subsubsection{Controller Reset}
+
+Since there are no mechanical limits in the rotor, it may be installed with the antenna pointing in any direction. There is no reason to locate “TRUE NORTH” until you are ready to calibrate the control box. Use the controller to position the antenna to physically point north, then reset the controller as follows:
+\begin{itemize}
+\item Turn the unit OFF.
+\item While holding the F button down, turn control unit back on.
+\item The display should then read 0.0 0.0
+\end{itemize}
+
+This feature can be used if, for any reason, the direction of the antenna becomes incorrect. This may be caused by antenna to mast slippage or incorrect initial alignment.
+\\ \\
+\textbf{Important Note:}
+\\ \\
+The SPID rotator is now set at the counter-clockwise end of its normal rotation range. Normal rotation range is in a clockwise direction for 360 degrees.
+
+From the reset position, you can rotate counter-clockwise an additional 180 degrees in over-travel, as well 360 degrees clockwise, plus an additional 180 degrees into clockwise over-travel.
+
+Counter-clockwise over-travel is indicated by a steady dot above the over-travel icon [$<$-$>$]. [$<$-$>$] Rotation past 359 degrees into the clockwise over-travel is indicated by a blinking dot above the over-travel icon.[$<$-$>$]
+\\ \\
+\textbf{Technical Note:}
+\\ \\
+You will need to leave sufficient coax length to accommodate the additional 180 degrees of over-travel on each end of normal rotation. Failure to do so can cause damage to your coax and/or antennas.
+
+\subsubsection{Controller Operation}
+
+There are multiple modes of operation for the SPID controller. The two main modes, F and S are described below, along with all of their sub-modes.
+
+\subsubsection{F - Function Mode}
+
+The F button steps through the function menus. The leftmost character on the display indicates the function mode you are currently in.
+\\ \\
+\textbf{(no letter) = Normal Operations Mode}
+\\ \\
+In Normal Operations Mode, the up, down, left, right buttons cause rotation as long as the buttons are pressed. Pressing S while in normal operations mode will take you to setup mode.
+\\ \\
+\textbf{H = Half-Auto Mode}
+\\ \\
+In Half Auto Mode, the up, down, left, right buttons can be used to pre-select the desired beam heading. The heading displayed on the controller will rapidly change in the direction of desired rotation. Once the desired beam heading is shown on the display, release the key. Approximately $\frac{1}{2}$ of a second after no key presses have been detected, the display will revert back to the actual beam heading, and rotation towards the desired heading will take place. Pressing any key while in transit to the desired heading will cancel the action.
+\\ \\
+\textbf{A = Auto Mode}
+\\ \\
+In Auto Mode, the controller will respond to commands from control software running on an attached computer. The up, down, left, right buttons can still be used, but pressing of any of them will cause canceling the data from software.
+
+\subsubsection{S - Setup Mode}
+
+The S button steps through the setup menu.
+\\ \\
+\textbf{P = Rotor Transmission}
+\\ \\
+This value defines the accuracy of rotator operation. 1.0 means operating with up to 1 degree per pulse from rotator accuracy.
+\\ \\
+\textbf{PS = Program Simulation}
+\\ \\
+Program Simulation allows the user to set the serial communication protocol used by the rotator. When set to emulate another brand of rotator, the Spid will respond to commands, and send responses back to the computer as if it were the rotator brand selected. If your favorite software supports a rotator, chances are, the Spid will be able to interface to your software. There are 2 modes available:	
+\begin{itemize}
+\item PS SP = SPID
+\item PS 4A = Yaesu (GS232 protocol)
+\end{itemize}
+(RS232: 600N1, 8 bits)
+\\ \\
+(data rate bound 600, 1 STOP bit, no even parity bit)
+\\ \\
+Operating mode can be changed using left, right.
+\\ \\
+\textbf{PH = Programmable High Limit}
+\\ \\
+The Programmable High Limit is a user adjustable clockwise travel limit value. By reducing this value, the maximum clockwise rotation travel can be restricted. Use the buttons:
+\begin{itemize}
+\item \emph{left} and \emph{right} to adjust the azimuth value,
+\item \emph{up} and \emph{down} to adjust the elevation value.
+\end{itemize}
+
+\textbf{PL = Programmable Low Limit}
+\\
+The Programmable Low Limit is a user adjustable counter-clockwise travel limit value. By increasing this value, the minimum counter-clockwise rotation travel can be restricted. Use the buttons:
+\begin{itemize}
+\item \emph{left} and \emph{right} to adjust the azimuth value,
+\item \emph{up} and \emph{down} to adjust the elevation value.
+\end{itemize}
+\textbf{PP = Heading Adjust}
+\\ \\
+This setting can be used to make minor heading adjustments without causing the rotator to turn. If you notice that the heading displayed on the controller to a known signal source is out by a few degrees, you can change the heading displayed on the LED readout to match the known heading, rather than having to turn back to North and reset the controller. These settings are made by up, down, left, right buttons.
+
+
+
+
+
+
+\subsection{Controller Setup}
+
+
+The antenna controller will likely need a bit of setup in order to work properly with the software. To properly set up the controller, three things must be done: 
+
+\begin{enumerate}
+\item Make sure the controller has no limits set
+\item Set the controller to SPID mode
+\item Set the controller to Automatic mode so it is able to communicate with a computer via serial
+\end{enumerate}
+
+\subsubsection{Setting Limits}
+
+The easiest way to be sure there are no limits set on the controller is by doing a controller reset. To do this, turn off the controller, hold down the 'F' button, and while still holding down the button turn the controller on again. When this happens the display should look like this:
+
+\begin{center}
+\includegraphics[scale=0.10]{controller/01.jpeg}
+\end{center}
+
+To change the remaining settings, we will use the buttons on the controller, designated by the red arrows. (F, S, \emph{left}, \emph{right}, \emph{up}, \emph{down})
+\\ \\
+If there are limits set, it is possible that when the software is run, a buffer overflow may occur, and that the GUI logic breaks, leading the program to be ineffective. If no radio data is being displayed on the UI and large values/NaN appear on the readout, having limits set is a potential cause.
+
+\subsubsection{Setting to SPID}
+
+In the controller's program simulation setting, two options are available, SPID or Yaesu. Since the controller we used is SPID, the controller should be set to SPID. To set, press the 'S' button until the readout says PS. Then, if the readout does not say PS SP, press the $<$ or $>$ arrows to change it to SP. It should look like:
+
+\begin{center}
+\includegraphics[scale=0.10]{controller/02.jpeg}
+\end{center}
+
+If the controller is not in SPID mode, nothing will happen and the program may hang, as it is unable to communicate with the controller.
+
+\subsubsection{Set to Automatic}
+
+In order for the computer to be able to communicate with the controller, it must be in automatic mode. To do this, you would press the 'F' button until an A shows up on the readout. The readout should look like:
+
+\begin{center}
+\includegraphics[scale=0.10]{controller/03.jpeg}
+\end{center}
+
+\subsubsection{Controller Wiring}
+
+While the controller does not have many/complicated connections, and the documentation is fairly good for what connects where, below is a picture detailing our connection setup, for reference.
+
+\begin{center}
+\includegraphics[scale=0.15]{controller/04.jpeg}
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Building Components}
 
 
