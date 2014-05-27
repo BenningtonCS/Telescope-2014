@@ -14,59 +14,57 @@
 \contentsline {subsection}{\numberline {4.2}Assembling the Dish}{8}
 \contentsline {subsection}{\numberline {4.3}Mounting Dish}{8}
 \contentsline {subsection}{\numberline {4.4}Building the Mount}{9}
-\contentsline {subsection}{\numberline {4.5}Attaching Arms}{9}
+\contentsline {subsection}{\numberline {4.5}Attaching Arms to Dish}{9}
 \contentsline {subsection}{\numberline {4.6}Wiring the Rotor}{9}
 \contentsline {section}{\numberline {5}Installing SRTN Software}{10}
 \contentsline {subsection}{\numberline {5.1}MIT Haystack Observatory SRT}{10}
 \contentsline {subsection}{\numberline {5.2}Ubuntu}{10}
 \contentsline {subsubsection}{\numberline {5.2.1}Getting the Source Code}{10}
-\contentsline {subsubsection}{\numberline {5.2.2}Adding Library Dependencies}{11}
+\contentsline {subsubsection}{\numberline {5.2.2}Adding Project Dependencies}{10}
 \contentsline {subsubsection}{\numberline {5.2.3}Compiling the Source Code}{11}
 \contentsline {subsubsection}{\numberline {5.2.4}Running the Program}{11}
-\contentsline {subsection}{\numberline {5.3}CentOS}{12}
-\contentsline {subsubsection}{\numberline {5.3.1}MIT Haystack Observatory SRT}{12}
-\contentsline {subsubsection}{\numberline {5.3.2}Getting the Source Code}{12}
-\contentsline {subsubsection}{\numberline {5.3.3}Getting project dependencies}{12}
-\contentsline {subsubsection}{\numberline {5.3.4}Compiling and running}{13}
-\contentsline {subsubsection}{\numberline {5.3.5}Running with unsimulated dongle}{13}
-\contentsline {subsubsection}{\numberline {5.3.6}Running with unsimulated controller/rotator}{14}
-\contentsline {subsection}{\numberline {5.4}Arch}{14}
-\contentsline {subsubsection}{\numberline {5.4.1}Getting the Source Code}{14}
-\contentsline {subsubsection}{\numberline {5.4.2}Getting Project Dependencies}{14}
-\contentsline {subsubsection}{\numberline {5.4.3}Install gcc-4.4}{14}
-\contentsline {subsubsection}{\numberline {5.4.4}Compile and Run Source}{15}
-\contentsline {subsubsection}{\numberline {5.4.5}Running with unsimulated controller/rotator}{15}
-\contentsline {subsubsection}{\numberline {5.4.6}Troubleshooting}{16}
-\contentsline {section}{\numberline {6}RAS SPID Rotor}{17}
-\contentsline {subsection}{\numberline {6.1}Setup}{17}
-\contentsline {subsection}{\numberline {6.2}Wiring}{17}
-\contentsline {subsubsection}{\numberline {6.2.1}Tools Needed}{17}
-\contentsline {subsubsection}{\numberline {6.2.2}Instructions}{17}
-\contentsline {subsection}{\numberline {6.3}Controller Settings}{24}
-\contentsline {subsubsection}{\numberline {6.3.1}RAS SPID rot2 Settings}{24}
-\contentsline {subsubsection}{\numberline {6.3.2}Controller Reset}{24}
-\contentsline {subsubsection}{\numberline {6.3.3}Controller Operation}{25}
-\contentsline {subsubsection}{\numberline {6.3.4}F - Function Mode}{25}
-\contentsline {subsubsection}{\numberline {6.3.5}S - Setup Mode}{26}
-\contentsline {subsection}{\numberline {6.4}Controller Setup}{27}
-\contentsline {subsubsection}{\numberline {6.4.1}Setting Limits}{27}
-\contentsline {subsubsection}{\numberline {6.4.2}Setting to SPID}{28}
-\contentsline {subsubsection}{\numberline {6.4.3}Set to Automatic}{29}
-\contentsline {subsubsection}{\numberline {6.4.4}Controller Wiring}{30}
-\contentsline {section}{\numberline {7}Building Components}{31}
-\contentsline {subsection}{\numberline {7.1}LNA}{31}
-\contentsline {subsection}{\numberline {7.2}Building LNA to Dongle Interface}{38}
-\contentsline {subsubsection}{\numberline {7.2.1}Parts Needed}{38}
-\contentsline {subsubsection}{\numberline {7.2.2}Tools Needed}{39}
-\contentsline {subsubsection}{\numberline {7.2.3}Building DC Barrel Jack to F-Type Plug Connector}{39}
-\contentsline {subsubsection}{\numberline {7.2.4}Assembly}{40}
-\contentsline {subsection}{\numberline {7.3}Feed}{43}
-\contentsline {subsubsection}{\numberline {7.3.1}Cutting Styrofoam Rod}{43}
-\contentsline {subsubsection}{\numberline {7.3.2}Drilling Aluminum LNA Base Plate}{44}
-\contentsline {subsubsection}{\numberline {7.3.3}Drilling Aluminum Cake Pan}{44}
-\contentsline {subsubsection}{\numberline {7.3.4}Minor concerns}{46}
-\contentsline {subsubsection}{\numberline {7.3.5}Making helical antenna}{47}
-\contentsline {subsubsection}{\numberline {7.3.6}Drilling/cutting PC board}{52}
-\contentsline {subsubsection}{\numberline {7.3.7}Assembly}{53}
-\contentsline {subsection}{\numberline {7.4}Roof Mount}{56}
-\contentsline {subsection}{\numberline {7.5}Dish}{61}
+\contentsline {subsection}{\numberline {5.3}CentOS}{11}
+\contentsline {subsubsection}{\numberline {5.3.1}Getting the Source Code}{11}
+\contentsline {subsubsection}{\numberline {5.3.2}Adding Project Dependencies}{11}
+\contentsline {subsubsection}{\numberline {5.3.3}Compiling the Source Code}{12}
+\contentsline {subsubsection}{\numberline {5.3.4}Running the Program}{12}
+\contentsline {subsection}{\numberline {5.4}Arch}{12}
+\contentsline {subsubsection}{\numberline {5.4.1}Getting the Source Code}{12}
+\contentsline {subsubsection}{\numberline {5.4.2}Adding Project Dependencies}{13}
+\contentsline {subsubsection}{\numberline {5.4.3}Compiling the Source Code}{13}
+\contentsline {subsubsection}{\numberline {5.4.4}Running the Program}{14}
+\contentsline {subsection}{\numberline {5.5}Troubleshooting}{14}
+\contentsline {subsubsection}{\numberline {5.5.1}Blacklisting the Driver}{14}
+\contentsline {section}{\numberline {6}RAS SPID Rotor}{15}
+\contentsline {subsection}{\numberline {6.1}Setup}{15}
+\contentsline {subsection}{\numberline {6.2}Wiring}{15}
+\contentsline {subsubsection}{\numberline {6.2.1}Tools Needed}{15}
+\contentsline {subsubsection}{\numberline {6.2.2}Instructions}{15}
+\contentsline {subsection}{\numberline {6.3}Controller Settings}{22}
+\contentsline {subsubsection}{\numberline {6.3.1}RAS SPID rot2 Settings}{22}
+\contentsline {subsubsection}{\numberline {6.3.2}Controller Reset}{22}
+\contentsline {subsubsection}{\numberline {6.3.3}Controller Operation}{23}
+\contentsline {subsubsection}{\numberline {6.3.4}F - Function Mode}{23}
+\contentsline {subsubsection}{\numberline {6.3.5}S - Setup Mode}{24}
+\contentsline {subsection}{\numberline {6.4}Controller Setup}{25}
+\contentsline {subsubsection}{\numberline {6.4.1}Setting Limits}{25}
+\contentsline {subsubsection}{\numberline {6.4.2}Setting to SPID}{26}
+\contentsline {subsubsection}{\numberline {6.4.3}Set to Automatic}{27}
+\contentsline {subsubsection}{\numberline {6.4.4}Controller Wiring}{28}
+\contentsline {section}{\numberline {7}Building Components}{29}
+\contentsline {subsection}{\numberline {7.1}LNA}{29}
+\contentsline {subsection}{\numberline {7.2}Building LNA to Dongle Interface}{36}
+\contentsline {subsubsection}{\numberline {7.2.1}Parts Needed}{36}
+\contentsline {subsubsection}{\numberline {7.2.2}Tools Needed}{37}
+\contentsline {subsubsection}{\numberline {7.2.3}Building DC Barrel Jack to F-Type Plug Connector}{37}
+\contentsline {subsubsection}{\numberline {7.2.4}Assembly}{38}
+\contentsline {subsection}{\numberline {7.3}Feed}{41}
+\contentsline {subsubsection}{\numberline {7.3.1}Cutting Styrofoam Rod}{41}
+\contentsline {subsubsection}{\numberline {7.3.2}Drilling Aluminum LNA Base Plate}{42}
+\contentsline {subsubsection}{\numberline {7.3.3}Drilling Aluminum Cake Pan}{42}
+\contentsline {subsubsection}{\numberline {7.3.4}Minor concerns}{44}
+\contentsline {subsubsection}{\numberline {7.3.5}Making helical antenna}{45}
+\contentsline {subsubsection}{\numberline {7.3.6}Drilling/cutting PC board}{50}
+\contentsline {subsubsection}{\numberline {7.3.7}Assembly}{51}
+\contentsline {subsection}{\numberline {7.4}Roof Mount}{54}
+\contentsline {subsection}{\numberline {7.5}Dish}{59}
