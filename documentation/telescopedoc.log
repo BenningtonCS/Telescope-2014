@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  26 MAY 2014 21:20
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  26 MAY 2014 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,22 +643,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 367--372
  []
 
 [12] [13] [14] [15]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 545.
+Underfull \hbox (badness 10000) in paragraph at lines 536--543
 
+ []
+
+
+Overfull \hbox (8.94891pt too wide) in paragraph at lines 536--543
+\OT1/cmr/m/n/10.95 https://github.com/BenningtonCS/Telescope-2014/wiki/SPID-Ant
+enna-Rotator-Setup---
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--543
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 554.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 545.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 554.
 
-Overfull \hbox (27.25859pt too wide) in paragraph at lines 557--559
+Overfull \hbox (27.25859pt too wide) in paragraph at lines 566--568
 \OT1/cmr/m/n/10.95 The ro-ta-tor we used was an Al-pha Spid RAS ro-tor (http://
 www.spid.alpha.pl/english/11.php).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--559
+Underfull \hbox (badness 10000) in paragraph at lines 566--568
 
  []
 
@@ -696,97 +720,97 @@ File: wiring/09.jpeg Graphic file (type jpg)
 File: wiring/10.jpeg Graphic file (type jpg)
  <use wiring/10.jpeg>
 [22 <./wiring/08.jpeg> <./wiring/09.jpeg>] [23 <./wiring/10.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 646--651
+Underfull \hbox (badness 10000) in paragraph at lines 655--660
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--651
+Underfull \hbox (badness 10000) in paragraph at lines 655--660
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--659
+Underfull \hbox (badness 10000) in paragraph at lines 663--668
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--659
+Underfull \hbox (badness 10000) in paragraph at lines 663--668
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--679
+Underfull \hbox (badness 10000) in paragraph at lines 675--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--679
+Underfull \hbox (badness 10000) in paragraph at lines 675--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--679
+Underfull \hbox (badness 10000) in paragraph at lines 675--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--679
+Underfull \hbox (badness 10000) in paragraph at lines 675--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--679
+Underfull \hbox (badness 10000) in paragraph at lines 675--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--679
+Underfull \hbox (badness 10000) in paragraph at lines 675--688
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 682--692
+Underfull \hbox (badness 10000) in paragraph at lines 691--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--692
+Underfull \hbox (badness 10000) in paragraph at lines 691--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--692
+Underfull \hbox (badness 10000) in paragraph at lines 691--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--692
+Underfull \hbox (badness 10000) in paragraph at lines 691--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--714
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--714
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--714
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--705
+Underfull \hbox (badness 10000) in paragraph at lines 704--714
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 716--719
+Underfull \hbox (badness 10000) in paragraph at lines 725--728
 
  []
 
@@ -794,7 +818,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 716--719
 File: controller/01.jpeg Graphic file (type jpg)
 
 <use controller/01.jpeg> [26]
-Underfull \hbox (badness 10000) in paragraph at lines 744--747
+Underfull \hbox (badness 10000) in paragraph at lines 753--756
 
  []
 
@@ -844,165 +868,188 @@ File: lna/10.jpeg Graphic file (type jpg)
  <use lna/10.jpeg>
 <lna/11.jpeg, id=147, 1638.12pt x 1228.59pt>
 File: lna/11.jpeg Graphic file (type jpg)
- <use lna/11.jpeg> [35 <./lna/09.jpeg> <./lna/10.jpeg>] <feed/01.jpeg, id=151, 
-2457.18pt x 1842.885pt>
+ <use lna/11.jpeg> [35 <./lna/09.jpeg> <./lna/10.jpeg>] <lnainterface/01.jpeg, 
+id=151, 724.7075pt x 950.55125pt>
+File: lnainterface/01.jpeg Graphic file (type jpg)
+
+<use lnainterface/01.jpeg> [36 <./lna/11.jpeg>] [37 <./lnainterface/01.jpeg>]
+<lnainterface/02.jpeg, id=159, 1638.12pt x 1228.59pt>
+File: lnainterface/02.jpeg Graphic file (type jpg)
+
+<use lnainterface/02.jpeg>
+<lnainterface/03.jpeg, id=160, 1638.12pt x 1228.59pt>
+File: lnainterface/03.jpeg Graphic file (type jpg)
+
+<use lnainterface/03.jpeg> [38 <./lnainterface/02.jpeg>]
+<lnainterface/04.jpeg, id=164, 1638.12pt x 1228.59pt>
+File: lnainterface/04.jpeg Graphic file (type jpg)
+
+<use lnainterface/04.jpeg> [39 <./lnainterface/03.jpeg> <./lnainterface/04.jpeg
+>] <lnainterface/05.jpeg, id=168, 1638.12pt x 1228.59pt>
+File: lnainterface/05.jpeg Graphic file (type jpg)
+
+<use lnainterface/05.jpeg> [40]
+<lnainterface/06.jpeg, id=172, 1228.59pt x 1638.12pt>
+File: lnainterface/06.jpeg Graphic file (type jpg)
+
+<use lnainterface/06.jpeg> [41 <./lnainterface/05.jpeg> <./lnainterface/06.jpeg
+>] <feed/01.jpeg, id=176, 2457.18pt x 1842.885pt>
 File: feed/01.jpeg Graphic file (type jpg)
-
-<use feed/01.jpeg> [36 <./lna/11.jpeg>]
-<feed/02.jpeg, id=155, 1842.885pt x 2457.18pt>
+ <use feed/01.jpeg>
+<feed/02.jpeg, id=177, 1842.885pt x 2457.18pt>
 File: feed/02.jpeg Graphic file (type jpg)
- <use feed/02.jpeg> [37 <./feed/01.jpeg> <./feed/02.jpeg>] <feed/03.jpeg, id=16
-0, 1842.885pt x 2457.18pt>
+ <use feed/02.jpeg> [42 <./feed/01.jpeg>] <feed/03.jpeg, id=181, 1842.885pt x 2
+457.18pt>
 File: feed/03.jpeg Graphic file (type jpg)
-
-<use feed/03.jpeg> <feed/04.jpeg, id=161, 2211.26125pt x 2948.01375pt>
+ <use feed/03.jpeg>
+[43 <./feed/02.jpeg>] <feed/04.jpeg, id=186, 2211.26125pt x 2948.01375pt>
 File: feed/04.jpeg Graphic file (type jpg)
 
-<use feed/04.jpeg> [38 <./feed/03.jpeg>]
-<feed/05.jpeg, id=165, 2457.18pt x 1842.885pt>
+<use feed/04.jpeg> [44 <./feed/03.jpeg>]
+<feed/05.jpeg, id=190, 2457.18pt x 1842.885pt>
 File: feed/05.jpeg Graphic file (type jpg)
- <use feed/05.jpeg> [39 <./feed/04.jpeg>] <feed/06.jpeg, id=169, 2948.01375pt x
+ <use feed/05.jpeg> [45 <./feed/04.jpeg>] <feed/06.jpeg, id=194, 2948.01375pt x
  2211.26125pt>
 File: feed/06.jpeg Graphic file (type jpg)
 
-<use feed/06.jpeg> <feed/07.jpeg, id=170, 2948.01375pt x 2211.26125pt>
+<use feed/06.jpeg> <feed/07.jpeg, id=195, 2948.01375pt x 2211.26125pt>
 File: feed/07.jpeg Graphic file (type jpg)
 
-<use feed/07.jpeg> [40 <./feed/05.jpeg> <./feed/06.jpeg>]
-<feed/08.jpeg, id=174, 2211.26125pt x 2948.01375pt>
+<use feed/07.jpeg> [46 <./feed/05.jpeg> <./feed/06.jpeg>]
+<feed/08.jpeg, id=199, 2211.26125pt x 2948.01375pt>
 File: feed/08.jpeg Graphic file (type jpg)
- <use feed/08.jpeg> [41 <./feed/07.jpeg>] <feed/09.jpeg, id=178, 2457.18pt x 32
+ <use feed/08.jpeg> [47 <./feed/07.jpeg>] <feed/09.jpeg, id=203, 2457.18pt x 32
 76.24pt>
 File: feed/09.jpeg Graphic file (type jpg)
  <use feed/09.jpeg>
-[42 <./feed/08.jpeg>] <feed/10.jpeg, id=182, 2457.18pt x 3276.24pt>
+[48 <./feed/08.jpeg>] <feed/10.jpeg, id=207, 2457.18pt x 3276.24pt>
 File: feed/10.jpeg Graphic file (type jpg)
 
-<use feed/10.jpeg> [43 <./feed/09.jpeg>]
-<feed/11.jpeg, id=187, 2457.18pt x 3276.24pt>
+<use feed/10.jpeg> [49 <./feed/09.jpeg>]
+<feed/11.jpeg, id=212, 2457.18pt x 3276.24pt>
 File: feed/11.jpeg Graphic file (type jpg)
- <use feed/11.jpeg> [44 <./feed/10.jpeg> <./feed/11.jpeg>] <feed/12.jpeg, id=19
-1, 2457.18pt x 3276.24pt>
+ <use feed/11.jpeg> [50 <./feed/10.jpeg> <./feed/11.jpeg>] <feed/12.jpeg, id=21
+6, 2457.18pt x 3276.24pt>
 File: feed/12.jpeg Graphic file (type jpg)
 
-<use feed/12.jpeg> <feed/13.jpeg, id=192, 2457.18pt x 3276.24pt>
+<use feed/12.jpeg> <feed/13.jpeg, id=217, 2457.18pt x 3276.24pt>
 File: feed/13.jpeg Graphic file (type jpg)
 
-<use feed/13.jpeg> [45 <./feed/12.jpeg>]
-<feed/14.jpeg, id=196, 2457.18pt x 3276.24pt>
+<use feed/13.jpeg> [51 <./feed/12.jpeg>]
+<feed/14.jpeg, id=222, 2457.18pt x 3276.24pt>
 File: feed/14.jpeg Graphic file (type jpg)
- <use feed/14.jpeg> [46 <./feed/13.jpeg>] <feed/15.jpeg, id=200, 2457.18pt x 32
+ <use feed/14.jpeg> [52 <./feed/13.jpeg>] <feed/15.jpeg, id=226, 2457.18pt x 32
 76.24pt>
 File: feed/15.jpeg Graphic file (type jpg)
  <use feed/15.jpeg>
-[47 <./feed/14.jpeg>] <feed/16.jpeg, id=204, 2457.18pt x 3276.24pt>
+[53 <./feed/14.jpeg>] <feed/16.jpeg, id=230, 2457.18pt x 3276.24pt>
 File: feed/16.jpeg Graphic file (type jpg)
 
-<use feed/16.jpeg> [48 <./feed/15.jpeg> <./feed/16.jpeg>]
-<feed/17.jpeg, id=208, 2457.18pt x 3276.24pt>
+<use feed/16.jpeg> [54 <./feed/15.jpeg> <./feed/16.jpeg>]
+<feed/17.jpeg, id=234, 2457.18pt x 3276.24pt>
 File: feed/17.jpeg Graphic file (type jpg)
  <use feed/17.jpeg>
-<feed/18.jpeg, id=209, 2457.18pt x 3276.24pt>
+<feed/18.jpeg, id=235, 2457.18pt x 3276.24pt>
 File: feed/18.jpeg Graphic file (type jpg)
  <use feed/18.jpeg>
-<feed/19.jpeg, id=210, 2457.18pt x 3276.24pt>
+<feed/19.jpeg, id=236, 2457.18pt x 3276.24pt>
 File: feed/19.jpeg Graphic file (type jpg)
- <use feed/19.jpeg> [49 <./feed/17.jpeg> <./feed/18.jpeg>] <feed/20.jpeg, id=21
-5, 2457.18pt x 3276.24pt>
+ <use feed/19.jpeg> [55 <./feed/17.jpeg> <./feed/18.jpeg>] <feed/20.jpeg, id=24
+1, 2457.18pt x 3276.24pt>
 File: feed/20.jpeg Graphic file (type jpg)
 
-<use feed/20.jpeg> <roofmount/00.jpeg, id=216, 1842.885pt x 2457.18pt>
+<use feed/20.jpeg> <roofmount/00.jpeg, id=242, 1842.885pt x 2457.18pt>
 File: roofmount/00.jpeg Graphic file (type jpg)
 
-<use roofmount/00.jpeg> [50 <./feed/19.jpeg> <./feed/20.jpeg>]
-<roofmount/01.jpeg, id=220, 2457.18pt x 1842.885pt>
+<use roofmount/00.jpeg> [56 <./feed/19.jpeg> <./feed/20.jpeg>]
+<roofmount/01.jpeg, id=246, 2457.18pt x 1842.885pt>
 File: roofmount/01.jpeg Graphic file (type jpg)
  <use roofmount/01.jpeg>
-[51 <./roofmount/00.jpeg>] <roofmount/02.jpeg, id=225, 1842.885pt x 2457.18pt>
+[57 <./roofmount/00.jpeg>] <roofmount/02.jpeg, id=250, 1842.885pt x 2457.18pt>
 File: roofmount/02.jpeg Graphic file (type jpg)
 
-<use roofmount/02.jpeg> <roofmount/03.jpeg, id=226, 1842.885pt x 2457.18pt>
+<use roofmount/02.jpeg> <roofmount/03.jpeg, id=251, 1842.885pt x 2457.18pt>
 File: roofmount/03.jpeg Graphic file (type jpg)
 
-<use roofmount/03.jpeg> [52 <./roofmount/01.jpeg> <./roofmount/02.jpeg>]
-<roofmount/04.jpeg, id=230, 1842.885pt x 2457.18pt>
+<use roofmount/03.jpeg> [58 <./roofmount/01.jpeg> <./roofmount/02.jpeg>]
+<roofmount/04.jpeg, id=255, 1842.885pt x 2457.18pt>
 File: roofmount/04.jpeg Graphic file (type jpg)
  <use roofmount/04.jpeg>
-[53 <./roofmount/03.jpeg>] <roofmount/05.jpeg, id=234, 1842.885pt x 2457.18pt>
+[59 <./roofmount/03.jpeg>] <roofmount/05.jpeg, id=259, 1842.885pt x 2457.18pt>
 File: roofmount/05.jpeg Graphic file (type jpg)
 
-<use roofmount/05.jpeg> [54 <./roofmount/04.jpeg>]
+<use roofmount/05.jpeg> [60 <./roofmount/04.jpeg>]
 File: roofmount/05.jpeg Graphic file (type jpg)
  <use roofmount/05.jpeg>
-[55 <./roofmount/05.jpeg>] <dish/01.jpeg, id=242, 2457.18pt x 3276.24pt>
+[61 <./roofmount/05.jpeg>] <dish/01.jpeg, id=267, 2457.18pt x 3276.24pt>
 File: dish/01.jpeg Graphic file (type jpg)
 
-<use dish/01.jpeg> [56] <dish/02.jpeg, id=246, 2457.18pt x 3276.24pt>
+<use dish/01.jpeg> [62] <dish/02.jpeg, id=271, 2457.18pt x 3276.24pt>
 File: dish/02.jpeg Graphic file (type jpg)
 
-<use dish/02.jpeg> [57 <./dish/01.jpeg>]
-<dish/03.jpeg, id=250, 3276.24pt x 2457.18pt>
+<use dish/02.jpeg> [63 <./dish/01.jpeg>]
+<dish/03.jpeg, id=275, 3276.24pt x 2457.18pt>
 File: dish/03.jpeg Graphic file (type jpg)
- <use dish/03.jpeg> [58 <./dish/02.jpeg>] <dish/04.jpeg, id=254, 3276.24pt x 24
+ <use dish/03.jpeg> [64 <./dish/02.jpeg>] <dish/04.jpeg, id=279, 3276.24pt x 24
 57.18pt>
 File: dish/04.jpeg Graphic file (type jpg)
  <use dish/04.jpeg>
-[59 <./dish/03.jpeg>] <dish/05.jpeg, id=258, 3276.24pt x 2457.18pt>
+[65 <./dish/03.jpeg>] <dish/05.jpeg, id=283, 3276.24pt x 2457.18pt>
 File: dish/05.jpeg Graphic file (type jpg)
 
-<use dish/05.jpeg> [60 <./dish/04.jpeg>]
-<dish/06.jpeg, id=262, 3276.24pt x 2457.18pt>
+<use dish/05.jpeg> [66 <./dish/04.jpeg>]
+<dish/06.jpeg, id=287, 3276.24pt x 2457.18pt>
 File: dish/06.jpeg Graphic file (type jpg)
- <use dish/06.jpeg> [61 <./dish/05.jpeg>] <dish/07.jpeg, id=267, 3276.24pt x 24
+ <use dish/06.jpeg> [67 <./dish/05.jpeg>] <dish/07.jpeg, id=292, 3276.24pt x 24
 57.18pt>
 File: dish/07.jpeg Graphic file (type jpg)
  <use dish/07.jpeg>
-[62 <./dish/06.jpeg>] <dish/08.jpeg, id=271, 1612.0225pt x 2053.6725pt>
+[68 <./dish/06.jpeg>] <dish/08.jpeg, id=296, 1612.0225pt x 2053.6725pt>
 File: dish/08.jpeg Graphic file (type jpg)
 
-<use dish/08.jpeg> <dish/09.jpeg, id=272, 3276.24pt x 2457.18pt>
+<use dish/08.jpeg> <dish/09.jpeg, id=297, 3276.24pt x 2457.18pt>
 File: dish/09.jpeg Graphic file (type jpg)
 
-<use dish/09.jpeg> [63 <./dish/07.jpeg> <./dish/08.jpeg>]
-<dish/10.jpeg, id=276, 3276.24pt x 2457.18pt>
+<use dish/09.jpeg> [69 <./dish/07.jpeg> <./dish/08.jpeg>]
+<dish/10.jpeg, id=301, 3276.24pt x 2457.18pt>
 File: dish/10.jpeg Graphic file (type jpg)
- <use dish/10.jpeg> [64 <./dish/09.jpeg>] <dish/11.jpeg, id=280, 3276.24pt x 24
+ <use dish/10.jpeg> [70 <./dish/09.jpeg>] <dish/11.jpeg, id=305, 3276.24pt x 24
 57.18pt>
 File: dish/11.jpeg Graphic file (type jpg)
  <use dish/11.jpeg>
-[65 <./dish/10.jpeg>] <dish/12.jpeg, id=284, 3276.24pt x 2457.18pt>
+[71 <./dish/10.jpeg>] <dish/12.jpeg, id=309, 3276.24pt x 2457.18pt>
 File: dish/12.jpeg Graphic file (type jpg)
 
-<use dish/12.jpeg> [66 <./dish/11.jpeg>]
-<dish/13.jpeg, id=288, 3276.24pt x 2457.18pt>
+<use dish/12.jpeg> [72 <./dish/11.jpeg>]
+<dish/13.jpeg, id=313, 3276.24pt x 2457.18pt>
 File: dish/13.jpeg Graphic file (type jpg)
- <use dish/13.jpeg> [67 <./dish/12.jpeg>] <dish/14.jpeg, id=293, 3276.24pt x 24
+ <use dish/13.jpeg> [73 <./dish/12.jpeg>] <dish/14.jpeg, id=318, 3276.24pt x 24
 57.18pt>
 File: dish/14.jpeg Graphic file (type jpg)
  <use dish/14.jpeg>
-[68 <./dish/13.jpeg>] <dish/15.jpeg, id=297, 3276.24pt x 2457.18pt>
+[74 <./dish/13.jpeg>] <dish/15.jpeg, id=322, 3276.24pt x 2457.18pt>
 File: dish/15.jpeg Graphic file (type jpg)
 
-<use dish/15.jpeg> [69 <./dish/14.jpeg>]
-<dish/16.jpeg, id=301, 3276.24pt x 2457.18pt>
+<use dish/15.jpeg> [75 <./dish/14.jpeg>]
+<dish/16.jpeg, id=326, 3276.24pt x 2457.18pt>
 File: dish/16.jpeg Graphic file (type jpg)
- <use dish/16.jpeg> [70 <./dish/15.jpeg>] <dish/17.jpeg, id=305, 3276.24pt x 24
+ <use dish/16.jpeg> [76 <./dish/15.jpeg>] <dish/17.jpeg, id=330, 3276.24pt x 24
 57.18pt>
 File: dish/17.jpeg Graphic file (type jpg)
  <use dish/17.jpeg>
-[71 <./dish/16.jpeg>] <dish/18.jpeg, id=309, 3276.24pt x 2457.18pt>
+[77 <./dish/16.jpeg>] <dish/18.jpeg, id=334, 3276.24pt x 2457.18pt>
 File: dish/18.jpeg Graphic file (type jpg)
 
-<use dish/18.jpeg> [72 <./dish/17.jpeg>]
-<dish/19.jpeg, id=313, 3276.24pt x 2457.18pt>
+<use dish/18.jpeg> [78 <./dish/17.jpeg>]
+<dish/19.jpeg, id=338, 3276.24pt x 2457.18pt>
 File: dish/19.jpeg Graphic file (type jpg)
- <use dish/19.jpeg> [73 <./dish/18.jpeg>] [74 <./dish/19.jpeg>] (./telescopedoc
+ <use dish/19.jpeg> [79 <./dish/18.jpeg>] [80 <./dish/19.jpeg>] (./telescopedoc
 .aux) ) 
 Here is how much of TeX's memory you used:
- 4194 strings out of 493747
- 63485 string characters out of 3143546
+ 4219 strings out of 493747
+ 64116 string characters out of 3143546
  137923 words of memory out of 3000000
- 7402 multiletter control sequences out of 15000+200000
+ 7426 multiletter control sequences out of 15000+200000
  12119 words of font info for 42 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  44i,11n,43p,601b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1019,10 +1066,10 @@ ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loc
 al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/loca
 l/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on telescopedoc.pdf (74 pages, 64124869 bytes).
+Output written on telescopedoc.pdf (80 pages, 66328320 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
+ 392 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 351 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

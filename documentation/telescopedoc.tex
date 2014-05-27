@@ -533,6 +533,15 @@ This will require a reboot before the effects can be seen.
 
 \subsection{Setup}
 
+Documentation on how to set up the rotor and the controller can be found: \\ \\
+https://github.com/BenningtonCS/Telescope-2014/wiki/SPID-Antenna-Rotator-Setup---Getting-Started
+\\ \\
+Additional information can be found: \\ \\
+http://www.spid.alpha.pl/download/AlfaSpid\_Rotator\_RAS\_EN.doc \\
+http://www.spid.alpha.pl/download/rot2prog/RotorController\_sat\_A3.pdf \\
+http://www.spid.alpha.pl/download/rot2prog/RotorController\_sat\_zas\_A3.pdf \\
+
+
 
 
 \subsection{Wiring}
@@ -850,6 +859,95 @@ Back End b/t Dongle and LNA Put Together
 \begin{center}
 \includegraphics[scale=0.20]{lna/11.jpeg}
 \end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Building LNA to Dongle Interface}
+
+\begin{center}
+\includegraphics[scale=0.35]{lnainterface/01.jpeg}
+\end{center}
+
+\subsubsection{Parts Needed}
+
+\begin{itemize}
+\item 4 BNC jack (female) to BNC jack patch cables
+\item Line Amp
+\item Power Injector
+\item (DIY) DC plug (male) to F-type Plug adapter
+\item 1 SMA-M to BNC-M adapter
+\item 1 SMA-F to BNC-M adapter
+\item 5 F-type plug to BNC-M adapters
+\item Perf board/breadboard
+\item 22-gauge copper wire
+\item DC-Barrel jack connector
+\item Right-angle F-type plug connector
+\end{itemize}
+
+\subsubsection{Tools Needed}
+
+\begin{itemize}
+\item Soldering Iron + Solder
+\item Wire cutters/strippers
+\item Electrical Tape
+\end{itemize}
+
+\subsubsection{Building DC Barrel Jack to F-Type Plug Connector}
+
+\begin{itemize}
+\item Assemble the perf board/breadboard, dc barrel jack connector, F-type plug connector, and copper wire.
+\item Solder middle pin of dc plug connector to perf board.
+\item Solder middle pin of f type plug connector to same conductive strip of perf board. 
+\end{itemize}
+
+\begin{center}
+\includegraphics[scale=0.20]{lnainterface/02.jpeg}
+\end{center}
+
+Under side:
+
+\begin{center}
+\includegraphics[scale=0.20]{lnainterface/03.jpeg}
+\end{center}
+
+Solder ground pin on dc jack connector directly to one of the ground pins on the f type plug connector. 
+
+\begin{center}
+\includegraphics[scale=0.20]{lnainterface/04.jpeg}
+\end{center}
+
+\subsubsection{Assembly}
+
+\begin{itemize}
+\item Attach one F type plug to BNC-M adapter to one end of one of the patch cables.
+\item To the other end of the patch cable, attach another F-type plug to BNC-M adapter.
+\item To the F-type side of the adapter, attach the "in" side of the line amp.
+\item To the "out" side of the line amp, attach another F-type plug to BNC-M adapter.
+\item Attach another patch cable to the BNC side of the adapter.
+\item To the other end of the patch cable, attach another F-type plug to BNC-M adapter.
+\item Plug the F-type side of the adapter into the "to amp" input on the Power Injector.
+\item Screw an F-type plug to BNC-M adapter onto the "out" of the power injector.
+\item Attach another patch cable to the adapter.
+\item Onto the free side of the patch cable, screw on your SMA-M to BNC-M adapter.
+\item Attach the "in" of the bandpass filter to the free (SMA-M) side of the adapter.
+\item To the "out" of the BPF, screw in the SMA-F side of the SMA-F to BNC-M adapter.
+\item Attach another patch cable to the previous adapter.
+\item Attach the BNC-M to SMB-M adapter to the patch cable.
+\item Plug the SMB-M side of your adapter into the dongle.
+\item Into the "12V DC IN" portion of the power injector, screw the F-type side of the dc plug to F type adapter
+\item Plug your 12V DC wall wart power supply into the DC Barrel Jack side of your DIY adapter.
+\item Plug dongle into computer.
+\end{itemize}
+
+\begin{center}
+\includegraphics[scale=0.20]{lnainterface/05.jpeg}
+\end{center}
+
+\begin{center}
+\includegraphics[scale=0.20]{lnainterface/06.jpeg}
+\end{center}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
