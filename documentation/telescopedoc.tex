@@ -82,6 +82,7 @@ Haystack Small Radio Telescope Project
 
 \tableofcontents
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
 \section{Introduction}
@@ -89,6 +90,56 @@ Haystack Small Radio Telescope Project
 This manual serves as a guide following the work done at Bennington College during the spring of 2014 to build and operate a radiotelescope, following the procedure layed out by MIT Haystack and their Small Radio Telescope (SRT) project. This manual contains information regarding both the hardware and software components of the project which should allow for a simple and successful build and operation of a SRT.
 
 
+\section{Considerations}
+
+\subsection{Acquiring Parts}
+
+Many of the components required for this project are available through major suppliers, such as Digi-Key, Mini-Circuits, and Mouser. Many of the hardware should be available at your local hardware store, or online at a major hardware store's website. A few components are easier to find on Amazon or eBay, such as the cake pan used for the feed, but they may also be available at local retail stores. To get larger parts, such as the rotor, rotor controller, or dish, you can visit the manufacturer's website or find a retailer for what you need online. For our rotor and controller, we used products from Spid Electronik ( http://www.spid.alpha.pl/english/01.php ), and for our dish, RF Hamdesign ( http://www.rfhamdesign.com/ ), though other options do exist.
+
+
+\subsection{Mounting the Dish}
+
+When choosing a location to mount the dish, it is best to have as few obstructions to the sky as possible. Care should also be taken to place the dish in a location with little RF interference. This means that when scoping out places where you want your dish to be, having a way to measure the RF interference would be helpful. Although you want as clear a view of the sky as possible, it may be useful to have a tree nearby to act as an absorber during calibration. \\
+There are a few options that you can consider when deciding how to mount your dish. The two options suggested by the MIT Haystack documentation are
+
+\begin{enumerate}
+\item Non-Penetrating Roof Mount
+\item Concrete Pier
+\end{enumerate}
+
+These are good options to consider, however they are not the only that exist. Our dish is secured on a roof by a custom-built mount. Below are details on each of the three suggested methods so you can make a decision as to which mounting system will work best for you.
+
+\subsubsection{Non-Penetrating Roof Mount}
+
+Non-Penetrating Roof Mounts are ideal for flat areas, particularly roofs, paved areas, or flat fields, though they are not limited to these locations. Being non-penetrating, this method is the least permanent, as you are able to move the mount (and thus the dish) as needed. This option appears to have a large footprint, so it would be necessary to make sure you have the area required first. These mounts are available commercially. Below are links to some websites that sell them, as described in the MIT documentation
+
+\begin{itemize}
+\item http://www.skyvision.com/store/mi6012006.html
+\item http://www.orbitcommunications.com/cyberstore/cband/mounts.htm
+\item https://www.bairdmounts.com/
+\end{itemize}
+
+Since the mounts will be dependant on the dish size and may depend on project restrictions, it may be worthwhile to search for one that will best fit your needs. 
+
+\subsubsection{Concrete Pier}
+
+Building a concrete pier mount is sturdy and reliable, if constructed properly, however it is also permanent. If this is the option you choose, take into consideration that soil mechanics vary widely, so the suggestions here (taken from MIT documentation) are just suggestions. You should speak to someone familiar with your local geography/weather to ensure your pier will be stable. Things to take into consideration:
+
+\begin{itemize}
+\item When digging the hole for the pier to be set in, be sure it goes below the frost line
+\item Taper the sides of the hole inward as the hole goes down. This will help provide additional stability
+\item Fill the bottom of the hole with gravel to improve drainage
+\item Make sure the pipe coming up from the concrete foundation is level as the concrete cures
+\item Allow enough time for the concrete to cure fully before applying too much weight to your mounting system
+\end{itemize}
+
+\subsubsection{Custom Mount}
+
+We decided to build a mount to fit our needs, and it may be that this is the easiest option. The pros of this method is that your solution will work for your design and placement of the dish. Our design allowed us to use pre-existing structures, which simplified the mount a bit. If this method is chosen, it is likely everything will have to be custom built and designed, so be sure you have resources in place for this. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
 \section{Parts List}
@@ -868,6 +919,7 @@ Back End b/t Dongle and LNA Put Together
 \begin{center}
 \includegraphics[scale=0.35]{lnainterface/01.jpeg}
 \end{center}
+
 
 \subsubsection{Parts Needed}
 
