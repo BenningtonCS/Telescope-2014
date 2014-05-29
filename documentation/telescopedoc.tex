@@ -267,7 +267,7 @@ Large roofing square & Useful for making sure things are perpendicular \\ \hline
 \end{tabular}
 
 
-\subsection{Attaching Arms}
+\subsection{Attaching Arms to Dish}
 
 \begin{tabular}{| l | p{10cm} |}
 \hline
@@ -296,19 +296,20 @@ Wire Strippers & Cut and strip the wires to use as the terminal leads \\ \hline
 \end{tabular}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
 \section{Installing SRTN Software}
 
 The original SRT source can be found on the MIT Haystack Observatory website, here: http://www.haystack.mit.edu/edu/undergrad/srt/ . This source appears to work with ArchLinux and CentOS, and reportedly works on REHL (Red Hat Enterprise Linux). The source will not work immediately with Ubuntu, however a modified version of the source can be found here: https://github.com/BenningtonCS/Telescope-2014 , which will work on Ubuntu, as well as CentOS and ArchLinux (It may work with other linux-based operating systems, however, those listed are the only ones we have tested so far). 
 
 \subsection{MIT Haystack Observatory SRT}
-The MIT Haystack Observatory SRT website includes the manuals, documentation, and program code. The code base we are looking at, SRT Source Code ver 3, can be found here.
+The MIT Haystack Observatory SRT website includes the manuals, documentation, and program code. The code base we are looking at, SRT Source Code ver 3, can be found here: \\ http://www.haystack.mit.edu/edu/undergrad/srt/newsrtsource\_ver3.tar.gz
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Ubuntu}
 
-
-These instructions were developed as a guide from a clean download of source files from the MIT Haystack Observatory website. If using the code pulled from the repository, some of the steps (modifying the srtnmake script for example) may not be necessary, but the guide should still hold, overall.
-\\ \\
 Note that these instructions were written for Ubuntu 12.10
 
 \begin{verbatim}
@@ -323,54 +324,37 @@ Codename:   quantal
 
 
 \subsubsection{Getting the Source Code}
-To get the source code, either go to the website, linked above, and download SRT Source Code ver 3, or download directly from the link above. Once downloaded, the gzipped tarball should be in your Downloads directory: 
-\begin{verbatim}
-~/Downloads/newsrtsource_ver3.tar.gz
-\end{verbatim}
-
-\noindent\emph{Move and Unzip File in New Directory} 
-\\ \\
-To create a new directory, move the gzipped tarball into it, and then unzip it, follow the commands below:
-\begin{verbatim}
-~$ mkdir radio
-~$ mv Downloads/newsrtsource_ver3.tar.gz radio
-~$ cd radio
-~/radio$ tar -xzvf newsrtsource_ver3.tar.gz
-~/radio$ cd srtnver3
-\end{verbatim}
+To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
 
-\subsubsection{Adding Library Dependencies}
-The reason the code would not compile is because SRT uses libraries which the computer you are using does not have. To get them, use the command below:
+\subsubsection{Adding Project Dependencies}
+ In order to compile and run the program successfully, two libraries must be installed, gtk+-2.0, and libusb-1.0. This can be done using the command below:
 
 \begin{verbatim}
 ~/radio/srtnver3$ sudo apt-get install libgtk2.0-dev libusb-1.0-0-dev
 \end{verbatim}
 
+NOTE: If you are unable to download using apt-get install, try using the command \emph{apt-get update} first, wait for all updates to be installed, and then retry the install command above.
 
-NOTE: If you are unable to download using apt-get install, try using the command apt-get update first, wait for all updates to be installed, and then retry the install command above.
-
-Modifying the Compile Script
-In order for the program to compile with gtk+-2.0, it must know that it has to use it/where to get it. (This was the problem that prevented it from compiling in class). To remedy this, simply
-~/radio/srtnver3\$ sudo nano srtnmake
-to edit the bash script. Scroll to the bottom of the file to the gcc line, which should look like:
-gcc -W -Wall -03 \$CFLAGS \$LIBS main.c vspectra\_four.c disp.c plot.c cat.c geom.c time.c outfile.c sport.c map.c cmdfl.c cal.c srthelp.c velspec.c four.c librtlsdr.c tuner\_r820t.c -lm `pkg-config --libs --cflags libusb-1.0`
-and change it so the end section is now
-... `pkg-config --libs --cflags gtk+-2.0 libusb-1.0`
-Now you have all the libraries and the script should be able to compile successfully.
 
 \subsubsection{Compiling the Source Code}
-The script to compile the code (the one you just edited) should take care of all the compilation, so it is just a matter of running it
-~/radio/srtnver3\$ ./srtnmake
-Once you execute this command, a few warnings should appear, with lines ending with [-Wunused-but-set-variable]. These errors are fine, and there should be relatively few of them as compared to before (running the compile script without the libraries or modification to the script). The output I got from running the compile script is shown below as a reference for which errors are acceptable.
+A script exists to compile the source code. To compile, run it:
 
-Now the source code is successfully compiled!
+\begin{verbatim}
+~/radio/srtnver3$ ./srtnmake
+\end{verbatim}
+
+A few warnings may appear, but the code should compile successfully, assuming the needed libraries were installed properly.
 
 \subsubsection{Running the Program}
-If you look in the srtnver3 directory, you will notice an executable file called srtn. This is what we just compiled with srtnmake. To run:
-~/radio/srtnver3\$ ./srtn
-Once executed, this should open a window which looks similar to the image below.
+To execute the program:
+ 
+\begin{verbatim}
+~/radio/srtnver3$ ./srtn
+\end{verbatim}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{CentOS}
 
