@@ -367,21 +367,11 @@ $ uname -r
 \end{verbatim}
 on a machine with an AMD processor.
 
-\subsubsection{MIT Haystack Observatory SRT}
-The MIT Haystack Observatory SRT website includes the manuals, documentation, and program code. The code base we are looking at, SRT Source Code ver 3, can be found here.
 
 \subsubsection{Getting the Source Code}
-From the website, linked above, or the download link provided, download the srtnver3 source files from the MIT Haystack website. Once the download is complete, the gzipped tarball should be in your Downloads directory.
+To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
-\begin{verbatim}
-$ cd Downloads
-$ tar xzvf newsrtsource_ver4.tar.gz
-If you want to move the source code out of the Downloads directory, and into the Home directory, for example:
-$ mv srtnver3 ~
-$ cd ~
-\end{verbatim}
-
-\subsubsection{Getting project dependencies}
+\subsubsection{Adding Project Dependencies}
 From a clean install of CentOS, you will be missing some of the packages needed to run the software.
 \\ \\
 \emph{Getting sudo permissions} \\ \\
@@ -400,7 +390,7 @@ Down by the bottom of the file will be the line:
 root    ALL=(ALL)    ALL
 \end{verbatim}
 
-Below this add the line " ALL=(ALL) ALL", where is the username logged in to the computer, in our case 'radio telescope'
+Below this add the line "xxx ALL=(ALL) ALL", where xxx is the username logged in to the computer, in our case 'radiotelescope'
 
 \begin{verbatim}
 \#\# Allow root to run any commands anywhere
@@ -423,66 +413,39 @@ Now your user account should have sudo permission, so we can now install package
 The packages needed are gtk+2, gcc, and libusb. These can be acquired using the CentOS package manager, yum:
 
 \begin{verbatim}
-\$ sudo yum install gtk2-devel gcc libusb1-devel
+$ sudo yum install gtk2-devel gcc libusb1-devel
 \end{verbatim}
 
-If successful, you should now have all the packages you need to run the software.
+\noindent If successful, you should now have all the packages you need to run the software.
 
-\subsubsection{Compiling and running}
+\subsubsection{Compiling the Source Code}
+ A script exists to compile the source code. To compile, run it:
 
-Now, move into the srtnver3 directory
-\$ cd ~/srtnver3
-and run srtnmake:
-\$ ./srtnmake
-This should complete successfully, but may show some warning messages. Now, to run the software:
-\$ ./srtn
+\begin{verbatim}
+~/radio/srtnver3$ ./srtnmake
+\end{verbatim}
 
-\subsubsection{Running with unsimulated dongle}
-To run with the dongle, receiver simulation must be turned off. To do this, simply
-\$ gedit srt.cat
-In the edit window, find the line that says
-SIMULATE RECEIVER
-and change it to
-*SIMULATE RECEIVER
-Save the file and exit gedit. Now, we can run srtn using the dongle with
-\$ sudo ./srtn
-And it should work!
-NOTE: Notice how before to run, it was just ./srtn and this time it is sudo ./srtn. If you try./srtn after enabling the dongle you will get a message similar to:
-\$ ./srtn
-Found 1 device(s)
-  0:  ,   SN:  ?????
-Using device 0: ezcap USB 2.0 DVB-T/DAB/FM dongle
-usb\_open error -3
-Please fix the device permissions, e.g. by installing the udev rules file rtl-sdr.rules
-Failed to open rtlsdr device \#0.
-As we see above, it is possible to run srtn without sudo, but to do so, we must do a little extra work in installing the provided udev rules. A guide to installing the udev rules will be added later.
+\subsubsection{Running the Program}
+To execute the program:
 
-\subsubsection{Running with unsimulated controller/rotator}
-To run with the controller/rotator, antenna simulation must be turned off. To do this, simply
-\$ gedit srt.cat
-In the edit window, find the line that says
-SIMULATE ANTENNA
-and change it to
-*SIMULATE ANTENNA
-Save the file and exit gedit. Now, we can run srtn using the controller/rotator with
-\$ sudo ./srtn
-To test that the rotator works, try manually changing the az or el in-program using the 'azel' button. (Note: If the the rotator motion is moving in a direction you do not want it to go, you can press the 'S' button on the controller to stop movement.)
-If you are unable to run the program successfully, look at the controller setup page to troubleshoot and make sure the controller was set up correctly.
+\begin{verbatim}
+~/radio/srtnver3$ ./srtn
+\end{verbatim}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Arch}
 
-The MIT Haystack Observatory SRT website includes the manuals, documentation, and program code. The code base we are looking at, SRT Source Code ver 3, can be found here.
 
 \subsubsection{Getting the Source Code}
-From the website, linked above, or the download link provided, download the srtnver3 source files from the MIT Haystack website. Once the download is complete, the gzipped tarball should be in your Downloads directory.
+To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
-\begin{verbatim}
-$ cd Downloads
-$ tar xzvf newsrtsource_ver3.tar.gz
-\end{verbatim}
 
-\subsubsection{Getting Project Dependencies}
-From a clean install of Archbang, there are a few necessary things missing, namely make andpatch.
+\subsubsection{Adding Project Dependencies}
+From a clean install of Archbang, there are a few necessary things missing, namely \emph{make} and \emph{patch}.
+\\ \\
 From the command line, run:
 
 \begin{verbatim}
@@ -490,9 +453,7 @@ $ sudo pacman -S make patch
 \end{verbatim}
 
 \subsubsection{Install gcc-4.4}
-Unfortunately, the program will not run properly using a current version of gcc, so it is necessary to download and install version 4.4. As gcc-4.4 is not in pacman, gcc-4.4 must be downloaded from the AUR.
-You can find gcc-4.4 in the Arch User Repository here
-Download the tarball. It should appear in your Downloads folder. Untar it by using:
+Unfortunately, the program will not run properly using a current version of gcc, so it is necessary to download and install gcc version 4.4. As gcc-4.4 is not in pacman, gcc-4.4 must be downloaded from the AUR. You can find gcc-4.4 in the Arch User Repository here (https://aur.archlinux.org/packages/gcc44/). Download the tarball (https://aur.archlinux.org/packages/gc/gcc44/gcc44.tar.gz). It should appear in your Downloads folder. Untar it by using:
 
 \begin{verbatim}
 $ cd ~/Downloads
@@ -505,7 +466,7 @@ and move into the new folder that was created.
 $ cd gcc44
 \end{verbatim}
 
-Use the command makepkg by itself to make the package. NOTE: It might be necessary to make the package as root. If this is the case, run:
+Use the command \emph{makepkg} by itself to make the package. NOTE: It might be necessary to make the package as root. If this is the case, run:
 
 \begin{verbatim}
 $ sudo makepkg --asroot
@@ -519,64 +480,45 @@ $ sudo pacman -U gcc44-4.4.7-6-x86_64.pkg.tar.xz
 
 Once again, as gcc is a large program, this will take a long time to complete.
 
-\subsubsection{Compile and Run Source}
-Move into the srtnver3 folder that you downloaded and untared from MIT. Assuming it's in your Downloads folder, use:
-\$ cd Downloads/srtnver3
+\subsubsection{Compiling the Source Code}
 
-Edit srtnmake
-To make the makefile use gcc-4.4 instead of the default version, you will have to edit the make file.
-\$ nano srtnmake
-Change gcc to gcc-4.4
-Save and exit out of nano.
+First, you will need to edit the compiler script, srtnmake to make the script use gcc-4.4 instead of the default version.
 
-Compile srtnmake
-Run:
-\$ ./srtnmake
-If everything is done right, the program should compile with few errors.
+\begin{verbatim}
+$ nano srtnmake
+\end{verbatim}
 
-Running srtn
-To run the program:
-\$ ./srtn
-Running with unsimulated dongle
-NOTE: It might be necessary to blacklist the driver in order to run properly. Please look at 'Blacklist Driver' under the troubleshooting section.
-To run with the dongle, receiver simulation must be turned off. To do this, simply
-\$ nano srt.cat
-In the edit window, find the line that says
-SIMULATE RECEIVER
-and change it to
-*SIMULATE RECEIVER
-Save the file and exit nano. Now, we can run srtn using the dongle with
-\$ sudo ./srtn
-And it should work!
-NOTE: Notice how before to run, it was just ./srtn and this time it is sudo ./srtn. If you try./srtn after enabling the dongle you will get a message similar to:
-\$ ./srtn
-Found 1 device(s)
-  0:  ,   SN:  ?????
-Using device 0: ezcap USB 2.0 DVB-T/DAB/FM dongle
-usb\_open error -3
-Please fix the device permissions, e.g. by installing the udev rules file rtl-sdr.rules
-Failed to open rtlsdr device \#0.
-As we see above, it is possible to run srtn without sudo, but to do so, we must do a little extra work in installing the provided udev rules. A guide to installing the udev rules will be added later.
+Then, change gcc to gcc-4.4, save, and exit out of nano.
 
-\subsubsection{Running with unsimulated controller/rotator}
-To run with the controller/rotator, antenna simulation must be turned off. To do this, simply
-\$ nano srt.cat
-In the edit window, find the line that says
-SIMULATE ANTENNA
-and change it to
-*SIMULATE ANTENNA
-Save the file and exit nano. Now, we can run srtn using the controller/rotator with
-\$ sudo ./srtn
-To test that the rotator works, try manually changing the az or el in-program using the 'azel' button. (Note: If the the rotator motion is moving in a direction you do not want it to go, you can press the 'S' button on the controller to stop movement.)
-If you are unable to run the program successfully, look at the controller setup page to troubleshoot and make sure the controller was set up correctly.
+You can now compile the software.
 
-\subsubsection{Troubleshooting}
-Blacklist driver
+\begin{verbatim}
+$ ./srtnmake
+\end{verbatim}
+
+\subsubsection{Running the Program}
+To execute the program:
+
+\begin{verbatim}
+$ ./srtn
+\end{verbatim}
+
+
+
+\subsection{Troubleshooting}
+
+\subsubsection{Blacklisting the Driver}
+
 It may be necessary to blacklist the driver so it will not already be in use when we try to call on it:
-\$ sudo -i
-\# echo "blacklist dvb\_usb\_rtl28xxu" > /etc/modprobe.d/librtlsdr-blacklist.conf
+
+\begin{verbatim}
+$ sudo -i
+# echo "blacklist dvb_usb_rtl28xxu" > /etc/modprobe.d/librtlsdr-blacklist.conf
+\end{verbatim}
 This will require a reboot before the effects can be seen.
-\$ sudo reboot
+\begin{verbatim}
+$ sudo reboot
+\end{verbatim}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
