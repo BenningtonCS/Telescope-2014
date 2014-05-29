@@ -7,7 +7,7 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Custom Mount}{5}
 \contentsline {section}{\numberline {3}Parts List}{6}
 \contentsline {subsection}{\numberline {3.1}LNA to Dongle Interface}{6}
-\contentsline {subsection}{\numberline {3.2}Feed \& LNA}{6}
+\contentsline {subsection}{\numberline {3.2}Feed \& LNA}{7}
 \contentsline {subsection}{\numberline {3.3}Mount}{7}
 \contentsline {section}{\numberline {4}Tools List}{8}
 \contentsline {subsection}{\numberline {4.1}Assembling the LNA and Feed}{8}
