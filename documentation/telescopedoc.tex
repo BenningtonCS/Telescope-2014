@@ -165,6 +165,7 @@ AC-to-DC Power Supply & 1 & & \$20.18 \\ \hline
 Breadboard & 1 & Vector Electronics & \$5.75 \\ \hline
 DC Jack & 1 & CUI Inc & \$1.00 \\ \hline
 F-Type Plug & 1 & Bomar Interconnect/ Winchester Electronics & \$4.16\\ \hline
+\textbf{Approximate Total:} & & & \textbf{\$216.24} \\ \hline
 \end{tabular}
 
 \subsection{Feed \& LNA}
@@ -197,6 +198,7 @@ Styrofoam Rod 2.5" x 24" & 1 & & \\ \hline
 Cake Pan 7"x3" & 1 & & \\ \hline
 O-rings 7/32" (inner diameter) & 2 & & \\ \hline
 O-rings 1/4" (inner diameter) & 2 & & \\ \hline
+\textbf{Approximate Total:} & & & \textbf{\$26.22} \\ \hline
 \end{tabular}
 
 
@@ -209,6 +211,7 @@ O-rings 1/4" (inner diameter) & 2 & & \\ \hline
 2 1/2" (11') long steel pipe & 1 & &  Found scrap metal \\ \hline
 1/8" 2" (6') angle iron	 & 1 & &  Found scrap metal \\ \hline
 Black spray paint & 1-3 & Any & \$4 - \$12 \\ \hline
+\textbf{Approximate Total:} & & & \textbf{\$4 - \$12} \\ \hline
 \end{tabular}
 
 
@@ -315,12 +318,12 @@ Wire Strippers & Cut and strip the wires to use as the terminal leads \\ \hline
 \section{Installing SRTN Software}
 
 The original SRT source can be found on the MIT Haystack Observatory website, here: http://www.haystack.mit.edu/edu/undergrad/srt/ . This source appears to work with ArchLinux and CentOS, and reportedly works on REHL (Red Hat Enterprise Linux). The source will not work immediately with Ubuntu, however a modified version of the source can be found here: https://github.com/BenningtonCS/Telescope-2014 , which will work on Ubuntu, as well as CentOS and ArchLinux (It may work with other linux-based operating systems, however, those listed are the only ones we have tested so far). 
-
+\vspace{1cm}
 \subsection{MIT Haystack Observatory SRT}
 The MIT Haystack Observatory SRT website includes the manuals, documentation, and program code. The code base we are looking at, SRT Source Code ver 3, can be found here: \\ http://www.haystack.mit.edu/edu/undergrad/srt/newsrtsource\_ver3.tar.gz
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\vspace{1cm}
 \subsection{Ubuntu}
 
 Note that these instructions were written for Ubuntu 12.10
@@ -335,11 +338,11 @@ Codename:   quantal
 \end{verbatim}
 
 
-
+\vspace{1cm}
 \subsubsection{Getting the Source Code}
 To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
-
+\vspace{1cm}
 \subsubsection{Adding Project Dependencies}
  In order to compile and run the program successfully, two libraries must be installed, gtk+-2.0, and libusb-1.0. This can be done using the command below:
 
@@ -349,7 +352,7 @@ To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and
 
 NOTE: If you are unable to download using apt-get install, try using the command \emph{apt-get update} first, wait for all updates to be installed, and then retry the install command above.
 
-
+\vspace{1cm}
 \subsubsection{Compiling the Source Code}
 A script exists to compile the source code. To compile, run it:
 
@@ -358,7 +361,7 @@ A script exists to compile the source code. To compile, run it:
 \end{verbatim}
 
 A few warnings may appear, but the code should compile successfully, assuming the needed libraries were installed properly.
-
+\vspace{1cm}
 \subsubsection{Running the Program}
 To execute the program:
  
@@ -368,7 +371,7 @@ To execute the program:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\vspace{1cm}
 \subsection{CentOS}
 
 
@@ -380,10 +383,12 @@ $ uname -r
 \end{verbatim}
 on a machine with an AMD processor.
 
-
+\vspace{1cm}
 \subsubsection{Getting the Source Code}
 To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
+
+\vspace{1cm}
 \subsubsection{Adding Project Dependencies}
 From a clean install of CentOS, you will be missing some of the packages needed to run the software.
 \\ \\
@@ -431,6 +436,7 @@ $ sudo yum install gtk2-devel gcc libusb1-devel
 
 \noindent If successful, you should now have all the packages you need to run the software.
 
+\vspace{1cm}
 \subsubsection{Compiling the Source Code}
  A script exists to compile the source code. To compile, run it:
 
@@ -438,6 +444,7 @@ $ sudo yum install gtk2-devel gcc libusb1-devel
 ~/radio/srtnver3$ ./srtnmake
 \end{verbatim}
 
+\vspace{1cm}
 \subsubsection{Running the Program}
 To execute the program:
 
@@ -448,14 +455,14 @@ To execute the program:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\vspace{1cm}
 \subsection{Arch}
 
 
 \subsubsection{Getting the Source Code}
 To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
-
+\vspace{1cm}
 \subsubsection{Adding Project Dependencies}
 From a clean install of Archbang, there are a few necessary things missing, namely \emph{make} and \emph{patch}.
 \\ \\
@@ -464,7 +471,7 @@ From the command line, run:
 \begin{verbatim}
 $ sudo pacman -S make patch
 \end{verbatim}
-
+\vspace{1cm}
 \subsubsection{Install gcc-4.4}
 Unfortunately, the program will not run properly using a current version of gcc, so it is necessary to download and install gcc version 4.4. As gcc-4.4 is not in pacman, gcc-4.4 must be downloaded from the AUR. You can find gcc-4.4 in the Arch User Repository here (https://aur.archlinux.org/packages/gcc44/). Download the tarball (https://aur.archlinux.org/packages/gc/gcc44/gcc44.tar.gz). It should appear in your Downloads folder. Untar it by using:
 
@@ -492,7 +499,7 @@ $ sudo pacman -U gcc44-4.4.7-6-x86_64.pkg.tar.xz
 \end{verbatim}
 
 Once again, as gcc is a large program, this will take a long time to complete.
-
+\vspace{1cm}
 \subsubsection{Compiling the Source Code}
 
 First, you will need to edit the compiler script, srtnmake to make the script use gcc-4.4 instead of the default version.
@@ -508,7 +515,7 @@ You can now compile the software.
 \begin{verbatim}
 $ ./srtnmake
 \end{verbatim}
-
+\vspace{1cm}
 \subsubsection{Running the Program}
 To execute the program:
 
@@ -517,7 +524,7 @@ $ ./srtn
 \end{verbatim}
 
 
-
+\vspace{1cm}
 \subsection{Troubleshooting}
 
 \subsubsection{Blacklisting the Driver}
@@ -535,16 +542,16 @@ $ sudo reboot
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+\newpage 
 \section{Using SRTN Software}
 
 The section above details how to install, compile, and run the software. Below are some tips/guidelines on how to use the software more effectively, including setting it up to work with the controller and the LNA/Feed/dongle.
-
+\vspace{1cm}
 \subsection{Configuration Options}
 
 The bulk of the configuration options for the software are found in the \emph{srt.cat} file. The commands in this file are described in the help file, \emph{srt.hlp}, which is accessible either through reading the file directly, or pressing the 'Help' button on the software UI when it is running. 
 
-
+\vspace{1cm}
 \subsection{Simulated Mode vs Unsimulated Mode}
 
 In the \emph{srt.cat} file are options for 
@@ -558,7 +565,7 @@ In the \emph{srt.cat} file are options for
 When active, the command will simulate antenna motion, simulate incoming data from the dongle, and simulating the fast-fourrier transform, respectively. 
 \\ \\
 To see if the software works intially, it may be prudent to simulate the receiver and antenna and run SRTN. This way you will be able to see if the software runs correctly without hardware dependencies. To recieve data from the dongle, make sure the dongle is plugged into the computer, and comment out the SIMULATE RECIEVER command. Similarly, to use the controller via software, make sure the controller is plugged in to the computer and comment out the SIMULATE ANTENNA.
-
+\vspace{1cm}
 \subsection{Setting Your Location}
 
 In the \emph{srt.cat} file, under the LOCATION command, update the field with the name of your location, and the latitude and longitude. 
