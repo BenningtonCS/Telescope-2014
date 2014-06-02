@@ -22,6 +22,9 @@
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{float}
 \usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{sidecap}
 
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -63,6 +66,7 @@
 \begin{document}
 \maketitle
 
+\lstset{language=sh}
 
 \vspace{4cm}
 
@@ -329,15 +333,15 @@ The MIT Haystack Observatory SRT website includes the manuals, documentation, an
 \subsection{Ubuntu}
 
 Note that these instructions were written for Ubuntu 12.10
-
-\begin{verbatim}
+\\ \\
+\begin{lstlisting}[frame=single]
 $ lsb_release -a
 No LSB modules are available.
 Distributor ID: Ubuntu
 Description:    Ubuntu 12.10
 Release:    12.10
 Codename:   quantal
-\end{verbatim}
+\end{lstlisting}
 
 
 \vspace{1cm}
@@ -348,9 +352,9 @@ To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and
 \subsubsection{Adding Project Dependencies}
  In order to compile and run the program successfully, two libraries must be installed, gtk+-2.0, and libusb-1.0. This can be done using the command below:
 
-\begin{verbatim}
-~/radio/srtnver3$ sudo apt-get install libgtk2.0-dev libusb-1.0-0-dev
-\end{verbatim}
+\begin{lstlisting}[frame=single]
+$ sudo apt-get install libgtk2.0-dev libusb-1.0-0-dev
+\end{lstlisting}
 
 NOTE: If you are unable to download using apt-get install, try using the command \emph{apt-get update} first, wait for all updates to be installed, and then retry the install command above.
 
@@ -358,18 +362,18 @@ NOTE: If you are unable to download using apt-get install, try using the command
 \subsubsection{Compiling the Source Code}
 A script exists to compile the source code. To compile, run it:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 ~/radio/srtnver3$ ./srtnmake
-\end{verbatim}
+\end{lstlisting}
 
 A few warnings may appear, but the code should compile successfully, assuming the needed libraries were installed properly.
 \vspace{1cm}
 \subsubsection{Running the Program}
 To execute the program:
  
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 ~/radio/srtnver3$ ./srtn
-\end{verbatim}
+\end{lstlisting}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -379,10 +383,10 @@ To execute the program:
 
 These instructions were made using CentOS release 6.5 with kernel version:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ uname -r
 2.6.32-431.el6.x86_64
-\end{verbatim}
+\end{lstlisting}
 on a machine with an AMD processor.
 
 \vspace{1cm}
@@ -396,35 +400,34 @@ From a clean install of CentOS, you will be missing some of the packages needed 
 \\ \\
 \emph{Getting sudo permissions} \\ \\
 Before you do this though, you need to add your profile to the sudoers file, if you do not already have sudo permissions. To do this:
-
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ su
 $ chmod +w /etc/sudoers
 $ gedit /etc/sudoers
-\end{verbatim}
+\end{lstlisting}
 
 Down by the bottom of the file will be the line:
 
-\begin{verbatim}
-\#\# Allow root to run any commands anywhere
+\begin{lstlisting}[frame=single]
+## Allow root to run any commands anywhere
 root    ALL=(ALL)    ALL
-\end{verbatim}
+\end{lstlisting}
 
 Below this add the line "xxx ALL=(ALL) ALL", where xxx is the username logged in to the computer, in our case 'radiotelescope'
 
-\begin{verbatim}
-\#\# Allow root to run any commands anywhere
+\begin{lstlisting}[frame=single]
+## Allow root to run any commands anywhere
 root    ALL=(ALL)    ALL
 radiotelescope    ALL=(ALL)    ALL
-\end{verbatim}
+\end{lstlisting}
 
 Save the file and exit gedit, then in the terminal, type exit to return to your user status:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 [root@localhost radiotelescope]\# exit
 exit
 [radiotelescope@localhost ~]\$
-\end{verbatim}
+\end{lstlisting}
 
 Now your user account should have sudo permission, so we can now install package dependencies.
 \\ \\
@@ -432,9 +435,9 @@ Now your user account should have sudo permission, so we can now install package
 \\ \\
 The packages needed are gtk+2, gcc, and libusb. These can be acquired using the CentOS package manager, yum:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ sudo yum install gtk2-devel gcc libusb1-devel
-\end{verbatim}
+\end{lstlisting}
 
 \noindent If successful, you should now have all the packages you need to run the software.
 
@@ -442,17 +445,17 @@ $ sudo yum install gtk2-devel gcc libusb1-devel
 \subsubsection{Compiling the Source Code}
  A script exists to compile the source code. To compile, run it:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 ~/radio/srtnver3$ ./srtnmake
-\end{verbatim}
+\end{lstlisting}
 
 \vspace{1cm}
 \subsubsection{Running the Program}
 To execute the program:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 ~/radio/srtnver3$ ./srtn
-\end{verbatim}
+\end{lstlisting}
 
 
 
@@ -470,35 +473,35 @@ From a clean install of Archbang, there are a few necessary things missing, name
 \\ \\
 From the command line, run:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ sudo pacman -S make patch
-\end{verbatim}
+\end{lstlisting}
 \vspace{1cm}
 \subsubsection{Install gcc-4.4}
 Unfortunately, the program will not run properly using a current version of gcc, so it is necessary to download and install gcc version 4.4. As gcc-4.4 is not in pacman, gcc-4.4 must be downloaded from the AUR. You can find gcc-4.4 in the Arch User Repository here (https://aur.archlinux.org/packages/gcc44/). Download the tarball (https://aur.archlinux.org/packages/gc/gcc44/gcc44.tar.gz). It should appear in your Downloads folder. Untar it by using:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ cd ~/Downloads
 $ tar xzvf gcc44.tar.gz
-\end{verbatim}
+\end{lstlisting}
 
 and move into the new folder that was created.
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ cd gcc44
-\end{verbatim}
+\end{lstlisting}
 
 Use the command \emph{makepkg} by itself to make the package. NOTE: It might be necessary to make the package as root. If this is the case, run:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ sudo makepkg --asroot
-\end{verbatim}
+\end{lstlisting}
 
 As gcc is a large program, it might take a very long time to download. Once it's downloaded, run:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ sudo pacman -U gcc44-4.4.7-6-x86_64.pkg.tar.xz
-\end{verbatim}
+\end{lstlisting}
 
 Once again, as gcc is a large program, this will take a long time to complete.
 \vspace{1cm}
@@ -506,24 +509,24 @@ Once again, as gcc is a large program, this will take a long time to complete.
 
 First, you will need to edit the compiler script, srtnmake to make the script use gcc-4.4 instead of the default version.
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ nano srtnmake
-\end{verbatim}
+\end{lstlisting}
 
 Then, change gcc to gcc-4.4, save, and exit out of nano.
 
 You can now compile the software.
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ ./srtnmake
-\end{verbatim}
+\end{lstlisting}
 \vspace{1cm}
 \subsubsection{Running the Program}
 To execute the program:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ ./srtn
-\end{verbatim}
+\end{lstlisting}
 
 
 \vspace{1cm}
@@ -533,14 +536,15 @@ $ ./srtn
 
 It may be necessary to blacklist the driver so it will not already be in use when we try to call on it:
 
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ sudo -i
-# echo "blacklist dvb_usb_rtl28xxu" > /etc/modprobe.d/librtlsdr-blacklist.conf
-\end{verbatim}
+# echo "blacklist dvb_usb_rtl28xxu" > 
+       /etc/modprobe.d/librtlsdr-blacklist.conf
+\end{lstlisting}
 This will require a reboot before the effects can be seen.
-\begin{verbatim}
+\begin{lstlisting}[frame=single]
 $ sudo reboot
-\end{verbatim}
+\end{lstlisting}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -600,6 +604,7 @@ http://www.spid.alpha.pl/download/rot2prog/RotorController\_sat\_zas\_A3.pdf \\
 The document that came with the rotator can be found here for additional information on the rotator and wiring it.
 
 \subsubsection{Tools Needed}
+\begin{multicols}{2}
 \begin{itemize}
 \item Screwdriver (Phillips)
 \item Utility Knife
@@ -610,78 +615,85 @@ The document that came with the rotator can be found here for additional informa
 \item Electrical Tape
 \item Wire Strippers
 \end{itemize}
+\end{multicols}
 
 \subsubsection{Instructions}
 
+
 The rotator we used was an Alpha Spid RAS rotor (http://www.spid.alpha.pl/english/11.php). These instructions are a guide to accessing the power/control terminals to the rotator in order to control it with our rotor controller (http://www.spid.alpha.pl/english/05.php). \\ \\
-On the rotor, there is a plate with two screws and two waterproofed wire outputs (see pictures below). On the face next to the plate should be a sticker detailing the EL AZ wiring.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/01.jpeg}
-\end{center}
-
-First, unscrew/remove the two waterproof outlets using the adjustable wrench and unscrew the two screws on the plate.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/02.jpeg}
-
-\includegraphics[scale=0.10]{wiring/03.jpeg}
-\end{center}
 
 
-Note that the edge of the plate may be painted over, so use a utility knife to edge the plate. The first time you remove the plate, it may be difficult, so, using the back of a screwdriver, tap around the corners of the plate to loosen it. \\
-Using a screwdriver (or some other means of leverage), insert one end into a hole left from unscrewing the waterproof outlet, and carefully pry off the plate. This may take some time since the plate has a tight fit initially.
+\begin{SCfigure*}
+  \centering
+  \caption{On the rotor, there is a plate with two screws and two waterproofed wire outputs (see pictures below). On the face next to the plate should be a sticker detailing the EL AZ wiring. }
+  \includegraphics[width=0.45\textwidth]{wiring/01.jpeg}
+\end{SCfigure*}
 
 
-\begin{center}
-\includegraphics[scale=0.10]{wiring/04.jpeg}
-\end{center}
+\begin{SCfigure}
+  \centering
+  \caption{First, unscrew/remove the two waterproof outlets using the adjustable wrench and unscrew the two screws on the plate.}
+  \includegraphics[width=0.45\textwidth]{wiring/02.jpeg}
+\end{SCfigure}
 
 
-Underneath the plate are two wiring terminals, one for AZ and one for EL. (See the sticker on the rotor to determine which terminal corresponds to AZ and which corresponds to EL).
+\begin{SCfigure}
+  \centering
+  \caption{Note that the edge of the plate may be painted over, so use a utility knife to edge the plate. The first time you remove the plate, it may be difficult, so, using the back of a screwdriver, tap around the corners of the plate to loosen it. }
+  \includegraphics[width=0.45\textwidth]{wiring/03.jpeg}
+\end{SCfigure}
 
 
-\begin{center}
-\includegraphics[scale=0.10]{wiring/05.jpeg}
-\end{center}
+\begin{SCfigure}
+  \centering
+  \caption{Using a screwdriver (or some other means of leverage), insert one end into a hole left from unscrewing the waterproof outlet, and carefully pry off the plate. This may take some time since the plate has a tight fit initially.}
+  \includegraphics[width=0.45\textwidth]{wiring/04.jpeg}
+\end{SCfigure}
 
 
-For testing purposes, a set of test cables were made, approx. 75 cm long. (Later, these wires were replaced with more permanent ones to fit our mounting strategy). Our test cables consisted of four cables, each cable containing two wires, so there were two cables per terminal, or four wires per terminal. The ends of the wires were stripped and tinned.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/06.jpeg}
-\end{center}
-
-The ends of the wires were secured in their respective rotator terminal.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/07.jpeg}
-\end{center}
-
-The free end was then soldered to a head which connects to the controller. When doing this, note the order of the wires. On the head, the pins are labeled 1-4, which will correspond sequentially to the wires coming from the terminal. Electrical tape was wrapped around the wire near the connection to ensure each pin and wire were isolated from one another. Stripping a small amount of wire on this end may diminish the need to wrap the connection in electrical tape.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/08.jpeg}
-\end{center}
-
-The head was re-assembled and connected to the controller.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/09.jpeg}
-\end{center}
-
-Once everything was secure and connected, the power supply and controller were turned on, with the mouse attached to the controller.
-
-\begin{center}
-\includegraphics[scale=0.10]{wiring/10.jpeg}
-\end{center}
-
-Adjusting the the controller to be in 'A' (automatic mode), we were able to control the rotor with the mouse.
+\begin{SCfigure}
+  \centering
+  \caption{Underneath the plate are two wiring terminals, one for AZ and one for EL. (See the sticker on the rotor to determine which terminal corresponds to AZ and which corresponds to EL).}
+  \includegraphics[width=0.45\textwidth]{wiring/05.jpeg}
+\end{SCfigure}
 
 
+\begin{SCfigure}
+  \centering
+  \caption{For testing purposes, a set of test cables were made, approx. 75 cm long. (Later, these wires were replaced with more permanent ones to fit our mounting strategy). Our test cables consisted of four cables, each cable containing two wires, so there were two cables per terminal, or four wires per terminal. The ends of the wires were stripped and tinned.}
+  \includegraphics[width=0.45\textwidth]{wiring/06.jpeg}
+\end{SCfigure}
 
 
+\begin{SCfigure}
+  \centering
+  \caption{The ends of the wires were secured in their respective rotator terminal.}
+  \includegraphics[width=0.45\textwidth]{wiring/07.jpeg}
+\end{SCfigure}
 
+
+\begin{SCfigure}
+  \centering
+  \caption{The free end was then soldered to a head which connects to the controller. When doing this, note the order of the wires. On the head, the pins are labeled 1-4, which will correspond sequentially to the wires coming from the terminal. Electrical tape was wrapped around the wire near the connection to ensure each pin and wire were isolated from one another. Stripping a small amount of wire on this end may diminish the need to wrap the connection in electrical tape.}
+  \includegraphics[width=0.45\textwidth]{wiring/08.jpeg}
+\end{SCfigure}
+
+
+\begin{SCfigure}
+  \centering
+  \caption{The head was re-assembled and connected to the controller.}
+  \includegraphics[width=0.45\textwidth]{wiring/09.jpeg}
+\end{SCfigure}
+
+
+\begin{SCfigure}
+  \centering
+  \caption{Once everything was secure and connected, the power supply and controller were turned on, with the mouse attached to the controller. }
+  \includegraphics[width=0.45\textwidth]{wiring/10.jpeg}
+\end{SCfigure}
+
+\vspace{3.5cm}
+Adjusting the the controller to be in 'A' (automatic mode, see the controller settings section below for a full list of controller options), we were able to control the rotor with the mouse. Note that in order for the controller to be given commands via the computer (serial), the controller must be in 'A' mode.
 
 
 
