@@ -71,5 +71,5 @@
 \contentsline {subsubsection}{\numberline {8.3.5}Making helical antenna}{47}
 \contentsline {subsubsection}{\numberline {8.3.6}Drilling/cutting PC board}{52}
 \contentsline {subsubsection}{\numberline {8.3.7}Assembly}{53}
-\contentsline {subsection}{\numberline {8.4}Roof Mount}{56}
-\contentsline {subsection}{\numberline {8.5}Dish}{61}
+\contentsline {subsection}{\numberline {8.4}Roof Mount}{55}
+\contentsline {subsection}{\numberline {8.5}Dish}{60}
