@@ -53,23 +53,23 @@
 \contentsline {subsubsection}{\numberline {7.3.5}S - Setup Mode}{24}
 \contentsline {subsection}{\numberline {7.4}Controller Setup}{26}
 \contentsline {subsubsection}{\numberline {7.4.1}Setting Limits}{26}
-\contentsline {subsubsection}{\numberline {7.4.2}Setting to SPID}{27}
+\contentsline {subsubsection}{\numberline {7.4.2}Setting to SPID}{26}
 \contentsline {subsubsection}{\numberline {7.4.3}Set to Automatic}{27}
-\contentsline {subsubsection}{\numberline {7.4.4}Controller Wiring}{28}
-\contentsline {section}{\numberline {8}Building Components}{29}
-\contentsline {subsection}{\numberline {8.1}LNA}{29}
-\contentsline {subsection}{\numberline {8.2}Building LNA to Dongle Interface}{36}
-\contentsline {subsubsection}{\numberline {8.2.1}Parts Needed}{36}
-\contentsline {subsubsection}{\numberline {8.2.2}Tools Needed}{37}
-\contentsline {subsubsection}{\numberline {8.2.3}Building DC Barrel Jack to F-Type Plug Connector}{37}
-\contentsline {subsubsection}{\numberline {8.2.4}Assembly}{38}
-\contentsline {subsection}{\numberline {8.3}Feed}{41}
-\contentsline {subsubsection}{\numberline {8.3.1}Cutting Styrofoam Rod}{41}
-\contentsline {subsubsection}{\numberline {8.3.2}Drilling Aluminum LNA Base Plate}{42}
-\contentsline {subsubsection}{\numberline {8.3.3}Drilling Aluminum Cake Pan}{42}
-\contentsline {subsubsection}{\numberline {8.3.4}Minor concerns}{44}
-\contentsline {subsubsection}{\numberline {8.3.5}Making helical antenna}{45}
-\contentsline {subsubsection}{\numberline {8.3.6}Drilling/cutting PC board}{50}
-\contentsline {subsubsection}{\numberline {8.3.7}Assembly}{51}
-\contentsline {subsection}{\numberline {8.4}Roof Mount}{53}
-\contentsline {subsection}{\numberline {8.5}Dish}{58}
+\contentsline {subsubsection}{\numberline {7.4.4}Controller Wiring}{27}
+\contentsline {section}{\numberline {8}Building Components}{28}
+\contentsline {subsection}{\numberline {8.1}LNA}{28}
+\contentsline {subsection}{\numberline {8.2}Building LNA to Dongle Interface}{28}
+\contentsline {subsubsection}{\numberline {8.2.1}Parts Needed}{31}
+\contentsline {subsubsection}{\numberline {8.2.2}Tools Needed}{32}
+\contentsline {subsubsection}{\numberline {8.2.3}Building DC Barrel Jack to F-Type Plug Connector}{32}
+\contentsline {subsubsection}{\numberline {8.2.4}Assembly}{33}
+\contentsline {subsection}{\numberline {8.3}Feed}{36}
+\contentsline {subsubsection}{\numberline {8.3.1}Cutting Styrofoam Rod}{36}
+\contentsline {subsubsection}{\numberline {8.3.2}Drilling Aluminum LNA Base Plate}{37}
+\contentsline {subsubsection}{\numberline {8.3.3}Drilling Aluminum Cake Pan}{37}
+\contentsline {subsubsection}{\numberline {8.3.4}Minor concerns}{39}
+\contentsline {subsubsection}{\numberline {8.3.5}Making helical antenna}{40}
+\contentsline {subsubsection}{\numberline {8.3.6}Drilling/cutting PC board}{45}
+\contentsline {subsubsection}{\numberline {8.3.7}Assembly}{46}
+\contentsline {subsection}{\numberline {8.4}Roof Mount}{48}
+\contentsline {subsection}{\numberline {8.5}Dish}{53}

@@ -792,7 +792,7 @@ This setting can be used to make minor heading adjustments without causing the r
 
 
 
-
+\newpage
 \subsection{Controller Setup}
 
 
@@ -806,11 +806,16 @@ The antenna controller will likely need a bit of setup in order to work properly
 
 \subsubsection{Setting Limits}
 
-The easiest way to be sure there are no limits set on the controller is by doing a controller reset. To do this, turn off the controller, hold down the 'F' button, and while still holding down the button turn the controller on again. When this happens the display should look like this:
 
-\begin{center}
-\includegraphics[scale=0.10]{controller/01.jpeg}
-\end{center}
+
+
+\begin{SCfigure}
+  \centering
+  \caption{The easiest way to be sure there are no limits set on the controller is by doing a controller reset. To do this, turn off the controller, hold down the 'F' button, and while still holding down the button turn the controller on again.  }
+  \includegraphics[width=0.45\textwidth]{controller/01.jpeg}
+\end{SCfigure}
+
+
 
 To change the remaining settings, we will use the buttons on the controller, designated by the red arrows. (F, S, \emph{left}, \emph{right}, \emph{up}, \emph{down})
 \\ \\
@@ -818,29 +823,35 @@ If there are limits set, it is possible that when the software is run, a buffer 
 
 \subsubsection{Setting to SPID}
 
-In the controller's program simulation setting, two options are available, SPID or Yaesu. Since the controller we used is SPID, the controller should be set to SPID. To set, press the 'S' button until the readout says PS. Then, if the readout does not say PS SP, press the $<$ or $>$ arrows to change it to SP. It should look like:
+In the controller's program simulation setting, two options are available, SPID or Yaesu. Since the controller we used is SPID, the controller should be set to SPID. To set, press the 'S' button until the readout says PS. Then, if the readout does not say PS SP, press the $<$ or $>$ arrows to change it to SP. 
 
-\begin{center}
-\includegraphics[scale=0.10]{controller/02.jpeg}
-\end{center}
+\begin{SCfigure}
+  \centering
+  \caption{Controller set to SP mode (SPID mode) }
+  \includegraphics[width=0.45\textwidth]{controller/02.jpeg}
+\end{SCfigure}
 
 If the controller is not in SPID mode, nothing will happen and the program may hang, as it is unable to communicate with the controller.
 
 \subsubsection{Set to Automatic}
 
-In order for the computer to be able to communicate with the controller, it must be in automatic mode. To do this, you would press the 'F' button until an A shows up on the readout. The readout should look like:
+In order for the computer to be able to communicate with the controller, it must be in automatic mode. To do this, you would press the 'F' button until an A shows up on the readout. 
 
-\begin{center}
-\includegraphics[scale=0.10]{controller/03.jpeg}
-\end{center}
+\begin{SCfigure}
+  \centering
+  \caption{Controller readout in Automatic (A) mode}
+  \includegraphics[width=0.45\textwidth]{controller/03.jpeg}
+\end{SCfigure}
 
 \subsubsection{Controller Wiring}
 
 While the controller does not have many/complicated connections, and the documentation is fairly good for what connects where, below is a picture detailing our connection setup, for reference.
 
-\begin{center}
-\includegraphics[scale=0.15]{controller/04.jpeg}
-\end{center}
+\begin{SCfigure}
+  \centering
+  \caption{Controller wiring guide}
+  \includegraphics[width=0.45\textwidth]{controller/04.jpeg}
+\end{SCfigure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -850,77 +861,81 @@ While the controller does not have many/complicated connections, and the documen
 
 \subsection{LNA}
 
-Attached the coupler to the "In" side of Amp 1.
-Then attached the bandpass filter to the "Out" side of Amp 1. 
+\begin{SCfigure}
+  \centering
+  \caption{Attached the coupler to the "In" side of Amp 1. Then attached the bandpass filter to the "Out" side of Amp 1. }
+  \includegraphics[width=0.45\textwidth]{lna/01.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.12]{lna/01.jpeg}
-\end{center}
 
-Connected one coaxial cable to bandpass. 
+\begin{SCfigure}
+  \centering
+  \caption{Connected one coaxial cable to bandpass. }
+  \includegraphics[width=0.45\textwidth]{lna/02.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.12]{lna/02.jpeg}
-\end{center}
 
-Connected opposite end of coaxial cable to "In" side of Amp 2. 
+\begin{SCfigure}
+  \centering
+  \caption{Connected opposite end of coaxial cable to "In" side of Amp 2.  }
+  \includegraphics[width=0.45\textwidth]{lna/03.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.14]{lna/03.jpeg}
-\end{center}
 
-Cut two lengths of 15-20 centimeter long 22 gauge copper wire. 
-Soldered one wire to both Amps.
-Soldered the other wire to Amp 2. 
+\begin{SCfigure}
+  \centering
+  \caption{Cut two lengths of 15-20 centimeter long 22 gauge copper wire.  Soldered one wire to both Amps. Soldered the other wire to Amp 2. }
+  \includegraphics[width=0.45\textwidth]{lna/04.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.13]{lna/04.jpeg}
-\end{center}
 
-Soldered the other end of the second wire to the 12 volt pin on the bias tee.
-Connected "RF" side of the bias tee and "out" side of Amp 2 with coaxial cable. 
+\begin{SCfigure}
+  \centering
+  \caption{Soldered the other end of the second wire to the 12 volt pin on the bias tee. Connected "RF" side of the bias tee and "out" side of Amp 2 with coaxial cable. }
+  \includegraphics[width=0.45\textwidth]{lna/05.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.15]{lna/05.jpeg}
-\end{center}
 
-Placed this group into the case, with coupler and "RF DC" side of the bias tee protruding from the holes. 
+\begin{SCfigure}
+  \centering
+  \caption{Placed this group into the case, with coupler and "RF DC" side of the bias tee protruding from the holes. }
+  \includegraphics[width=0.45\textwidth]{lna/06.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.12]{lna/06.jpeg}
-\end{center}
 
-Placed on rubber lining, and case cover, wrote LNA on top, and screwed into place. 
+\begin{SCfigure}
+  \centering
+  \caption{Placed on rubber lining, and case cover, wrote LNA on top, and screwed into place.}
+  \includegraphics[width=0.45\textwidth]{lna/07.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.12]{lna/07.jpeg}
-\end{center}
 
-Pics of assembly of dc jack connector to f type coax adapter.
-Solder middle pin of dc plug connector to perf board.
-Solder middle pin of f type plug connector to same conductive strip of perf board. 
+\begin{SCfigure}
+  \centering
+  \caption{Pics of assembly of dc jack connector to f type coax adapter. Solder middle pin of dc plug connector to perf board. Solder middle pin of f type plug connector to same conductive strip of perf board. }
+  \includegraphics[width=0.45\textwidth]{lna/08.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.20]{lna/08.jpeg}
-\end{center}
 
-Under side. 
+\begin{SCfigure}
+  \centering
+  \caption{Under side. }
+  \includegraphics[width=0.45\textwidth]{lna/09.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.20]{lna/09.jpeg}
-\end{center}
 
-Solder ground pin on dc jack connector directly to one of the ground pins on the f type plug connector. 
+\begin{SCfigure}
+  \centering
+  \caption{Solder ground pin on dc jack connector directly to one of the ground pins on the f type plug connector. }
+  \includegraphics[width=0.45\textwidth]{lna/10.jpeg}
+\end{SCfigure}
 
-\begin{center}
-\includegraphics[scale=0.20]{lna/10.jpeg}
-\end{center}
 
-Back End b/t Dongle and LNA Put Together 
-
-\begin{center}
-\includegraphics[scale=0.20]{lna/11.jpeg}
-\end{center}
+\begin{SCfigure}
+  \centering
+  \caption{Back End b/t Dongle and LNA Put Together }
+  \includegraphics[width=0.45\textwidth]{lna/11.jpeg}
+\end{SCfigure}
 
 
 
