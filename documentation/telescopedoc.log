@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  2 JUN 2014 22:37
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  3 JUN 2014 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -399,46 +399,71 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \c@SC@C=\count109
 \SC@BOX=\box57
 )
-(/usr/local/texlive/2010/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen131
-\lightrulewidth=\dimen132
-\cmidrulewidth=\dimen133
-\belowrulesep=\dimen134
-\belowbottomsep=\dimen135
-\aboverulesep=\dimen136
-\abovetopsep=\dimen137
-\cmidrulesep=\dimen138
-\cmidrulekern=\dimen139
-\defaultaddspace=\dimen140
-\@cmidla=\count110
-\@cmidlb=\count111
-\@aboverulesep=\dimen141
-\@belowrulesep=\dimen142
-\@thisruleclass=\count112
-\@lastruleclass=\count113
-\@thisrulewidth=\dimen143
+(/usr/local/texlive/2010/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
 (/usr/local/texlive/2010/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen144
-\extrarowheight=\dimen145
+\col@sep=\dimen131
+\extrarowheight=\dimen132
 \NC@list=\toks22
 \extratabsurround=\skip45
 \backup@length=\skip46
 )
+\everycr=\toks23
+\minrowclearance=\skip47
+)
+\rownum=\count110
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen133
+\lightrulewidth=\dimen134
+\cmidrulewidth=\dimen135
+\belowrulesep=\dimen136
+\belowbottomsep=\dimen137
+\aboverulesep=\dimen138
+\abovetopsep=\dimen139
+\cmidrulesep=\dimen140
+\cmidrulekern=\dimen141
+\defaultaddspace=\dimen142
+\@cmidla=\count111
+\@cmidlb=\count112
+\@aboverulesep=\dimen143
+\@belowrulesep=\dimen144
+\@thisruleclass=\count113
+\@lastruleclass=\count114
+\@thisrulewidth=\dimen145
+)
 (/usr/local/texlive/2010/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
-\pltopsep=\skip47
-\plpartopsep=\skip48
-\plitemsep=\skip49
-\plparsep=\skip50
-\pl@lab=\toks23
+\pltopsep=\skip48
+\plpartopsep=\skip49
+\plitemsep=\skip50
+\plparsep=\skip51
+\pl@lab=\toks24
 )
 (/usr/local/texlive/2010/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks24
-\verbatim@line=\toks25
+\every@verbatim=\toks25
+\verbatim@line=\toks26
 \verbatim@in@stream=\read1
 )
 (/usr/local/texlive/2010/texmf-dist/tex/latex/subfig/subfig.sty
@@ -456,36 +481,36 @@ Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
 \caption@parindent=\dimen150
 \caption@hangindent=\dimen151
 )
-\c@ContinuedFloat=\count114
+\c@ContinuedFloat=\count115
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: sidecap package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
-\c@KVtest=\count115
-\sf@farskip=\skip51
+\c@KVtest=\count116
+\sf@farskip=\skip52
 \sf@captopadj=\dimen152
-\sf@capskip=\skip52
-\sf@nearskip=\skip53
-\c@subfigure=\count116
-\c@subfigure@save=\count117
-\c@lofdepth=\count118
-\c@subtable=\count119
-\c@subtable@save=\count120
-\c@lotdepth=\count121
-\sf@top=\skip54
-\sf@bottom=\skip55
+\sf@capskip=\skip53
+\sf@nearskip=\skip54
+\c@subfigure=\count117
+\c@subfigure@save=\count118
+\c@lofdepth=\count119
+\c@subtable=\count120
+\c@subtable@save=\count121
+\c@lotdepth=\count122
+\sf@top=\skip55
+\sf@bottom=\skip56
 )
 (/usr/local/texlive/2010/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip56
-\f@ncyO@elh=\skip57
-\f@ncyO@erh=\skip58
-\f@ncyO@olh=\skip59
-\f@ncyO@orh=\skip60
-\f@ncyO@elf=\skip61
-\f@ncyO@erf=\skip62
-\f@ncyO@olf=\skip63
-\f@ncyO@orf=\skip64
+\fancy@headwidth=\skip57
+\f@ncyO@elh=\skip58
+\f@ncyO@erh=\skip59
+\f@ncyO@olh=\skip60
+\f@ncyO@orh=\skip61
+\f@ncyO@elf=\skip62
+\f@ncyO@erf=\skip63
+\f@ncyO@olf=\skip64
+\f@ncyO@orf=\skip65
 )
 (/usr/local/texlive/2010/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
@@ -506,58 +531,58 @@ Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
 
 Package tocloft Note: The document has section divisions.
 
-\cftparskip=\skip65
-\cftbeforetoctitleskip=\skip66
-\cftaftertoctitleskip=\skip67
-\cftbeforepartskip=\skip68
-\cftpartnumwidth=\skip69
-\cftpartindent=\skip70
-\cftbeforesecskip=\skip71
-\cftsecindent=\skip72
-\cftsecnumwidth=\skip73
-\cftbeforesubsecskip=\skip74
-\cftsubsecindent=\skip75
-\cftsubsecnumwidth=\skip76
-\cftbeforesubsubsecskip=\skip77
-\cftsubsubsecindent=\skip78
-\cftsubsubsecnumwidth=\skip79
-\cftbeforeparaskip=\skip80
-\cftparaindent=\skip81
-\cftparanumwidth=\skip82
-\cftbeforesubparaskip=\skip83
-\cftsubparaindent=\skip84
-\cftsubparanumwidth=\skip85
-\cftbeforeloftitleskip=\skip86
-\cftafterloftitleskip=\skip87
-\cftbeforefigskip=\skip88
-\cftfigindent=\skip89
-\cftfignumwidth=\skip90
-\cftbeforelottitleskip=\skip91
-\cftafterlottitleskip=\skip92
-\cftbeforetabskip=\skip93
-\cfttabindent=\skip94
-\cfttabnumwidth=\skip95
-\cftbeforesubfigskip=\skip96
-\cftsubfigindent=\skip97
-\cftsubfignumwidth=\skip98
-\cftbeforesubtabskip=\skip99
-\cftsubtabindent=\skip100
-\cftsubtabnumwidth=\skip101
+\cftparskip=\skip66
+\cftbeforetoctitleskip=\skip67
+\cftaftertoctitleskip=\skip68
+\cftbeforepartskip=\skip69
+\cftpartnumwidth=\skip70
+\cftpartindent=\skip71
+\cftbeforesecskip=\skip72
+\cftsecindent=\skip73
+\cftsecnumwidth=\skip74
+\cftbeforesubsecskip=\skip75
+\cftsubsecindent=\skip76
+\cftsubsecnumwidth=\skip77
+\cftbeforesubsubsecskip=\skip78
+\cftsubsubsecindent=\skip79
+\cftsubsubsecnumwidth=\skip80
+\cftbeforeparaskip=\skip81
+\cftparaindent=\skip82
+\cftparanumwidth=\skip83
+\cftbeforesubparaskip=\skip84
+\cftsubparaindent=\skip85
+\cftsubparanumwidth=\skip86
+\cftbeforeloftitleskip=\skip87
+\cftafterloftitleskip=\skip88
+\cftbeforefigskip=\skip89
+\cftfigindent=\skip90
+\cftfignumwidth=\skip91
+\cftbeforelottitleskip=\skip92
+\cftafterlottitleskip=\skip93
+\cftbeforetabskip=\skip94
+\cfttabindent=\skip95
+\cfttabnumwidth=\skip96
+\cftbeforesubfigskip=\skip97
+\cftsubfigindent=\skip98
+\cftsubfignumwidth=\skip99
+\cftbeforesubtabskip=\skip100
+\cftsubtabindent=\skip101
+\cftsubtabnumwidth=\skip102
 ) (./telescopedoc.aux)
 \openout1 = `telescopedoc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -595,16 +620,16 @@ LaTeX Font Info:    ... okay on input line 66.
 
 (/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
+\scratchcounter=\count123
 \scratchdimen=\dimen153
 \scratchbox=\box58
-\nofMPsegments=\count123
-\nofMParguments=\count124
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count125
+\nofMPsegments=\count124
+\nofMParguments=\count125
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count126
 \MPscratchDim=\dimen154
-\MPnumerator=\count126
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count127
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
 
@@ -651,7 +676,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count127
+\c@lstlisting=\count128
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -660,31 +685,31 @@ Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 Package: everysel 2009/05/30 v1.1 EverySelectfont Package (MS)
 LaTeX Info: Redefining \selectfont on input line 117.
 )
-\CenteringLeftskip=\skip102
-\RaggedLeftLeftskip=\skip103
-\RaggedRightLeftskip=\skip104
-\CenteringRightskip=\skip105
-\RaggedLeftRightskip=\skip106
-\RaggedRightRightskip=\skip107
-\CenteringParfillskip=\skip108
-\RaggedLeftParfillskip=\skip109
-\RaggedRightParfillskip=\skip110
-\JustifyingParfillskip=\skip111
-\CenteringParindent=\skip112
-\RaggedLeftParindent=\skip113
-\RaggedRightParindent=\skip114
-\JustifyingParindent=\skip115
+\CenteringLeftskip=\skip103
+\RaggedLeftLeftskip=\skip104
+\RaggedRightLeftskip=\skip105
+\CenteringRightskip=\skip106
+\RaggedLeftRightskip=\skip107
+\RaggedRightRightskip=\skip108
+\CenteringParfillskip=\skip109
+\RaggedLeftParfillskip=\skip110
+\RaggedRightParfillskip=\skip111
+\JustifyingParfillskip=\skip112
+\CenteringParindent=\skip113
+\RaggedLeftParindent=\skip114
+\RaggedRightParindent=\skip115
+\JustifyingParindent=\skip116
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 66.
+LaTeX Info: Redefining \subref on input line 70.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 67.
+(Font)              <12> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 67.
+(Font)              <8> on input line 71.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 67.
+(Font)              <6> on input line 71.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -699,162 +724,162 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `telescopedoc.toc'.
 
  [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 127.
 
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
  [5]
-Underfull \hbox (badness 2042) in paragraph at lines 168--168
-[]|\OT1/cmr/m/n/10.95 AIM-Cambridge / Emer-son
- []
-
-
-Overfull \hbox (10.03093pt too wide) in paragraph at lines 156--176
+Overfull \hbox (10.03091pt too wide) in paragraph at lines 162--182
 [] 
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 187--187
+Underfull \hbox (badness 2042) in paragraph at lines 193--193
+[]|\OT1/cmr/m/n/10.95 SMA-F to SMA-F Adapter SF-
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 194--194
 []|\OT1/cmr/m/n/10.95 SMA-F to Sol-der Pin Bulk-head
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 188--188
+Underfull \hbox (badness 1062) in paragraph at lines 195--195
 []|\OT1/cmr/m/n/10.95 SMA-M to SMA-M Right An-gle
  []
 
 
-Overfull \hbox (2.80681pt too wide) in paragraph at lines 179--209
+Overfull \hbox (14.6696pt too wide) in paragraph at lines 186--216
 [] 
  []
 
 [6] [7]
-Overfull \hbox (4.6544pt too wide) in paragraph at lines 230--244
+Overfull \hbox (4.65439pt too wide) in paragraph at lines 237--251
 [] 
  []
 
 
-Overfull \hbox (11.28526pt too wide) in paragraph at lines 248--261
+Overfull \hbox (11.28525pt too wide) in paragraph at lines 255--268
 [] 
  []
 
 
-Overfull \hbox (24.54686pt too wide) in paragraph at lines 265--272
+Overfull \hbox (24.54684pt too wide) in paragraph at lines 272--279
 [] 
  []
 
 
-Overfull \hbox (25.96133pt too wide) in paragraph at lines 276--290
+Overfull \hbox (25.96132pt too wide) in paragraph at lines 283--297
 [] 
  []
 
 [8]
-Overfull \hbox (52.24683pt too wide) in paragraph at lines 307--319
+Overfull \hbox (52.2468pt too wide) in paragraph at lines 314--326
 [] 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 396--400
+Underfull \hbox (badness 10000) in paragraph at lines 403--407
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--400
+Underfull \hbox (badness 10000) in paragraph at lines 403--407
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 429--434
+Underfull \hbox (badness 10000) in paragraph at lines 436--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--434
+Underfull \hbox (badness 10000) in paragraph at lines 436--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--472
+Underfull \hbox (badness 10000) in paragraph at lines 476--479
 
  []
 
 [12] [13]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 536.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 543.
 
  (/usr/local/texlive/2010/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 536.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 543.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 566--569
+Underfull \hbox (badness 10000) in paragraph at lines 573--576
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 585--592
+Underfull \hbox (badness 10000) in paragraph at lines 592--599
 
  []
 
 
-Overfull \hbox (8.94891pt too wide) in paragraph at lines 585--592
+Overfull \hbox (8.94891pt too wide) in paragraph at lines 592--599
 \OT1/cmr/m/n/10.95 https://github.com/BenningtonCS/Telescope-2014/wiki/SPID-Ant
 enna-Rotator-Setup---
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--592
+Underfull \hbox (badness 10000) in paragraph at lines 592--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--592
+Underfull \hbox (badness 10000) in paragraph at lines 592--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--592
+Underfull \hbox (badness 10000) in paragraph at lines 592--599
 
  []
 
 
-Overfull \hbox (27.25859pt too wide) in paragraph at lines 618--619
+Overfull \hbox (27.25859pt too wide) in paragraph at lines 625--626
 \OT1/cmr/m/n/10.95 The ro-ta-tor we used was an Al-pha Spid RAS ro-tor (http://
 www.spid.alpha.pl/english/11.php).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
@@ -889,104 +914,104 @@ File: wiring/09.jpeg Graphic file (type jpg)
 <wiring/10.jpeg, id=70, 2948.01375pt x 2211.26125pt>
 File: wiring/10.jpeg Graphic file (type jpg)
  <use wiring/10.jpeg>
-Underfull \hbox (badness 1540) in paragraph at lines 688--688
+Underfull \hbox (badness 1540) in paragraph at lines 695--695
 [][]\OT1/cmr/m/n/10.95 : |Once ev-ery-thing was se-
  []
 
 [16] [17 <./wiring/01.jpeg> <./wiring/02.jpeg>] [18 <./wiring/03.jpeg> <./wirin
 g/04.jpeg>] [19 <./wiring/05.jpeg> <./wiring/06.jpeg>] [20 <./wiring/07.jpeg> <
 ./wiring/08.jpeg>] [21 <./wiring/09.jpeg> <./wiring/10.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 712--717
+Underfull \hbox (badness 10000) in paragraph at lines 719--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--717
+Underfull \hbox (badness 10000) in paragraph at lines 719--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--725
+Underfull \hbox (badness 10000) in paragraph at lines 727--732
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 720--725
+Underfull \hbox (badness 10000) in paragraph at lines 727--732
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 732--745
+Underfull \hbox (badness 10000) in paragraph at lines 739--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--745
+Underfull \hbox (badness 10000) in paragraph at lines 739--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--745
+Underfull \hbox (badness 10000) in paragraph at lines 739--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--745
+Underfull \hbox (badness 10000) in paragraph at lines 739--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--745
+Underfull \hbox (badness 10000) in paragraph at lines 739--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--745
+Underfull \hbox (badness 10000) in paragraph at lines 739--752
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--758
+Underfull \hbox (badness 10000) in paragraph at lines 755--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--758
+Underfull \hbox (badness 10000) in paragraph at lines 755--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--758
+Underfull \hbox (badness 10000) in paragraph at lines 755--765
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--758
+Underfull \hbox (badness 10000) in paragraph at lines 755--765
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 761--771
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--771
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--771
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--771
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 782--785
+Underfull \hbox (badness 10000) in paragraph at lines 789--792
 
  []
 
@@ -994,7 +1019,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 782--785
 File: controller/01.jpeg Graphic file (type jpg)
 
 <use controller/01.jpeg>
-Underfull \hbox (badness 10000) in paragraph at lines 815--818
+Underfull \hbox (badness 10000) in paragraph at lines 822--825
 
  []
 
@@ -1141,22 +1166,22 @@ File: feed/20.jpeg Graphic file (type jpg)
 <roofmount/00.jpeg, id=211, 1842.885pt x 2457.18pt>
 File: roofmount/00.jpeg Graphic file (type jpg)
  <use roofmount/00.jpeg>
-Underfull \hbox (badness 1337) in paragraph at lines 1179--1182
+Underfull \hbox (badness 1337) in paragraph at lines 1186--1189
 \OT1/cmr/m/n/10.95 mount. It was de-signed to use few
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 1179--1182
+Underfull \hbox (badness 1917) in paragraph at lines 1186--1189
 \OT1/cmr/m/n/10.95 struc-tures (in our case, a clerestory)
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 1179--1182
+Underfull \hbox (badness 1360) in paragraph at lines 1186--1189
 \OT1/cmr/m/n/10.95 of the pro-cess and the con-sid-er-a-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1179--1182
+Underfull \hbox (badness 10000) in paragraph at lines 1186--1189
 
  []
 
@@ -1245,13 +1270,13 @@ File: dish/19.jpeg Graphic file (type jpg)
  <use dish/19.jpeg> [69 <./dish/18.jpeg>] [70 <./dish/19.jpeg>] (./telescopedoc
 .aux) ) 
 Here is how much of TeX's memory you used:
- 6390 strings out of 493747
- 93088 string characters out of 3143546
- 178315 words of memory out of 3000000
- 9554 multiletter control sequences out of 15000+200000
+ 6901 strings out of 493747
+ 99002 string characters out of 3143546
+ 197347 words of memory out of 3000000
+ 10055 multiletter control sequences out of 15000+200000
  11951 words of font info for 41 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 44i,11n,44p,780b,1642s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,44p,780b,1650s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12
 .pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
@@ -1264,7 +1289,7 @@ local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loc
 al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on telescopedoc.pdf (70 pages, 66737878 bytes).
+Output written on telescopedoc.pdf (70 pages, 66741950 bytes).
 PDF statistics:
  354 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
