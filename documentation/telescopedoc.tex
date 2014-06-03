@@ -324,12 +324,12 @@ Wire Strippers & Cut and strip the wires to use as the terminal leads \\ \hline
 \section{Installing SRTN Software}
 
 The original SRT source can be found on the MIT Haystack Observatory website, here: http://www.haystack.mit.edu/edu/undergrad/srt/ . This source appears to work with ArchLinux and CentOS, and reportedly works on REHL (Red Hat Enterprise Linux). The source will not work immediately with Ubuntu, however a modified version of the source can be found here: https://github.com/BenningtonCS/Telescope-2014 , which will work on Ubuntu, as well as CentOS and ArchLinux (It may work with other linux-based operating systems, however, those listed are the only ones we have tested so far). 
-\vspace{1cm}
+
 \subsection{MIT Haystack Observatory SRT}
 The MIT Haystack Observatory SRT website includes the manuals, documentation, and program code. The code base we are looking at, SRT Source Code ver 3, can be found here: \\ http://www.haystack.mit.edu/edu/undergrad/srt/newsrtsource\_ver3.tar.gz
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{1cm}
+
 \subsection{Ubuntu}
 
 Note that these instructions were written for Ubuntu 12.10
@@ -344,40 +344,37 @@ Codename:   quantal
 \end{lstlisting}
 
 
-\vspace{1cm}
+
 \subsubsection{Getting the Source Code}
 To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
-\vspace{1cm}
+
 \subsubsection{Adding Project Dependencies}
  In order to compile and run the program successfully, two libraries must be installed, gtk+-2.0, and libusb-1.0. This can be done using the command below:
-
+\\ \\
 \begin{lstlisting}[frame=single]
 $ sudo apt-get install libgtk2.0-dev libusb-1.0-0-dev
 \end{lstlisting}
 
-NOTE: If you are unable to download using apt-get install, try using the command \emph{apt-get update} first, wait for all updates to be installed, and then retry the install command above.
+\noindent NOTE: If you are unable to download using apt-get install, try using the command \emph{apt-get update} first, wait for all updates to be installed, and then retry the install command above.
 
-\vspace{1cm}
+
 \subsubsection{Compiling the Source Code}
 A script exists to compile the source code. To compile, run it:
-
 \begin{lstlisting}[frame=single]
-~/radio/srtnver3$ ./srtnmake
+$ ./srtnmake
 \end{lstlisting}
-
 A few warnings may appear, but the code should compile successfully, assuming the needed libraries were installed properly.
-\vspace{1cm}
+
 \subsubsection{Running the Program}
 To execute the program:
- 
 \begin{lstlisting}[frame=single]
-~/radio/srtnver3$ ./srtn
+$ ./srtn
 \end{lstlisting}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{1cm}
+
 \subsection{CentOS}
 
 
@@ -389,12 +386,12 @@ $ uname -r
 \end{lstlisting}
 on a machine with an AMD processor.
 
-\vspace{1cm}
+
 \subsubsection{Getting the Source Code}
 To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
 
 
-\vspace{1cm}
+
 \subsubsection{Adding Project Dependencies}
 From a clean install of CentOS, you will be missing some of the packages needed to run the software.
 \\ \\
@@ -406,14 +403,14 @@ $ chmod +w /etc/sudoers
 $ gedit /etc/sudoers
 \end{lstlisting}
 
-Down by the bottom of the file will be the line:
+\noindent Down by the bottom of the file will be the line:
 
 \begin{lstlisting}[frame=single]
 ## Allow root to run any commands anywhere
 root    ALL=(ALL)    ALL
 \end{lstlisting}
 
-Below this add the line "xxx ALL=(ALL) ALL", where xxx is the username logged in to the computer, in our case 'radiotelescope'
+\noindent Below this add the line "xxx ALL=(ALL) ALL", where xxx is the username logged in to the computer, in our case 'radiotelescope'
 
 \begin{lstlisting}[frame=single]
 ## Allow root to run any commands anywhere
@@ -421,7 +418,7 @@ root    ALL=(ALL)    ALL
 radiotelescope    ALL=(ALL)    ALL
 \end{lstlisting}
 
-Save the file and exit gedit, then in the terminal, type exit to return to your user status:
+\noindent Save the file and exit gedit, then in the terminal, type exit to return to your user status:
 
 \begin{lstlisting}[frame=single]
 [root@localhost radiotelescope]\# exit
@@ -429,7 +426,7 @@ exit
 [radiotelescope@localhost ~]\$
 \end{lstlisting}
 
-Now your user account should have sudo permission, so we can now install package dependencies.
+\noindent Now your user account should have sudo permission, so we can now install package dependencies.
 \\ \\
 \emph{Getting dependencies}
 \\ \\
@@ -441,86 +438,15 @@ $ sudo yum install gtk2-devel gcc libusb1-devel
 
 \noindent If successful, you should now have all the packages you need to run the software.
 
-\vspace{1cm}
+
 \subsubsection{Compiling the Source Code}
  A script exists to compile the source code. To compile, run it:
 
 \begin{lstlisting}[frame=single]
-~/radio/srtnver3$ ./srtnmake
-\end{lstlisting}
-
-\vspace{1cm}
-\subsubsection{Running the Program}
-To execute the program:
-
-\begin{lstlisting}[frame=single]
-~/radio/srtnver3$ ./srtn
-\end{lstlisting}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{1cm}
-\subsection{Arch}
-
-
-\subsubsection{Getting the Source Code}
-To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
-
-\vspace{1cm}
-\subsubsection{Adding Project Dependencies}
-From a clean install of Archbang, there are a few necessary things missing, namely \emph{make} and \emph{patch}.
-\\ \\
-From the command line, run:
-
-\begin{lstlisting}[frame=single]
-$ sudo pacman -S make patch
-\end{lstlisting}
-\vspace{1cm}
-\subsubsection{Install gcc-4.4}
-Unfortunately, the program will not run properly using a current version of gcc, so it is necessary to download and install gcc version 4.4. As gcc-4.4 is not in pacman, gcc-4.4 must be downloaded from the AUR. You can find gcc-4.4 in the Arch User Repository here (https://aur.archlinux.org/packages/gcc44/). Download the tarball (https://aur.archlinux.org/packages/gc/gcc44/gcc44.tar.gz). It should appear in your Downloads folder. Untar it by using:
-
-\begin{lstlisting}[frame=single]
-$ cd ~/Downloads
-$ tar xzvf gcc44.tar.gz
-\end{lstlisting}
-
-and move into the new folder that was created.
-
-\begin{lstlisting}[frame=single]
-$ cd gcc44
-\end{lstlisting}
-
-Use the command \emph{makepkg} by itself to make the package. NOTE: It might be necessary to make the package as root. If this is the case, run:
-
-\begin{lstlisting}[frame=single]
-$ sudo makepkg --asroot
-\end{lstlisting}
-
-As gcc is a large program, it might take a very long time to download. Once it's downloaded, run:
-
-\begin{lstlisting}[frame=single]
-$ sudo pacman -U gcc44-4.4.7-6-x86_64.pkg.tar.xz
-\end{lstlisting}
-
-Once again, as gcc is a large program, this will take a long time to complete.
-\vspace{1cm}
-\subsubsection{Compiling the Source Code}
-
-First, you will need to edit the compiler script, srtnmake to make the script use gcc-4.4 instead of the default version.
-
-\begin{lstlisting}[frame=single]
-$ nano srtnmake
-\end{lstlisting}
-
-Then, change gcc to gcc-4.4, save, and exit out of nano.
-
-You can now compile the software.
-
-\begin{lstlisting}[frame=single]
 $ ./srtnmake
 \end{lstlisting}
-\vspace{1cm}
+
+
 \subsubsection{Running the Program}
 To execute the program:
 
@@ -529,7 +455,76 @@ $ ./srtn
 \end{lstlisting}
 
 
-\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Arch}
+
+
+\subsubsection{Getting the Source Code}
+To get the source code, go to https://github.com/BenningtonCS/Telescope-2014 and download the repository. The source code exists in the srtnver3 folder of the repo.
+
+
+\subsubsection{Adding Project Dependencies}
+From a clean install of Archbang, there are a few necessary things missing, namely \emph{make} and \emph{patch}.
+\\ \\
+From the command line, run:
+
+\begin{lstlisting}[frame=single]
+$ sudo pacman -S make patch
+\end{lstlisting}
+
+\subsubsection{Install gcc-4.4}
+Unfortunately, the program will not run properly using a current version of gcc, so it is necessary to download and install gcc version 4.4. As gcc-4.4 is not in pacman, gcc-4.4 must be downloaded from the AUR. You can find gcc-4.4 in the Arch User Repository here (https://aur.archlinux.org/packages/gcc44/). Download the tarball (https://aur.archlinux.org/packages/gc/gcc44/gcc44.tar.gz). It should appear in your Downloads folder. Untar it by using:
+
+\begin{lstlisting}[frame=single]
+$ cd ~/Downloads
+$ tar xzvf gcc44.tar.gz
+\end{lstlisting}
+
+\noindent and move into the new folder that was created.
+
+\begin{lstlisting}[frame=single]
+$ cd gcc44
+\end{lstlisting}
+
+\noindent Use the command \emph{makepkg} by itself to make the package. NOTE: It might be necessary to make the package as root. If this is the case, run:
+
+\begin{lstlisting}[frame=single]
+$ sudo makepkg --asroot
+\end{lstlisting}
+
+\noindent As gcc is a large program, it might take a very long time to download. Once it's downloaded, run:
+
+\begin{lstlisting}[frame=single]
+$ sudo pacman -U gcc44-4.4.7-6-x86_64.pkg.tar.xz
+\end{lstlisting}
+
+\noindent Once again, as gcc is a large program, this will take a long time to complete.
+
+\subsubsection{Compiling the Source Code}
+
+First, you will need to edit the compiler script, srtnmake to make the script use gcc-4.4 instead of the default version.
+
+\begin{lstlisting}[frame=single]
+$ nano srtnmake
+\end{lstlisting}
+
+\noindent Then, change gcc to gcc-4.4, save, and exit out of nano. You can now compile the software.
+
+\begin{lstlisting}[frame=single]
+$ ./srtnmake
+\end{lstlisting}
+
+\subsubsection{Running the Program}
+To execute the program:
+
+\begin{lstlisting}[frame=single]
+$ ./srtn
+\end{lstlisting}
+
+
+
 \subsection{Troubleshooting}
 
 \subsubsection{Blacklisting the Driver}
@@ -552,12 +547,12 @@ $ sudo reboot
 \section{Using SRTN Software}
 
 The section above details how to install, compile, and run the software. Below are some tips/guidelines on how to use the software more effectively, including setting it up to work with the controller and the LNA/Feed/dongle.
-\vspace{1cm}
+
 \subsection{Configuration Options}
 
 The bulk of the configuration options for the software are found in the \emph{srt.cat} file. The commands in this file are described in the help file, \emph{srt.hlp}, which is accessible either through reading the file directly, or pressing the 'Help' button on the software UI when it is running. 
 
-\vspace{1cm}
+
 \subsection{Simulated Mode vs Unsimulated Mode}
 
 In the \emph{srt.cat} file are options for 
@@ -571,7 +566,7 @@ In the \emph{srt.cat} file are options for
 When active, the command will simulate antenna motion, simulate incoming data from the dongle, and simulating the fast-fourrier transform, respectively. 
 \\ \\
 To see if the software works intially, it may be prudent to simulate the receiver and antenna and run SRTN. This way you will be able to see if the software runs correctly without hardware dependencies. To recieve data from the dongle, make sure the dongle is plugged into the computer, and comment out the SIMULATE RECIEVER command. Similarly, to use the controller via software, make sure the controller is plugged in to the computer and comment out the SIMULATE ANTENNA.
-\vspace{1cm}
+
 \subsection{Setting Your Location}
 
 In the \emph{srt.cat} file, under the LOCATION command, update the field with the name of your location, and the latitude and longitude. 
