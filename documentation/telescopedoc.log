@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  3 JUN 2014 11:36
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  3 JUN 2014 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -758,128 +758,128 @@ Overfull \hbox (14.6696pt too wide) in paragraph at lines 186--216
  []
 
 [6] [7]
-Overfull \hbox (4.65439pt too wide) in paragraph at lines 237--251
+Overfull \hbox (2.37314pt too wide) in paragraph at lines 238--253
 [] 
  []
 
 
-Overfull \hbox (11.28525pt too wide) in paragraph at lines 255--268
+Overfull \hbox (1.73442pt too wide) in paragraph at lines 257--272
 [] 
  []
 
 
-Overfull \hbox (24.54684pt too wide) in paragraph at lines 272--279
+Overfull \hbox (20.34935pt too wide) in paragraph at lines 276--285
 [] 
  []
 
 
-Overfull \hbox (25.96132pt too wide) in paragraph at lines 283--297
+Overfull \hbox (14.75273pt too wide) in paragraph at lines 289--304
 [] 
  []
 
 [8]
-Overfull \hbox (52.2468pt too wide) in paragraph at lines 314--326
+Overfull \hbox (21.34341pt too wide) in paragraph at lines 321--333
 [] 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 403--407
+Underfull \hbox (badness 10000) in paragraph at lines 410--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--407
+Underfull \hbox (badness 10000) in paragraph at lines 410--414
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 436--441
+Underfull \hbox (badness 10000) in paragraph at lines 443--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--441
+Underfull \hbox (badness 10000) in paragraph at lines 443--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--479
+Underfull \hbox (badness 10000) in paragraph at lines 483--486
 
  []
 
 [12] [13]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 543.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 550.
 
  (/usr/local/texlive/2010/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 543.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 550.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 573--576
+Underfull \hbox (badness 10000) in paragraph at lines 580--583
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 592--599
+Underfull \hbox (badness 10000) in paragraph at lines 599--606
 
  []
 
 
-Overfull \hbox (8.94891pt too wide) in paragraph at lines 592--599
+Overfull \hbox (8.94891pt too wide) in paragraph at lines 599--606
 \OT1/cmr/m/n/10.95 https://github.com/BenningtonCS/Telescope-2014/wiki/SPID-Ant
 enna-Rotator-Setup---
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--599
+Underfull \hbox (badness 10000) in paragraph at lines 599--606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--599
+Underfull \hbox (badness 10000) in paragraph at lines 599--606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--599
+Underfull \hbox (badness 10000) in paragraph at lines 599--606
 
  []
 
 
-Overfull \hbox (27.25859pt too wide) in paragraph at lines 625--626
+Overfull \hbox (27.25859pt too wide) in paragraph at lines 632--633
 \OT1/cmr/m/n/10.95 The ro-ta-tor we used was an Al-pha Spid RAS ro-tor (http://
 www.spid.alpha.pl/english/11.php).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
@@ -914,104 +914,104 @@ File: wiring/09.jpeg Graphic file (type jpg)
 <wiring/10.jpeg, id=70, 2948.01375pt x 2211.26125pt>
 File: wiring/10.jpeg Graphic file (type jpg)
  <use wiring/10.jpeg>
-Underfull \hbox (badness 1540) in paragraph at lines 695--695
+Underfull \hbox (badness 1540) in paragraph at lines 702--702
 [][]\OT1/cmr/m/n/10.95 : |Once ev-ery-thing was se-
  []
 
 [16] [17 <./wiring/01.jpeg> <./wiring/02.jpeg>] [18 <./wiring/03.jpeg> <./wirin
 g/04.jpeg>] [19 <./wiring/05.jpeg> <./wiring/06.jpeg>] [20 <./wiring/07.jpeg> <
 ./wiring/08.jpeg>] [21 <./wiring/09.jpeg> <./wiring/10.jpeg>]
-Underfull \hbox (badness 10000) in paragraph at lines 719--724
+Underfull \hbox (badness 10000) in paragraph at lines 726--731
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--724
+Underfull \hbox (badness 10000) in paragraph at lines 726--731
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--732
+Underfull \hbox (badness 10000) in paragraph at lines 734--739
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 727--732
+Underfull \hbox (badness 10000) in paragraph at lines 734--739
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 739--752
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--752
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--752
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--752
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--752
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--752
+Underfull \hbox (badness 10000) in paragraph at lines 746--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--765
+Underfull \hbox (badness 10000) in paragraph at lines 762--772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--765
+Underfull \hbox (badness 10000) in paragraph at lines 762--772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--765
+Underfull \hbox (badness 10000) in paragraph at lines 762--772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--765
+Underfull \hbox (badness 10000) in paragraph at lines 762--772
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 768--778
+Underfull \hbox (badness 10000) in paragraph at lines 775--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--778
+Underfull \hbox (badness 10000) in paragraph at lines 775--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--778
+Underfull \hbox (badness 10000) in paragraph at lines 775--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 768--778
+Underfull \hbox (badness 10000) in paragraph at lines 775--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--792
+Underfull \hbox (badness 10000) in paragraph at lines 796--799
 
  []
 
@@ -1019,7 +1019,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 789--792
 File: controller/01.jpeg Graphic file (type jpg)
 
 <use controller/01.jpeg>
-Underfull \hbox (badness 10000) in paragraph at lines 822--825
+Underfull \hbox (badness 10000) in paragraph at lines 829--832
 
  []
 
@@ -1166,22 +1166,22 @@ File: feed/20.jpeg Graphic file (type jpg)
 <roofmount/00.jpeg, id=211, 1842.885pt x 2457.18pt>
 File: roofmount/00.jpeg Graphic file (type jpg)
  <use roofmount/00.jpeg>
-Underfull \hbox (badness 1337) in paragraph at lines 1186--1189
+Underfull \hbox (badness 1337) in paragraph at lines 1193--1196
 \OT1/cmr/m/n/10.95 mount. It was de-signed to use few
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 1186--1189
+Underfull \hbox (badness 1917) in paragraph at lines 1193--1196
 \OT1/cmr/m/n/10.95 struc-tures (in our case, a clerestory)
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 1186--1189
+Underfull \hbox (badness 1360) in paragraph at lines 1193--1196
 \OT1/cmr/m/n/10.95 of the pro-cess and the con-sid-er-a-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1186--1189
+Underfull \hbox (badness 10000) in paragraph at lines 1193--1196
 
  []
 
@@ -1289,7 +1289,7 @@ local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/l
 ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loc
 al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on telescopedoc.pdf (70 pages, 66741950 bytes).
+Output written on telescopedoc.pdf (70 pages, 66742051 bytes).
 PDF statistics:
  354 PDF objects out of 1000 (max. 8388607)
  192 compressed objects within 2 object streams
