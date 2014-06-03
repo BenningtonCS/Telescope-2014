@@ -610,19 +610,21 @@ http://www.spid.alpha.pl/download/rot2prog/RotorController\_sat\_zas\_A3.pdf \\
 \subsection{Wiring}
 
 
-The document that came with the rotator can be found here for additional information on the rotator and wiring it.
+Documentation for wiring the rotor can often be found online. For the rotor we used, the documentation can be found off the manufacturer's website:
+\\ \\
+http://www.spid.alpha.pl/english/10.php
 
 \subsubsection{Tools Needed}
 \begin{multicols}{2}
 \begin{itemize}
-\item Screwdriver (Phillips)
-\item Utility Knife
-\item Adjustable Wrench
-\item Small Screwdrivers (Phillips \& Flathead)
-\item Soldering Iron
-\item Solder
-\item Electrical Tape
-\item Wire Strippers
+\item screwdriver (phillips)
+\item utility knife
+\item adjustable wrench 
+\item small screwdrivers (phillips \& flathead) 
+\item soldering iron
+\item solder 
+\item electrical tape 
+\item wire strippers 
 \end{itemize}
 \end{multicols}
 
@@ -800,7 +802,7 @@ This setting can be used to make minor heading adjustments without causing the r
 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \subsection{Controller Setup}
 
@@ -817,28 +819,24 @@ The antenna controller will likely need a bit of setup in order to work properly
 
 
 
-
-\begin{SCfigure}
+The easiest way to be sure there are no limits set on the controller is by doing a controller reset. To do this, turn off the controller, hold down the 'F' button, and while still holding down the button turn the controller on again.  
+\begin{figure}[H]
   \centering
-  \caption{The easiest way to be sure there are no limits set on the controller is by doing a controller reset. To do this, turn off the controller, hold down the 'F' button, and while still holding down the button turn the controller on again.  }
-  \includegraphics[width=0.45\textwidth]{controller/01.jpeg}
-\end{SCfigure}
+  \includegraphics[width=0.55\textwidth]{controller/01.jpeg}
+ \caption{To change the remaining settings, we will use the buttons on the controller, designated by the red arrows. (F, S, \emph{left}, \emph{right}, \emph{up}, \emph{down})}
+\end{figure}
 
-
-
-To change the remaining settings, we will use the buttons on the controller, designated by the red arrows. (F, S, \emph{left}, \emph{right}, \emph{up}, \emph{down})
-\\ \\
 If there are limits set, it is possible that when the software is run, a buffer overflow may occur, and that the GUI logic breaks, leading the program to be ineffective. If no radio data is being displayed on the UI and large values/NaN appear on the readout, having limits set is a potential cause.
 
 \subsubsection{Setting to SPID}
 
 In the controller's program simulation setting, two options are available, SPID or Yaesu. Since the controller we used is SPID, the controller should be set to SPID. To set, press the 'S' button until the readout says PS. Then, if the readout does not say PS SP, press the $<$ or $>$ arrows to change it to SP. 
 
-\begin{SCfigure}
+\begin{figure}[H]
   \centering
+  \includegraphics[width=0.55\textwidth]{controller/02.jpeg}
   \caption{Controller set to SP mode (SPID mode) }
-  \includegraphics[width=0.45\textwidth]{controller/02.jpeg}
-\end{SCfigure}
+\end{figure}
 
 If the controller is not in SPID mode, nothing will happen and the program may hang, as it is unable to communicate with the controller.
 
@@ -846,21 +844,21 @@ If the controller is not in SPID mode, nothing will happen and the program may h
 
 In order for the computer to be able to communicate with the controller, it must be in automatic mode. To do this, you would press the 'F' button until an A shows up on the readout. 
 
-\begin{SCfigure}
+\begin{figure}[H]
   \centering
+  \includegraphics[width=0.55\textwidth]{controller/03.jpeg}
   \caption{Controller readout in Automatic (A) mode}
-  \includegraphics[width=0.45\textwidth]{controller/03.jpeg}
-\end{SCfigure}
+\end{figure}
 
 \subsubsection{Controller Wiring}
 
 While the controller does not have many/complicated connections, and the documentation is fairly good for what connects where, below is a picture detailing our connection setup, for reference.
 
-\begin{SCfigure}
+\begin{figure}[H]
   \centering
+  \includegraphics[width=0.75\textwidth]{controller/04.jpeg}
   \caption{Controller wiring guide}
-  \includegraphics[width=0.45\textwidth]{controller/04.jpeg}
-\end{SCfigure}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
