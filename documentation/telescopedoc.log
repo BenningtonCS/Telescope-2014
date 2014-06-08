@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  6 JUN 2014 19:39
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  8 JUN 2014 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,78 +1050,82 @@ File: lna/04.jpeg Graphic file (type jpg)
 <use lna/04.jpeg> <lna/05.jpeg, id=118, 2457.18pt x 1842.885pt>
 File: lna/05.jpeg Graphic file (type jpg)
 
-<use lna/05.jpeg> <lna/06.jpeg, id=119, 2457.18pt x 1842.885pt>
+<use lna/05.jpeg>
+Underfull \hbox (badness 1661) in paragraph at lines 905--905
+[][]\OT1/cmr/m/n/10.95 : |Sol-der the other end of
+ []
+
+
+Underfull \hbox (badness 1286) in paragraph at lines 905--905
+\OT1/cmr/m/n/10.95 the sec-ond wire to the 12 volt pin
+ []
+
+<lna/06.jpeg, id=119, 2457.18pt x 1842.885pt>
 File: lna/06.jpeg Graphic file (type jpg)
-
-<use lna/06.jpeg> <lna/07.jpeg, id=120, 2457.18pt x 1842.885pt>
+ <use lna/06.jpeg>
+<lna/07.jpeg, id=120, 2457.18pt x 1842.885pt>
 File: lna/07.jpeg Graphic file (type jpg)
-
-<use lna/07.jpeg> <lna/08.jpeg, id=121, 1638.12pt x 1228.59pt>
+ <use lna/07.jpeg>
+<lna/08.jpeg, id=121, 1638.12pt x 1228.59pt>
 File: lna/08.jpeg Graphic file (type jpg)
-
-<use lna/08.jpeg> <lna/09.jpeg, id=122, 1638.12pt x 1228.59pt>
+ <use lna/08.jpeg>
+<lna/09.jpeg, id=122, 1638.12pt x 1228.59pt>
 File: lna/09.jpeg Graphic file (type jpg)
-
-<use lna/09.jpeg> <lna/10.jpeg, id=123, 1638.12pt x 1228.59pt>
+ <use lna/09.jpeg>
+<lna/10.jpeg, id=123, 1638.12pt x 1228.59pt>
 File: lna/10.jpeg Graphic file (type jpg)
-
-<use lna/10.jpeg> <lna/11.jpeg, id=124, 1638.12pt x 1228.59pt>
+ <use lna/10.jpeg>
+<lna/11.jpeg, id=124, 1638.12pt x 1228.59pt>
 File: lna/11.jpeg Graphic file (type jpg)
-
-<use lna/11.jpeg> <lnainterface/01.jpeg, id=125, 724.7075pt x 950.55125pt>
+ <use lna/11.jpeg>
+<lnainterface/01.jpeg, id=125, 724.7075pt x 950.55125pt>
 File: lnainterface/01.jpeg Graphic file (type jpg)
 
-<use lnainterface/01.jpeg>
-Overfull \vbox (116.83366pt too high) has occurred while \output is active []
-
-
-[28 <./lna/01.jpeg> <./lna/02.jpeg> <./lnainterface/01.jpeg>] [29 <./lna/03.jpe
-g> <./lna/04.jpeg> <./lna/05.jpeg> <./lna/06.jpeg>] [30 <./lna/07.jpeg> <./lna/
-08.jpeg> <./lna/09.jpeg> <./lna/10.jpeg>]
-<lnainterface/02.jpeg, id=135, 1638.12pt x 1228.59pt>
+<use lnainterface/01.jpeg> [28 <./lna/01.jpeg> <./lna/02.jpeg>] [29 <./lna/03.j
+peg> <./lna/04.jpeg> <./lna/05.jpeg> <./lna/06.jpeg>] [30 <./lna/07.jpeg> <./ln
+a/08.jpeg> <./lna/09.jpeg> <./lna/10.jpeg>] [31 <./lna/11.jpeg> <./lnainterface
+/01.jpeg>] <lnainterface/02.jpeg, id=139, 1638.12pt x 1228.59pt>
 File: lnainterface/02.jpeg Graphic file (type jpg)
 
-<use lnainterface/02.jpeg> [31 <./lna/11.jpeg>]
+<use lnainterface/02.jpeg>
 <lnainterface/03.jpeg, id=140, 1638.12pt x 1228.59pt>
 File: lnainterface/03.jpeg Graphic file (type jpg)
 
-<use lnainterface/03.jpeg>
-<lnainterface/04.jpeg, id=141, 1638.12pt x 1228.59pt>
+<use lnainterface/03.jpeg> [32 <./lnainterface/02.jpeg>]
+<lnainterface/04.jpeg, id=144, 1638.12pt x 1228.59pt>
 File: lnainterface/04.jpeg Graphic file (type jpg)
 
-<use lnainterface/04.jpeg> [32 <./lnainterface/02.jpeg> <./lnainterface/03.jpeg
->] [33 <./lnainterface/04.jpeg>]
-<lnainterface/05.jpeg, id=148, 1638.12pt x 1228.59pt>
+<use lnainterface/04.jpeg> [33 <./lnainterface/03.jpeg> <./lnainterface/04.jpeg
+>] <lnainterface/05.jpeg, id=148, 1638.12pt x 1228.59pt>
 File: lnainterface/05.jpeg Graphic file (type jpg)
 
-<use lnainterface/05.jpeg>
-<lnainterface/06.jpeg, id=149, 1228.59pt x 1638.12pt>
+<use lnainterface/05.jpeg> [34]
+<lnainterface/06.jpeg, id=152, 1228.59pt x 1638.12pt>
 File: lnainterface/06.jpeg Graphic file (type jpg)
 
-<use lnainterface/06.jpeg> [34 <./lnainterface/05.jpeg>]
-<feed/01.jpeg, id=153, 2457.18pt x 1842.885pt>
+<use lnainterface/06.jpeg> <feed/01.jpeg, id=153, 2457.18pt x 1842.885pt>
 File: feed/01.jpeg Graphic file (type jpg)
- <use feed/01.jpeg>
-<feed/02.jpeg, id=154, 2457.18pt x 1842.885pt>
+
+<use feed/01.jpeg> [35 <./lnainterface/05.jpeg> <./lnainterface/06.jpeg>]
+<feed/02.jpeg, id=157, 2457.18pt x 1842.885pt>
 File: feed/02.jpeg Graphic file (type jpg)
  <use feed/02.jpeg>
-<feed/03.jpeg, id=155, 2457.18pt x 1842.885pt>
+<feed/03.jpeg, id=158, 2457.18pt x 1842.885pt>
 File: feed/03.jpeg Graphic file (type jpg)
  <use feed/03.jpeg>
-<feed/04.jpeg, id=156, 2948.01375pt x 2211.26125pt>
+<feed/04.jpeg, id=159, 2948.01375pt x 2211.26125pt>
 File: feed/04.jpeg Graphic file (type jpg)
- <use feed/04.jpeg> [35 <./feed/01.jpeg> <./lnainterface/06.jpeg>] [36 <./feed/
-02.jpeg> <./feed/03.jpeg>]
-<feed/05.jpeg, id=163, 2457.18pt x 1842.885pt>
+ <use feed/04.jpeg>
+<feed/05.jpeg, id=160, 2457.18pt x 1842.885pt>
 File: feed/05.jpeg Graphic file (type jpg)
  <use feed/05.jpeg>
-<feed/06.jpeg, id=164, 2948.01375pt x 2211.26125pt>
+<feed/06.jpeg, id=161, 2948.01375pt x 2211.26125pt>
 File: feed/06.jpeg Graphic file (type jpg)
  <use feed/06.jpeg>
-<feed/07.jpeg, id=165, 2948.01375pt x 2211.26125pt>
+<feed/07.jpeg, id=162, 2948.01375pt x 2211.26125pt>
 File: feed/07.jpeg Graphic file (type jpg)
- <use feed/07.jpeg> [37 <./feed/04.jpeg> <./feed/05.jpeg>] [38 <./feed/06.jpeg>
- <./feed/07.jpeg>]
+ <use feed/07.jpeg> [36 <./feed/01.jpeg> <./feed/02.jpeg>] [37 <./feed/03.jpeg>
+ <./feed/04.jpeg> <./feed/05.jpeg>] [38 <./feed/06.jpeg> <./feed/07.jpeg>]
 <feed/08.jpeg, id=173, 2948.01375pt x 2211.26125pt>
 File: feed/08.jpeg Graphic file (type jpg)
  <use feed/08.jpeg>
@@ -1164,7 +1168,7 @@ File: feed/20.jpeg Graphic file (type jpg)
 <roofmount/00.jpeg, id=186, 1842.885pt x 2457.18pt>
 File: roofmount/00.jpeg Graphic file (type jpg)
  <use roofmount/00.jpeg>
-Underfull \hbox (badness 10000) in paragraph at lines 1250--1253
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1255
 
  []
 
@@ -1253,32 +1257,29 @@ File: dish/19.jpeg Graphic file (type jpg)
 <use dish/19.jpeg> [51 <./dish/07.jpeg>] [52 <./dish/08.jpeg> <./dish/09.jpeg>]
 [53 <./dish/10.jpeg> <./dish/11.jpeg> <./dish/12.jpeg>] [54 <./dish/13.jpeg> <.
 /dish/14.jpeg> <./dish/15.jpeg>] [55 <./dish/16.jpeg> <./dish/17.jpeg> <./dish/
-18.jpeg>] [56 <./dish/19.jpeg>] (./telescopedoc.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+18.jpeg>] [56 <./dish/19.jpeg>] (./telescopedoc.aux) ) 
 Here is how much of TeX's memory you used:
  6946 strings out of 493747
  99365 string characters out of 3143546
- 197555 words of memory out of 3000000
+ 197841 words of memory out of 3000000
  10100 multiletter control sequences out of 15000+200000
  11951 words of font info for 41 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  44i,12n,44p,780b,1650s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local
-/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
-texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
-exlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
-xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on telescopedoc.pdf (56 pages, 67239220 bytes).
+</usr/local/texlive/2010/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2010/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2010/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2010/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2010/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on telescopedoc.pdf (56 pages, 67239389 bytes).
 PDF statistics:
  311 PDF objects out of 1000 (max. 8388607)
  162 compressed objects within 2 object streams
