@@ -21,11 +21,13 @@
 
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{float}
+\usepackage{caption}
 \usepackage{wrapfig}
 \usepackage{listings}
 \usepackage{multicol}
 \usepackage{sidecap}
 \usepackage[table]{xcolor}
+
 
 % \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
@@ -98,6 +100,10 @@ Haystack Small Radio Telescope Project
 \section{Introduction}
 
 This manual serves as a guide following the work done at Bennington College during the spring of 2014 to build and operate a radiotelescope, following the procedure layed out by MIT Haystack and their Small Radio Telescope (SRT) project. This manual contains information regarding both the hardware and software components of the project which should allow for a simple and successful build and operation of a SRT.
+
+\subsection{Disclaimer}
+
+Note that the procedure detailed in this document is a representation of the way we decided to build, assemble, and run the telescope, but it is not the only way to do it. The decisions made were based off of, but did have some variance from, the MIT documentation, so reading that alongside with this may be useful. Note also that while we tried to make our documentation as complete and thorough as possible, there is a chance that it is not 100\% accurate and something small was missed along the way. 
 
 
 \section{Considerations}
@@ -868,9 +874,13 @@ While the controller does not have many/complicated connections, and the documen
 
 \subsection{LNA}
 
-Below are the steps we took to build the LNA for the SRT.
+The LNA (low-noise amplifier) is housed in a watertight container mounted on the back of the reciever (cake pan). Housing it on the back allows for minimal additional blockage of the aperture. Within the container, the LNA itself consists of two ultra-low-noise amplifier modules, a band-pass filter, and a bias-tee to power the amplifiers.
+\\ \\
+Below are the steps we took to build the LNA for the SRT. To follow along with MIT's guide, see http://www.haystack.mit.edu/edu/undergrad/srt/pdf\%20files/SRT\_Hardware\_Manual.pdf , beginning on page 5.
 
-\begin{SCfigure}
+\vspace{1cm}
+
+\begin{SCfigure}[][h]
   \centering
   \caption{Attach the coupler (SMA-M to SMA-M) to the "in" side of the amplifier (Ultra Low Noise Amplifier ZX60- 1 1614LN-S),  then attach the bandpass filter (VBF-1445+) to the "out" side of the amplifier. }
   \includegraphics[width=0.45\textwidth]{lna/01.jpeg}
@@ -945,6 +955,7 @@ Below are the steps we took to build the LNA for the SRT.
   \caption{Back End b/t Dongle and LNA Put Together }
   \includegraphics[width=0.45\textwidth]{lna/11.jpeg}
 \end{SCfigure}
+
 
 
 
@@ -1043,8 +1054,11 @@ Solder ground pin on dc jack connector directly to one of the ground pins on the
 
 \subsection{Feed}
 
-\subsubsection{Cutting Styrofoam Rod}
+The feed consists of a low-profile helical antenna contained within an aluminum cake pan. The helix is composed of copper tape wrapped around a polystyrene foam core, with a foil plate to match its impedance to that of the cable.
+\\ \\
+Below are the steps we took to build the LNA for the SRT. To follow along with MIT's guide, see http://www.haystack.mit.edu/edu/undergrad/srt/pdf\%20files/SRT\_Hardware\_Manual.pdf , beginning on page 8.
 
+\subsubsection{Cutting Styrofoam Rod}
 
 
 \begin{SCfigure}
@@ -1052,7 +1066,6 @@ Solder ground pin on dc jack connector directly to one of the ground pins on the
   \caption{We used a hack saw in a jig to get perfectly straight cuts in the 2.5" Styrofoam rod. The Styrofoam was measured from multiple sides to determine the center. The rod we have ranges from 2 5/16" to 2 1/2" in diameter.}
   \includegraphics[width=0.50\textwidth]{feed/01.jpeg}
 \end{SCfigure}
-
 
 
 \begin{SCfigure}
@@ -1063,13 +1076,9 @@ Solder ground pin on dc jack connector directly to one of the ground pins on the
 
 
 
-
-
-
-
-
-
 \subsubsection{Drilling Aluminum LNA Base Plate}
+
+
 
 \begin{SCfigure}
   \centering
@@ -1177,8 +1186,8 @@ The cake pan is made of what seems to be a softer aluminum than the LNA base pla
 
 
 \subsubsection{Drilling/cutting PC board}
-
-\begin{SCfigure}
+.
+\begin{SCfigure}[][h]
   \centering
   \caption{  We cut the PC board into 63mm squares (We had enough PC board to make a couple back ups).  }
   \includegraphics[width=0.50\textwidth]{feed/15.jpeg}
@@ -1242,27 +1251,10 @@ All the components were then bolted together.
 \end{SCfigure}
 
 
-%\begin{wrapfigure}{r}{0.5\textwidth}
-%  \begin{center}
-%    \includegraphics[width=0.48\textwidth]{roofmount/00.jpeg}
-%  \end{center}
-%  \caption{The clerestory our mount would be attached to.}
-%\end{wrapfigure}
 
 This section outlines the method we used for constructing our custom-designed dish mount. It was designed to use few materials, mostly scrap metal, and attaching the whole mount to pre-existing structures (in our case, a clerestory) on the roof of a building. Other options for roof mounts exist and not all methods will follow from what we have done below, but it may still be worthwhile to read through to get an idea of the process and the considerations made.
-\\ \\
+
 We used scrap metal to make our dish mount, so we started by cleaning the metal and cutting it to size. We plasma cut a 1.5' x 3' rectangle of 5 gauge steel (about 3/16" thick, it later turned out this is to thin) and cleaned up the edges with a grinder.
-
-
-
-%\begin{figure}[H]
-%\begin{center}
-%\includegraphics[scale=0.12]{roofmount/00.jpeg}
-%\end{center}
-%\caption{The clerestory our mount would be attached to.}
-%\end{figure}
-
-
 
 
 

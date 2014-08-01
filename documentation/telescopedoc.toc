@@ -1,9 +1,10 @@
-\contentsline {section}{\numberline {1}Introduction}{4}
-\contentsline {section}{\numberline {2}Considerations}{4}
-\contentsline {subsection}{\numberline {2.1}Acquiring Parts}{4}
-\contentsline {subsection}{\numberline {2.2}Mounting the Dish}{4}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Disclaimer}{3}
+\contentsline {section}{\numberline {2}Considerations}{3}
+\contentsline {subsection}{\numberline {2.1}Acquiring Parts}{3}
+\contentsline {subsection}{\numberline {2.2}Mounting the Dish}{3}
 \contentsline {subsubsection}{\numberline {2.2.1}Non-Penetrating Roof Mount}{4}
-\contentsline {subsubsection}{\numberline {2.2.2}Concrete Pier}{5}
+\contentsline {subsubsection}{\numberline {2.2.2}Concrete Pier}{4}
 \contentsline {subsubsection}{\numberline {2.2.3}Custom Mount}{5}
 \contentsline {section}{\numberline {3}Parts List}{6}
 \contentsline {subsection}{\numberline {3.1}LNA to Dongle Interface}{6}
@@ -70,6 +71,6 @@
 \contentsline {subsubsection}{\numberline {8.3.4}Minor concerns}{36}
 \contentsline {subsubsection}{\numberline {8.3.5}Making helical antenna}{39}
 \contentsline {subsubsection}{\numberline {8.3.6}Drilling/cutting PC board}{39}
-\contentsline {subsubsection}{\numberline {8.3.7}Assembly}{39}
-\contentsline {subsection}{\numberline {8.4}Roof Mount}{39}
-\contentsline {subsection}{\numberline {8.5}Dish}{45}
+\contentsline {subsubsection}{\numberline {8.3.7}Assembly}{42}
+\contentsline {subsection}{\numberline {8.4}Roof Mount}{42}
+\contentsline {subsection}{\numberline {8.5}Dish}{47}
