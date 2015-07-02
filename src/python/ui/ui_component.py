@@ -1,7 +1,8 @@
 import wx
-import cv, cv2
+import cv2
 
 import matplotlib
+
 matplotlib.use('WXAgg')
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import \
@@ -15,25 +16,81 @@ class WebcamPanel(wx.Panel):
     def __init__(self, parent, id, pos, size, travers):
         wx.Panel.__init__(self, parent, id, pos, size, travers)
 
-        self.fps=5
+        self.primary_sizer = None
+        self.is_active = False
+        self.capture = None
+        self.draw_disabled_panel()
 
-        self.capture = cv2.VideoCapture(0)
-        self.capture.set(cv.CV_CAP_PROP_FRAME_WIDTH, 300)
-        self.capture.set(cv.CV_CAP_PROP_FRAME_HEIGHT, 240)
+    def enable(self):
+        pass
+
+    def disable(self):
+        pass
+
+    def _clear_sizer(self):
+        if self.primary_sizer:
+            for idx in range(len(self.primary_sizer.GetChildren())-1):
+                self.primary_sizer.Remove(idx)
+
+            if self.disable_el:
+                self.disable_el.Destroy()
+            self.Layout()
+
+
+    def draw_enabled_panel(self):
+        self._clear_sizer()
+
+        self.fps = 5
+        self._enable_webcam()
 
         ret, frame = self.capture.read()
 
         height, width = frame.shape[:2]
-        parent.SetSize((width, height))
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         self.bmp = wx.BitmapFromBuffer(width, height, frame)
 
         self.timer = wx.Timer(self)
-        self.timer.Start(1000./self.fps)
+        self.timer.Start(1000. / self.fps)
+        self.is_active = True
 
         self.Bind(wx.EVT_PAINT, self.on_paint)
         self.Bind(wx.EVT_TIMER, self.next_frame)
+
+    def draw_disabled_panel(self):
+
+        # Disable Active
+        self._disable_webcam()
+        self._clear_sizer()
+
+        # Update View
+        self.disable_el = self.get_disabled_text_element()
+
+        self.primary_sizer = wx.BoxSizer(wx.VERTICAL)
+        self.primary_sizer.AddSpacer((0, 0), 1, wx.EXPAND, 5)
+        self.primary_sizer.Add(self.disable_el, 0, wx.ALIGN_CENTER_VERTICAL | wx.ALL | wx.EXPAND, 2)
+        self.primary_sizer.AddSpacer((0, 0), 1, wx.EXPAND, 5)
+
+        self.SetSizer(self.primary_sizer)
+        self.Layout()
+        self.primary_sizer.Fit(self)
+
+    def get_disabled_text_element(self):
+        el = wx.StaticText(self, wx.ID_ANY, u"webcam is disabled", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE)
+        el.Wrap(-1)
+        el.SetForegroundColour(wx.Colour(190, 190, 190))
+        return el
+
+    def _enable_webcam(self):
+        self.capture = cv2.VideoCapture(0)
+
+    def _disable_webcam(self):
+        if self.is_active:
+            self.Unbind(wx.EVT_PAINT, handler=self.on_paint)
+            self.Unbind(wx.EVT_TIMER, handler=self.next_frame)
+            self.capture.release()
+            self.timer.Destroy()
+            self.bmp.Destroy()
 
     def on_paint(self, event):
         dc = wx.BufferedPaintDC(self)
@@ -51,6 +108,7 @@ class DataGen(object):
     """ A silly class that generates pseudo-random data for
         display in the plot.
     """
+
     def __init__(self, init=50):
         self.data = self.init = init
 
@@ -80,6 +138,7 @@ class GraphPanel(wx.Panel):
     """
     A panel containing a graph
     """
+
     def __init__(self, parent, id, pos, size, travers):
         wx.Panel.__init__(self, parent, id, pos, size, travers)
 
@@ -138,7 +197,7 @@ class GraphPanel(wx.Panel):
         xmax = len(self.data) if len(self.data) > 50 else 50
         xmin = 0
 
-        #if self.xmax_control.is_auto():
+        # if self.xmax_control.is_auto():
         #    xmax = len(self.data) if len(self.data) > 50 else 50
         #else:
         #    xmax = int(self.xmax_control.manual_value())
@@ -187,7 +246,7 @@ class GraphPanel(wx.Panel):
         # iterate, and setp already handles this.
         #
         pylab.setp(self.axes.get_xticklabels(),
-            visible=True)
+                   visible=True)
 
         self.plot_data.set_xdata(np.arange(len(self.data)))
         self.plot_data.set_ydata(np.array(self.data))

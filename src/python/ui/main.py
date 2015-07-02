@@ -1,10 +1,14 @@
 import wx
 from srt_ui import MainFrame, Properties
+from ui_component import WebcamPanel
 
 
 class PrimaryFrame(MainFrame):
     def __init__(self, parent):
         MainFrame.__init__(self, parent)
+
+        self.webcam_disabled = None
+        self.webcam_enabled = None
 
     # # HELPER FNs
     def show_window(self, window):
@@ -54,9 +58,33 @@ class PrimaryFrame(MainFrame):
 
     def view_window_webcam(self, event):
         if event.IsChecked():
-            self.show_window(self.m_richText13)
+            self.show_window(self.m_panel_webcam_container)
         else:
-            self.hide_window(self.m_richText13)
+            self.hide_window(self.m_panel_webcam_container)
+
+    def toggle_webcam( self, event ):
+        toggle = event.GetEventObject()
+
+        # webcam enabled
+        if toggle.GetValue():
+            toggle.SetLabel("Disable")
+            self.m_panel_webcam.draw_enabled_panel()
+
+        # webcam disabled
+        else:
+            toggle.SetLabel("Enable")
+            self.m_panel_webcam.draw_disabled_panel()
+
+    def hide_webcam_panel( self, event ):
+        if self.m_webcam_toggle.GetValue():
+            # TODO: if the webcam is on when it is being hidden, turn it off..
+            pass
+
+        self.hide_window(self.m_panel_webcam_container)
+
+        if self.m_view_windows_webcam.IsChecked():
+            self.m_view_windows_webcam.Toggle()
+
 
     ##
     ##
