@@ -27,21 +27,9 @@ class WebcamPanel(wx.Panel):
     def disable(self):
         pass
 
-    def _clear_sizer(self):
-        if self.primary_sizer:
-            for idx in range(len(self.primary_sizer.GetChildren())-1):
-                self.primary_sizer.Remove(idx)
-
-            if self.disable_el:
-                self.disable_el.Destroy()
-            self.Layout()
-
-
     def draw_enabled_panel(self):
-        self._clear_sizer()
-
         self.fps = 5
-        self._enable_webcam()
+        self._enable_active_state()
 
         ret, frame = self.capture.read()
 
@@ -60,20 +48,20 @@ class WebcamPanel(wx.Panel):
     def draw_disabled_panel(self):
 
         # Disable Active
-        self._disable_webcam()
-        self._clear_sizer()
+        self._disable_active_state()
 
-        # Update View
-        self.disable_el = self.get_disabled_text_element()
+        if not self.primary_sizer:
+            # Update View
+            self.disable_el = self.get_disabled_text_element()
 
-        self.primary_sizer = wx.BoxSizer(wx.VERTICAL)
-        self.primary_sizer.AddSpacer((0, 0), 1, wx.EXPAND, 5)
-        self.primary_sizer.Add(self.disable_el, 0, wx.ALIGN_CENTER_VERTICAL | wx.ALL | wx.EXPAND, 2)
-        self.primary_sizer.AddSpacer((0, 0), 1, wx.EXPAND, 5)
+            self.primary_sizer = wx.BoxSizer(wx.VERTICAL)
+            self.primary_sizer.AddSpacer((0, 0), 1, wx.EXPAND, 5)
+            self.primary_sizer.Add(self.disable_el, 0, wx.ALIGN_CENTER_VERTICAL | wx.ALL | wx.EXPAND, 2)
+            self.primary_sizer.AddSpacer((0, 0), 1, wx.EXPAND, 5)
 
-        self.SetSizer(self.primary_sizer)
-        self.Layout()
-        self.primary_sizer.Fit(self)
+            self.SetSizer(self.primary_sizer)
+            self.Layout()
+            self.primary_sizer.Fit(self)
 
     def get_disabled_text_element(self):
         el = wx.StaticText(self, wx.ID_ANY, u"webcam is disabled", wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTRE)
@@ -81,16 +69,22 @@ class WebcamPanel(wx.Panel):
         el.SetForegroundColour(wx.Colour(190, 190, 190))
         return el
 
-    def _enable_webcam(self):
+    def _enable_active_state(self):
+        self.primary_sizer.ShowItems(False)
         self.capture = cv2.VideoCapture(0)
 
-    def _disable_webcam(self):
+    def _disable_active_state(self):
         if self.is_active:
             self.Unbind(wx.EVT_PAINT, handler=self.on_paint)
             self.Unbind(wx.EVT_TIMER, handler=self.next_frame)
             self.capture.release()
             self.timer.Destroy()
             self.bmp.Destroy()
+            self.Layout()
+
+        if self.primary_sizer:
+            self.SetForegroundColour(wx.Colour(140, 140, 140))
+            self.primary_sizer.ShowItems(True)
 
     def on_paint(self, event):
         dc = wx.BufferedPaintDC(self)
