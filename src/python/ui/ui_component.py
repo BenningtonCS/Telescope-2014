@@ -1,5 +1,5 @@
 import wx
-import cv2
+from cv2 import cvtColor, COLOR_BGR2RGB, VideoCapture, imwrite
 
 import matplotlib
 
@@ -11,6 +11,9 @@ import numpy as np
 import random
 import pylab
 
+import time
+import datetime
+
 
 class WebcamPanel(wx.Panel):
     def __init__(self, parent, id, pos, size, travers):
@@ -19,6 +22,7 @@ class WebcamPanel(wx.Panel):
         self.primary_sizer = None
         self.is_active = False
         self.capture = None
+        self.frame = None
         self.draw_disabled_panel()
 
     def enable(self):
@@ -31,12 +35,12 @@ class WebcamPanel(wx.Panel):
         self.fps = 5
         self._enable_active_state()
 
-        ret, frame = self.capture.read()
+        ret, self.frame = self.capture.read()
 
-        height, width = frame.shape[:2]
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        height, width = self.frame.shape[:2]
+        self.frame = cvtColor(self.frame, COLOR_BGR2RGB)
 
-        self.bmp = wx.BitmapFromBuffer(width, height, frame)
+        self.bmp = wx.BitmapFromBuffer(width, height, self.frame)
 
         self.timer = wx.Timer(self)
         self.timer.Start(1000. / self.fps)
@@ -46,7 +50,6 @@ class WebcamPanel(wx.Panel):
         self.Bind(wx.EVT_TIMER, self.next_frame)
 
     def draw_disabled_panel(self):
-
         # Disable Active
         self._disable_active_state()
 
@@ -71,12 +74,13 @@ class WebcamPanel(wx.Panel):
 
     def _enable_active_state(self):
         self.primary_sizer.ShowItems(False)
-        self.capture = cv2.VideoCapture(0)
+        self.capture = VideoCapture(0)
 
     def _disable_active_state(self):
         if self.is_active:
             self.Unbind(wx.EVT_PAINT, handler=self.on_paint)
             self.Unbind(wx.EVT_TIMER, handler=self.next_frame)
+            self.frame = None
             self.capture.release()
             self.timer.Destroy()
             self.bmp.Destroy()
@@ -86,15 +90,23 @@ class WebcamPanel(wx.Panel):
             self.SetForegroundColour(wx.Colour(140, 140, 140))
             self.primary_sizer.ShowItems(True)
 
+    def save_image(self, filename=None):
+        if not filename:
+            tstamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
+            filename = 'capture_{}{}'.format(tstamp, '.jpg')
+
+        if self.frame is not None:
+            imwrite(filename, self.frame)
+
     def on_paint(self, event):
         dc = wx.BufferedPaintDC(self)
         dc.DrawBitmap(self.bmp, 0, 0)
 
     def next_frame(self, event):
-        ret, frame = self.capture.read()
+        ret, self.frame = self.capture.read()
         if ret:
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            self.bmp.CopyFromBuffer(frame)
+            self.frame = cvtColor(self.frame, COLOR_BGR2RGB)
+            self.bmp.CopyFromBuffer(self.frame)
             self.Refresh()
 
 

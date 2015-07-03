@@ -85,6 +85,8 @@ class PrimaryFrame(MainFrame):
         if self.m_view_windows_webcam.IsChecked():
             self.m_view_windows_webcam.Toggle()
 
+    def capture_webcam_image( self, event ):
+        self.m_panel_webcam.save_image()
 
     ##
     ##
