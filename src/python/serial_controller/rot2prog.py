@@ -131,6 +131,7 @@ class Rot2ProgController(object, BaseSerialController):
 
         # TODO: Once logging is in place, validate packet send size
         ser.write(cmd)
+        ser.close()
 
     def stop(self):
         """
@@ -153,6 +154,7 @@ class Rot2ProgController(object, BaseSerialController):
         # TODO: Once logging is in place, validate packet send size
         ser.write(cmd)
         response = ser.read(RESP_SIZE)
+        ser.close()
 
         return response
 
@@ -173,6 +175,7 @@ class Rot2ProgController(object, BaseSerialController):
         # TODO: Once logging is in place, validate packet send size
         ser.write(cmd)
         response = ser.read(RESP_SIZE)
+        ser.close()
 
         return response
 
