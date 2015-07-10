@@ -1,0 +1,20 @@
+: record rotation.rad  /(Start data recording of file rotation.rad)
+: galactic 206 20      /(unstow and move to calibration position)
+: freq 1419            /(Off-hydrogen calibration frequency)
+: calibrate
+: freq 1420.4 4        /(Set center frequency mode 4)
+: galactic 205 0       /(Move to first data point)
+: galactic 210 0       /(Next point)
+: galactic 215 0
+: galactic 220 0
+: galactic 225 0
+: freq 1419            /(Off-hydrogen calibration frequency)
+: galactic 225 20      /(Calibration point)
+: calibrate
+: freq 1420.4 4        /(Set center frequency mode 4)
+: galactic 230 0       /(Move to sixth data point)
+: galactic 235 0       /(Next point)
+: galactic 240 0
+: galactic 245 0
+: galactic 250 0
+: roff                 /(End data recording)

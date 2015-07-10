@@ -9,7 +9,7 @@ See rot2prog.py for definition of the packets.
 import logging
 import time
 
-from rot2prog import *
+from ..rot2prog import *
 
 
 # Initialize the logging facilities
@@ -59,8 +59,8 @@ log.debug('')
 
 try:
     # Check telescope status
-    response = r2p.status()
-    log.debug('Initial Stat Response: {}'.format(response))
+    initial_response = r2p.status()
+    log.debug('Initial Stat Response: {}'.format(initial_response))
 
     # Stop the telescope (should already be stopped, but this is to
     # check the response value
@@ -91,6 +91,12 @@ try:
     time.sleep(5)
     response = r2p.status()
     log.debug('stopped status: {}'.format(response))
+
+
+    ## attempt to set the telescope back to the starting position
+    hvals = initial_response[1:5]
+    vvals = initial_response[6:10]
+    r2p.set(hvals, vvals)
 
 except Exception:
     log.exception('Exception thrown:')
