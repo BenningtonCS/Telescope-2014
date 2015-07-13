@@ -4,8 +4,13 @@ Serial Controller for the SPID Rot2Prog Controller
 http://spid.net.pl/en/rot2-2/
 """
 import serial
+import logging
 
 from controller import BaseSerialController
+
+logging.basicConfig()
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 
 ## CONTROLLER SPECIFIC CONSTANTS
@@ -129,8 +134,9 @@ class Rot2ProgController(object, BaseSerialController):
         packet = [BYTE_S] + h_vals + [self.resol] + v_vals + [self.resol] + [BYTE_SET] + [BYTE_E]
         cmd = ''.join(chr(x) for x in packet)
 
-        # TODO: Once logging is in place, validate packet send size
-        ser.write(cmd)
+        sent = ser.write(cmd)
+        if sent != CMD_SIZE:
+            log.error('command packet size expected to be {} but was {}'.format(CMD_SIZE, sent))
         ser.close()
 
     def stop(self):
@@ -151,8 +157,10 @@ class Rot2ProgController(object, BaseSerialController):
         packet = [BYTE_S] + [BYTE_I] * 10 + [BYTE_STOP] + [BYTE_E]
         cmd = ''.join(chr(x) for x in packet)
 
-        # TODO: Once logging is in place, validate packet send size
-        ser.write(cmd)
+        sent = ser.write(cmd)
+        if sent != CMD_SIZE:
+            log.error('command packet size expected to be {} but was {}'.format(CMD_SIZE, sent))
+
         response = ser.read(RESP_SIZE)
         ser.close()
 
@@ -172,8 +180,10 @@ class Rot2ProgController(object, BaseSerialController):
         packet = [BYTE_S] + [BYTE_I] * 10 + [BYTE_STAT] + [BYTE_E]
         cmd = ''.join(chr(x) for x in packet)
 
-        # TODO: Once logging is in place, validate packet send size
-        ser.write(cmd)
+        sent = ser.write(cmd)
+        if sent != CMD_SIZE:
+            log.error('command packet size expected to be {} but was {}'.format(CMD_SIZE, sent))
+
         response = ser.read(RESP_SIZE)
         ser.close()
 

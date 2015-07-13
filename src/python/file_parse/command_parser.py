@@ -2,8 +2,15 @@
 Parser of srt command files
 """
 import re
+import logging
+
 from Queue import Queue
 from keywords import KEYWORDS, is_valid_keyword
+
+logging.basicConfig()
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
+
 
 # constants describing regex groups
 CMD_WAIT = 1
@@ -29,8 +36,11 @@ class CommandFileParser(object):
     """
     def __init__(self):
         self.regex = re.compile("(^:([0-9]+)?\s+?({})\s+?([^/\*:\n]*))|(^:([0-9]+))".format('|'.join(KEYWORDS)))
-
         self.task_queue = Queue()
+
+    @property
+    def command_queue(self):
+        return self.task_queue
 
     def parse_file(self, filename):
         """
@@ -67,18 +77,21 @@ class CommandFileParser(object):
         """
         groups = match_result.groups()
 
-        # The command is specified by a keyword
+        # the command is a wait command with no specified keyword
         if groups[WAIT] and not groups[CMD_KEY]:
             command = 'wait'
             wait = None
             args = groups[WAIT]
 
-        # validate that the keyword is supported
+        # the command is specified by a keyword
         else:
             command = groups[CMD_KEY]
             wait = groups[CMD_WAIT]
             args = groups[CMD_ARGS]
 
+        log.debug((command, wait, args))
+
+        # validate that the keyword is supported
         self._validate_command(command, wait, args)
 
     def _validate_command(self, command, wait, args):
@@ -96,8 +109,7 @@ class CommandFileParser(object):
             args = filter(None, args.split(' '))
             self.task_queue.put((command, wait, args))
         else:
-            # TODO: log invalid keyword
-            pass
+            log.error('Invalid keyword while parsing command file: {}'.format(command))
 
 
 if __name__ == "__main__":

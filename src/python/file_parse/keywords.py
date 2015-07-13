@@ -38,7 +38,7 @@ KEYWORDS = dict(zip(_keys, _values))
 
 def is_valid_keyword(keyword):
     """
-    Check if the keyword is a valid supported keyword
+    Check if a given string is a valid supported command keyword
 
     :param keyword:
     :return:
