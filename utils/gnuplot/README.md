@@ -1,3 +1,5 @@
+NOTE: These scripts were written using Python 2.7 -- they are NOT Python 3.x compatibile. 
+
 To run both `meta_parse` and `spectrum_parse` scripts via the command line, only an input file must be specified. An output file name may also be specified as an optional argument.
 
 ```
