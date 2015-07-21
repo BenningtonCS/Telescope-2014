@@ -4,9 +4,9 @@ Base class for any controller to be defined.
 """
 
 
-class BaseSerialController():
+class BaseSerialController(object):
     """
-
+    Effective interface for any serial controller
     """
     def __init__(self):
         pass

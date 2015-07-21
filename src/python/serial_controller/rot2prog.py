@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 
 
-## CONTROLLER SPECIFIC CONSTANTS
+# CONTROLLER SPECIFIC CONSTANTS
 BYTE_S = 0x57  # start byte value
 BYTE_E = 0x20  # end byte value
 BYTE_I = 0x00  # ignore byte value

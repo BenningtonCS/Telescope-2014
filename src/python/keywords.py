@@ -5,10 +5,10 @@ Supported command keywords
 __all__ = ['KEYWORDS', 'is_valid_keyword']
 
 
-## _keys stores the supported keywords which the command parser and the
-## command executor can operate with. To support additional keywords,
-## simply add the keyword to the list below, and add the appropriate
-## execution path in the command executor.
+# _keys stores the supported keywords which the command parser and the
+# command executor can operate with. To support additional keywords,
+# simply add the keyword to the list below, and add the appropriate
+# execution path in the command executor.
 _keys = [
     'sourcename',
     'mode',
@@ -25,16 +25,16 @@ _keys = [
     'wait'
 ]
 
-## creates a unique value for each keyword in the _keys list
+# creates a unique value for each keyword in the _keys list
 _values = range(len(_keys))
 
-## key each keyword in the _keys list to a unique value in the _values list
+# key each keyword in the _keys list to a unique value in the _values list
 KEYWORDS = dict(zip(_keys, _values))
 
 
-## --------------
-## Static Methods
-## --------------
+# --------------
+# Static Methods
+# --------------
 
 def is_valid_keyword(keyword):
     """
