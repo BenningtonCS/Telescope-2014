@@ -1,0 +1,19 @@
+<sessionStore>
+    <sessionProperties>
+        <sessionVar name="antenna-sim">ON</sessionVar>
+        <sessionVar name="receiver-sim">ON</sessionVar>
+        <sessionVar name="fft-sim">ON</sessionVar>
+        <sessionVar name="freq">1420.4</sessionVar>
+        <sessionVar name="num-freq">256</sessionVar>
+        <sessionVar name="cal-mode">2</sessionVar>
+        <sessionVar name="azimuth">0</sessionVar>
+        <sessionVar name="elevation">0</sessionVar>
+        <sessionVar name="azimuth-limits">21*355</sessionVar>
+        <sessionVar name="elevation-limits">-2*89</sessionVar>
+        <sessionVar name="bandwidth">2.0</sessionVar>
+        <sessionVar name="beamwidth">5</sessionVar>
+        <sessionVar name="system-temp">171</sessionVar>
+        <sessionVar name="tcal">290</sessionVar>
+        <sessionVar name="nblock">1</sessionVar>
+    </sessionProperties>
+</sessionStore>
