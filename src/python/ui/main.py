@@ -1,6 +1,6 @@
 import wx
-from srt_ui import MainFrame, Properties
-from ui_component import WebcamPanel
+from srt_ui import MainFrame
+from frame_properties import Properties
 
 
 class PrimaryFrame(MainFrame):
@@ -153,13 +153,14 @@ class PrimaryFrame(MainFrame):
                 child.SetBackgroundColour(color)
 
 
-    '''
+
     def config_tool_select( self, event ):
-        # Disable main window before creation, Enable after del so
+        # TODO Disable main window before creation, Enable after del so
         # cannot modify main window while editing properties
         properties_window = Properties(None)
         properties_window.Show()
 
+    '''
     def clear_tool_selected( self, event ):
         self.m_textCtrl2.Clear()
     '''

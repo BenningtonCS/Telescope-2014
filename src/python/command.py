@@ -9,6 +9,7 @@ def stow():
 
     :return:
     """
+    # TODO: need fn to set telescope to stow position, and fn to set new stow position
     pass
 
 
