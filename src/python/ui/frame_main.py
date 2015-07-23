@@ -16,6 +16,8 @@ from dialog_azel import AzelDialog
 from dialog_beamswitch import BeamswitchDialog
 from dialog_npoint import NpointDialog
 from dialog_frequency import FrequencyDialog
+from command_interpreter import CommandInterpreter
+from window_log import LogWindow
 
 from ui_utils import checked_menu_item, norm_menu_item, status_panel, status_label, status_value, \
     handle_window_update, hide_window
@@ -50,7 +52,7 @@ class MainFrame(wx.Frame):
 
         # Add elements to the top panel of the splitter window
         top_panel_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        top_panel_sizer.Add(self.graphs_sizer, 1, wx.EXPAND, 5)
+        top_panel_sizer.Add(self.graph_container, 1, wx.EXPAND, 5)
         top_panel_sizer.Add(self.status_window, 1, wx.ALL | wx.EXPAND, 5)
 
         self.top_panel.SetSizer(top_panel_sizer)
@@ -92,6 +94,9 @@ class MainFrame(wx.Frame):
 
         # Connect application events
         self._connect_events()
+
+        # Get instance of command interpreter
+        self.cmd_interpreter = CommandInterpreter(self, self.log_box)
 
     def __del__(self):
         """
@@ -598,10 +603,11 @@ class MainFrame(wx.Frame):
 
         :return:
         """
-        self.graphs_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.graph_container = wx.Panel(self.top_panel, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        graphs_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         self.m_panel5 = wx.Panel(self.top_panel, wx.ID_ANY, wx.DefaultPosition, wx.Size(-1, -1), wx.TAB_TRAVERSAL)
-        self.graphs_sizer.Add(self.m_panel5, 1, wx.EXPAND | wx.ALL, 5)
+        graphs_sizer.Add(self.m_panel5, 1, wx.EXPAND | wx.ALL, 5)
 
         side_graphs_sizer = wx.BoxSizer(wx.VERTICAL)
 
@@ -614,7 +620,11 @@ class MainFrame(wx.Frame):
         self.m_panel23 = wx.Panel(self.top_panel, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
         side_graphs_sizer.Add(self.m_panel23, 1, wx.EXPAND | wx.ALL, 5)
 
-        self.graphs_sizer.Add(side_graphs_sizer, 1, wx.EXPAND, 5)
+        graphs_sizer.Add(side_graphs_sizer, 1, wx.EXPAND, 5)
+
+        self.graph_container.SetSizer(graphs_sizer)
+        self.graph_container.Layout()
+        graphs_sizer.Fit(self.graph_container)
 
     def _create_webcam_window(self):
         """
@@ -674,8 +684,9 @@ class MainFrame(wx.Frame):
 
         :return:
         """
-        self.log_box = wx.TextCtrl(self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size(-1, 100),
-                                   wx.TE_LEFT | wx.TE_MULTILINE | wx.TE_READONLY | wx.TE_WORDWRAP)
+        self.log_box = LogWindow(self)
+        # self.log_box = wx.TextCtrl(self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size(-1, 100),
+        #                            wx.TE_LEFT | wx.TE_MULTILINE | wx.TE_READONLY | wx.TE_WORDWRAP)
         self.log_box.Enable(False)
 
         if self.csm.w_view_log:
@@ -702,6 +713,8 @@ class MainFrame(wx.Frame):
 
         :return:
         """
+        wx.EVT_MENU(self, self.m_file_quit.GetId(), self.on_application_quit)
+
         self.cmd_input.Bind(wx.EVT_TEXT_ENTER, self.process_text_input)
         self.m_webcam_toggle.Bind(wx.EVT_TOGGLEBUTTON, self.toggle_webcam)
         self.m_bp_capture.Bind(wx.EVT_BUTTON, self.capture_webcam_image)
@@ -744,6 +757,13 @@ class MainFrame(wx.Frame):
         self.Bind(wx.EVT_TOOL, self.cal_tool_select, id=self.toolid_cal)
         self.Bind(wx.EVT_TOOL, self.config_tool_select, id=self.toolid_config)
 
+    def on_application_quit(self, event):
+        """
+
+        :return:
+        """
+        self.Close(True)
+
     def process_text_input(self, event):
         """
 
@@ -751,9 +771,10 @@ class MainFrame(wx.Frame):
         :return:
         """
         text_input = event.GetEventObject()
-        data = str(text_input.GetValue())
+        input_val = str(text_input.GetValue())
         text_input.Clear()
-        self.log_box.AppendText(data + '\n')
+
+        self.cmd_interpreter.execute(input_val)
 
     def toggle_webcam(self, event):
         """
@@ -829,7 +850,7 @@ class MainFrame(wx.Frame):
         :param event:
         :return:
         """
-        handle_window_update(event, self.graphs_sizer)
+        handle_window_update(event, self.graph_container)
 
     def view_window_cmd_input(self, event):
         """
@@ -997,7 +1018,7 @@ class MainFrame(wx.Frame):
         :return:
         """
         self.cmd_input.Clear()
-        self.log_box.Clear()
+        self.log_box.ClearAll()
 
     def cancel_tool_selected(self, event):
         chgdep = CancelDialog(self, self.csm)

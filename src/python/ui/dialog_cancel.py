@@ -11,7 +11,7 @@ class CancelDialog(wx.Dialog):
         self.message_panel = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
 
         self.message = wx.StaticText(self.message_panel, -1, u"Cancel all current actions?")
-        self.checkbox = wx.CheckBox(self.message_panel, -1, u"Don't show this message again.")
+        self.checkbox = wx.CheckBox(self.message_panel, -1, u"Do not show this message again.")
 
         text_sizer = wx.BoxSizer(wx.VERTICAL)
         text_sizer.Add(self.message, 0, wx.ALL, 5)

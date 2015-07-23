@@ -1,4 +1,3 @@
-'''
 import wx
 from cv2 import cvtColor, COLOR_BGR2RGB, VideoCapture, imwrite
 
@@ -14,9 +13,8 @@ import pylab
 
 import time
 import datetime
-'''
 
-'''
+
 class WebcamPanel(wx.Panel):
     def __init__(self, parent, id, pos, size, travers):
         wx.Panel.__init__(self, parent, id, pos, size, travers)
@@ -260,4 +258,3 @@ class GraphPanel(wx.Panel):
         self.plot_data.set_ydata(np.array(self.data))
 
         self.canvas.draw()
-'''
