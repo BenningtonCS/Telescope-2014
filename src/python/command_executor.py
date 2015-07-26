@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 """
 Given a queue of commands, executes them sequentially.
+
+-------------------------
+author: erick daniszewski
 """
 
 

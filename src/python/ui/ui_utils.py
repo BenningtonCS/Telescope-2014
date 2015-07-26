@@ -1,11 +1,16 @@
+# -*- coding: utf-8 -*-
 """
+Utilities for constructing and manipulating UI components
 
+-------------------------
+author: erick daniszewski
 """
 import wx
 
 
 def static_text_gen(parent, text):
     """
+    Generate a left-aligned instance of wx.StaticText
 
     :param parent:
     :param text:
@@ -17,6 +22,7 @@ def static_text_gen(parent, text):
 
 def radiobutton_gen(parent, text):
     """
+    Generate a sizer containing radio buttons specified by the input 'text' list.
 
     :param parent:
     :param text:
@@ -39,6 +45,7 @@ def radiobutton_gen(parent, text):
 
 def norm_menu_item(parent, label, tooltip):
     """
+    Generate an instance of wx.MenuItem with property wx.ITEM_NORMAL
 
     :param parent:
     :param label:
@@ -50,6 +57,7 @@ def norm_menu_item(parent, label, tooltip):
 
 def checked_menu_item(parent, label, tooltip):
     """
+    Generate an instance of wx.MenuItem with property wx.ITEM_CHECK
 
     :param parent:
     :param label:
@@ -62,6 +70,7 @@ def checked_menu_item(parent, label, tooltip):
 
 def status_panel(parent, size):
     """
+    Generate an instance of wx.Panel with a MinSize and MaxSize set
 
     :param parent:
     :param size:
@@ -77,6 +86,7 @@ def status_panel(parent, size):
 
 def status_label(parent, label):
     """
+    Generate a wx.StaticText for the label of the Status window of the UI
 
     :param parent:
     :param label:
@@ -94,12 +104,13 @@ def status_label(parent, label):
 
 def status_value(parent, value):
     """
+    Generate a wx.StaticText for the value of the Status window of the UI
 
     :param parent:
     :param value:
     :return:
     """
-    text =  wx.StaticText(parent, wx.ID_ANY, value, wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_LEFT | wx.ST_NO_AUTORESIZE)
+    text = wx.StaticText(parent, wx.ID_ANY, value, wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_LEFT | wx.ST_NO_AUTORESIZE)
 
     text.Wrap(-1)
     text.SetFont(wx.Font(10, 70, 90, 90, False, wx.EmptyString))
@@ -109,6 +120,7 @@ def status_value(parent, value):
 
 def show_window(window):
     """
+    Show and enable the specified window
 
     :param window:
     :return:
@@ -120,6 +132,7 @@ def show_window(window):
 
 def hide_window(window):
     """
+    Hide and disable the specified window
 
     :param window:
     :return:
@@ -131,6 +144,7 @@ def hide_window(window):
 
 def handle_window_update(event, window):
     """
+    Check if an item is checked, and show/hide the specified window accordingly
 
     :param event:
     :param window:

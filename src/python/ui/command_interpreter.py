@@ -1,17 +1,23 @@
+# -*- coding: utf-8 -*-
 """
+Interpret and process commands from the UI command input.
 
+-------------------------
+author: erick daniszewski
 """
-from ui_logging import Level
+from ui_logging import UILogger
 from ui_utils import show_window, hide_window
+
+import help_docs
 
 
 class CommandInterpreter(object):
     """
-
+    Interprets, validates, and executes commands passed in via the UI commnand input.
     """
-    def __init__(self, parent, log_out=None):
+    def __init__(self, parent, log_out):
         self.parent = parent
-        self.log = log_out
+        self.log = UILogger(log_out)
 
         self.windows = {
             'graphs'    : self.parent.graph_container,
@@ -23,14 +29,19 @@ class CommandInterpreter(object):
         }
 
         self.commands = [
-            'SHOW', 'HIDE'
+            'SHOW', 'HIDE', 'CLEAR', 'HELP', 'LIST'
         ]
 
     def execute(self, command):
         """
+        Execute a given command.
 
-        :param command:
-        :return:
+        If the command is invalid or an argument to the command is invalid, a warning
+        is logged to the UI log window and no further action on the command is taken.
+
+        :param command: string containing the commands and args, space delimited
+        :type command: str
+        :return: None
         """
         cmd_array = filter(None, command.split(' '))
 
@@ -39,71 +50,126 @@ class CommandInterpreter(object):
                 cmd, args = cmd_array[0].upper(), cmd_array[1:]
 
                 if 'SHOW' == cmd:
-                    self.cmd_show(args)
+                    self._cmd_show(args)
 
                 elif 'HIDE' == cmd:
-                    self.cmd_hide(args)
+                    self._cmd_hide(args)
+
+                elif 'CLEAR' == cmd:
+                    self._cmd_clear()
+
+                elif 'HELP' == cmd:
+                    self._cmd_help(args)
+
+                elif 'LIST' == cmd:
+                    self._cmd_list(args)
 
             else:
-                self.__log('command not recognized: {}'.format(cmd_array[0]))
+                self.log.log('command not recognized: {}'.format(cmd_array[0]))
 
-    def cmd_show(self, args):
+    def _cmd_show(self, args):
         """
+        Process a 'SHOW' command
 
-        :param args:
+        :param args: any arguments for the given command
         :type args: list
-        :return:
+        :return: None
         """
+        if not args:
+            self.log.warn('no arguments given for command: SHOW')
+            return
+
         for arg in args:
             try:
                 window = self.windows[arg.lower()]
                 show_window(window)
-                self.__log('showing window: {}'.format(arg.lower()))
+                self.log.log('showing window: {}'.format(arg.lower()))
             except KeyError:
-                self.__error('invalid argument for SHOW command: {}. see \'HELP SHOW\''.format(arg.lower()))
+                self.log.warn('invalid argument for SHOW command: {}.'.format(arg.lower()))
 
-    def cmd_hide(self, args):
+    def _cmd_hide(self, args):
         """
+        Process a 'HIDE' command
 
-        :param args:
-        :return:
+        :param args: any arguments for the given command
+        :type args: list
+        :return: None
         """
+        if not args:
+            self.log.warn('no arguments given for command: HIDE')
+            return
+
         for arg in args:
             try:
                 window = self.windows[arg.lower()]
                 hide_window(window)
-                self.__log('hiding window: {}'.format(arg.lower()))
+                self.log.log('hiding window: {}'.format(arg.lower()))
             except KeyError:
-                self.__error('invalid argument for HIDE command: {}. see \'HELP HIDE\''.format(arg.lower()))
+                self.log.warn('invalid argument for HIDE command: {}.'.format(arg.lower()))
 
-    def __log(self, message):
+    def _cmd_clear(self):
         """
+        Process a 'CLEAR' command
 
-        :param message:
-        :return:
+        :return: None
         """
-        self.log.write('[LOG] {}\n'.format(message), Level.LOG)
+        self.parent.clear_tool_selected(None)
 
-    def __info(self, message):
+    def _cmd_list(self, args):
         """
+        Process a 'LIST' command
 
-        :param message:
-        :return:
+        :param args: any arguments for the given command
+        :type args: list
+        :return: None
         """
-        self.log.write('[INFO] {}\n'.format(message), Level.INFO)
+        if not args:
+            self.log.warn('no arguments given for command: LIST')
+            return
 
-    def __warn(self, message):
-        """
+        arg = args[0].lower()
 
-        :param message:
-        :return:
-        """
-        self.log.write('[WARN] {}\n'.format(message), Level.WARN)
+        if arg == 'commands':
+            message = 'current supported commands:\n\t' + ', '.join(self.commands)
+            self.log.log(message)
 
-    def __error(self, message):
-        """
+        elif arg == 'windows':
+            message = 'valid window names:\n\t' + ', '.join(self.windows.keys())
+            self.log.log(message)
 
-        :param message:
-        :return:
+    def _cmd_help(self, args):
         """
-        self.log.write('[ERROR] {}\n'.format(message), Level.ERROR)
+        Process a 'HELP' command
+
+        :param args: any arguments for the given command
+        :type args: list
+        :return: None
+        """
+        if not args:
+            self.log.warn('no arguments given for command: HELP')
+            return
+
+        command = args[0].upper()
+
+        if 'SHOW' == command:
+            for msg in help_docs.show_help:
+                self.log.log(msg)
+
+        elif 'HIDE' == command:
+            for msg in help_docs.hide_help:
+                self.log.log(msg)
+
+        elif 'CLEAR' == command:
+            for msg in help_docs.clear_help:
+                self.log.log(msg)
+
+        elif 'HELP' == command:
+            for msg in help_docs.help_help:
+                self.log.log(msg)
+
+        elif 'LIST' == command:
+            for msg in help_docs.list_help:
+                self.log.log(msg)
+
+        else:
+            self.log.warn('no help information available for command: {}'.format(command))

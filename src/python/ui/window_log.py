@@ -1,21 +1,45 @@
+# -*- coding: utf-8 -*-
 """
+Custom subclass of wx.stc.StyledTextCtrl to be used as a logging window
 
+-------------------------
+author: erick daniszewski
 """
 import wx
 from wx.stc import StyledTextCtrl
+from ui_logging import Level
 
 
 class LogWindow(StyledTextCtrl):
     """
-
+    A logging window with styles set for the different supported log levels
     """
     def __init__(self, parent, style=wx.SIMPLE_BORDER):
+        """
+        Constructor
+        """
         StyledTextCtrl.__init__(self, parent, style=style)
 
-        self.log_styles = ['black', 'green', 'gold', 'red']
+        # This list of styles should be parallel with the levels in ui_logging#Levels
+        self.log_styles = ['gray', 'blue', 'black', 'green', 'gold', 'red']
 
         self._styles = [None] * 32
         self._free = 1
+
+        # Write initial message to window
+        msg = [
+            '==================================================',
+            'srt control software (v0.1):',
+            '__________________________________________________',
+            'To view the documentation for the control software see "Help > Documentation.."',
+            'Basic commands to get you started:',
+            '\t"LIST commands" -> lists the supported commands',
+            '\t"HELP <command>" -> view the usage information for the given command',
+            '=================================================='
+        ]
+
+        for item in msg:
+            self.write(item + '\n', Level.SYSTEM)
 
     def get_style(self, c='black'):
         """
@@ -45,7 +69,7 @@ class LogWindow(StyledTextCtrl):
 
     def get_logging_style(self, level):
         """
-
+        Get the style for the specified log level
         """
         try:
             style = self.log_styles[level]

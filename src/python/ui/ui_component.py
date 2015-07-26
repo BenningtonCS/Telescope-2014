@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+
+-------------------------
+author: erick daniszewski
+"""
 import wx
 from cv2 import cvtColor, COLOR_BGR2RGB, VideoCapture, imwrite
 

@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 """
 
+-------------------------
+author: erick daniszewski
 """
 import wx
 
@@ -25,6 +28,8 @@ class Properties(wx.Frame):
 
         self.SetSizer(main_sizer)
         self.Layout()
+
+        self._connect_events()
 
         self.Centre(wx.BOTH)
 
@@ -118,25 +123,25 @@ class Properties(wx.Frame):
         sizer_receiver_sim = radiobutton_gen(self.scroll_window, [u"On", u"Off"])
         sizer_fft_sim = radiobutton_gen(self.scroll_window, [u"On", u"Off"])
 
-        self.freq_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, u"1420.4", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.freq_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.freq), wx.DefaultPosition, wx.DefaultSize, 0)
         self.freq_val.SetMaxLength(10)
 
-        self.num_freq_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, u"256", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.num_freq_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.num_freq), wx.DefaultPosition, wx.DefaultSize, 0)
         self.num_freq_val.SetMaxLength(8)
 
         cal_opt = [u"0", u"1", u"2", u"3", u"20"]
         self.cal_choice = wx.Choice(self.scroll_window, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, cal_opt, 0)
-        self.cal_choice.SetSelection(2)
+        self.cal_choice.SetSelection(self.csm.cal_mode)
 
-        self.az_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.el_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.az_lim_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.el_lim_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.bandw_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.beamw_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.stemp_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.tcal_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.nblock_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        self.az_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.azimuth), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.el_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.elevation), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.az_lim_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.az_limits), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.el_lim_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.el_limits), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.bandw_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.bandwidth), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.beamw_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.beamwidth), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.stemp_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.sys_temp), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.tcal_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.tcal), wx.DefaultPosition, wx.DefaultSize, 0)
+        self.nblock_val = wx.TextCtrl(self.scroll_window, wx.ID_ANY, str(self.csm.nblock), wx.DefaultPosition, wx.DefaultSize, 0)
 
         grid_sizer.Add(self.text_antenna_sim, 0, wx.ALL, 5)
         grid_sizer.Add(sizer_antenna_sim, 1, wx.EXPAND, 5)
@@ -184,6 +189,61 @@ class Properties(wx.Frame):
         grid_sizer.Add(self.nblock_val, 0, wx.ALL, 5)
 
         self.srt_config_sizer.Add(grid_sizer, 1, wx.EXPAND, 5)
+
+    def update_state(self):
+        """
+
+        :return:
+        """
+        # Simulations
+        self.csm.simulate_antenna = True  # FIXME
+        self.csm.simulate_receiver = True  # FIXME
+        self.csm.simulate_fft = True  # FIXME
+
+        # Other
+        self.csm.freq = self.freq_val.GetValue()
+        self.csm.num_freq = self.num_freq_val.GetValue()
+        self.csm.cal_mode = 2  ## FIXME
+        self.csm.azimuth = self.az_val.GetValue()
+        self.csm.elevation = self.el_val.GetValue()
+        self.csm.az_limits = self.az_lim_val.GetValue()
+        self.csm.el_limits = self.el_lim_val.GetValue()
+        self.csm.bandwidth = self.bandw_val.GetValue()
+        self.csm.beamwidth = self.beamw_val.GetValue()
+        self.csm.sys_temp = self.stemp_val.GetValue()
+        self.csm.tcal = self.tcal_val.GetValue()
+        self.csm.nblock = self.nblock_val.GetValue()
+
+    def _connect_events(self):
+        """
+
+        :return:
+        """
+        self.button_ok.Bind(wx.EVT_BUTTON, self.on_button_ok)
+        self.button_apply.Bind(wx.EVT_BUTTON, self.on_button_apply)
+        self.button_cancel.Bind(wx.EVT_BUTTON, self.on_button_cancel)
+
+    def on_button_ok(self, event):
+        """
+
+        :return:
+        """
+        self.update_state()
+        self.Close(True)
+
+    def on_button_apply(self, event):
+        """
+
+        :return:
+        """
+        self.update_state()
+
+    def on_button_cancel(self, event):
+        """
+
+        :return:
+        """
+        self.Close(True)
 
     def __del__(self):
         pass

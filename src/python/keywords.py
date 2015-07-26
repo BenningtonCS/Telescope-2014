@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 """
 Supported command keywords
+
+-------------------------
+author: erick daniszewski
 """
 
 __all__ = ['KEYWORDS', 'is_valid_keyword']

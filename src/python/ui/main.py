@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Entry point for the UI
+
+-------------------------
+author: erick daniszewski
+"""
 import wx
 from srt_ui import MainFrame
 from frame_properties import Properties

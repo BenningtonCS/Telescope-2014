@@ -1,11 +1,21 @@
+# -*- coding: utf-8 -*-
 """
+Custom subclass of wx.Dialog for canceling actions
 
+-------------------------
+author: erick daniszewski
 """
 import wx
 
 
 class CancelDialog(wx.Dialog):
+    """
+    Custom dialog for action cancellations
+    """
     def __init__(self, parent, csm):
+        """
+        Constructor
+        """
         wx.Dialog.__init__(self, parent, -1)
 
         self.message_panel = wx.Panel(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)

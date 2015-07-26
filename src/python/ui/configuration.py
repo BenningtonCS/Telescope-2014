@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Manages UI session configurations for both UI parameters and SRT-specific parameters.
+
+-------------------------
+author: erick daniszewski
+"""
 from ConfigParser import SafeConfigParser
 import os
 
@@ -7,6 +14,10 @@ class ConfigStateManager(object):
     Class which manages session configuration.
     """
     def __init__(self):
+        """
+        Constructor
+        """
+        # TODO: Should this be passed in/read in from somewhere or is it fine to leave hardcoded?
         self.dflt_path = './.config/default.cfg'
         self.cfg_path = './.config/session.cfg'
 
@@ -59,6 +70,25 @@ class ConfigStateManager(object):
         # ======================================
         self.srt_section = "SRT_SECTION"
 
+        # Simulations
+        self.simulate_antenna = None
+        self.simulate_receiver = None
+        self.simulate_fft = None
+
+        # Other
+        self.freq = None
+        self.num_freq = None
+        self.cal_mode = None
+        self.azimuth = None
+        self.elevation = None
+        self.az_limits = None
+        self.el_limits = None
+        self.bandwidth = None
+        self.beamwidth = None
+        self.sys_temp = None
+        self.tcal = None
+        self.nblock = None
+
     def save_session_state(self):
         """
         Save the session state
@@ -67,7 +97,7 @@ class ConfigStateManager(object):
         """
         cfg = SafeConfigParser()
 
-        # self._save_srt_state(cfg)
+        self._save_srt_state(cfg)
         self._save_ui_state(cfg)
         self._write_state(cfg)
 
@@ -130,10 +160,23 @@ class ConfigStateManager(object):
         :type cfg: SafeConfigParser
         :return:
         """
-        section_name = 'SRT_SECTION'
-        cfg.add_section(section_name)
+        cfg.add_section(self.srt_section)
+        cfg.set(self.srt_section, 'simulate_antenna', str(self.simulate_antenna))
+        cfg.set(self.srt_section, 'simulate_receiver', str(self.simulate_receiver))
+        cfg.set(self.srt_section, 'simulate_fft', str(self.simulate_fft))
 
-        cfg.set(section_name, 'key', 'value')
+        cfg.set(self.srt_section, 'freq', str(self.freq))
+        cfg.set(self.srt_section, 'num_freq', str(self.num_freq))
+        cfg.set(self.srt_section, 'cal_mode', str(self.cal_mode))
+        cfg.set(self.srt_section, 'azimuth', str(self.azimuth))
+        cfg.set(self.srt_section, 'elevation', str(self.elevation))
+        cfg.set(self.srt_section, 'az_limits', str(self.az_limits))
+        cfg.set(self.srt_section, 'el_limits', str(self.el_limits))
+        cfg.set(self.srt_section, 'bandwidth', str(self.bandwidth))
+        cfg.set(self.srt_section, 'beamwidth', str(self.beamwidth))
+        cfg.set(self.srt_section, 'sys_temp', str(self.sys_temp))
+        cfg.set(self.srt_section, 'tcal', str(self.tcal))
+        cfg.set(self.srt_section, 'nblock', str(self.nblock))
 
     def _load_ui_state(self, cfg):
         """
@@ -143,8 +186,6 @@ class ConfigStateManager(object):
         :type cfg: SafeConfigParser
         :return:
         """
-        cfg.read(self.cfg_file)
-
         # Application Dimensions
         # ----------------------------
         self.app_height = cfg.getint(self.ui_section, 'app_height')
@@ -190,7 +231,24 @@ class ConfigStateManager(object):
         :type cfg: SafeConfigParser
         :return:
         """
-        pass
+        # Simulations
+        self.simulate_antenna  = cfg.getboolean(self.srt_section, 'simulate_antenna')
+        self.simulate_receiver = cfg.getboolean(self.srt_section, 'simulate_receiver')
+        self.simulate_fft      = cfg.getboolean(self.srt_section, 'simulate_fft')
+
+        # Other
+        self.freq      = cfg.getfloat(self.srt_section, 'freq')
+        self.num_freq  = cfg.getint(self.srt_section, 'num_freq')
+        self.cal_mode  = cfg.getint(self.srt_section, 'cal_mode')
+        self.azimuth   = cfg.getfloat(self.srt_section, 'azimuth')
+        self.elevation = cfg.getfloat(self.srt_section, 'elevation')
+        self.az_limits = cfg.getfloat(self.srt_section, 'az_limits')
+        self.el_limits = cfg.getfloat(self.srt_section, 'el_limits')
+        self.bandwidth = cfg.getfloat(self.srt_section, 'bandwidth')
+        self.beamwidth = cfg.getfloat(self.srt_section, 'beamwidth')
+        self.sys_temp  = cfg.getfloat(self.srt_section, 'sys_temp')
+        self.tcal      = cfg.getfloat(self.srt_section, 'tcal')
+        self.nblock    = cfg.getint(self.srt_section, 'nblock')
 
     def _write_state(self, cfg):
         """

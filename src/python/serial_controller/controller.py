@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 Base class for any controller to be defined.
+
+-------------------------
+author: erick daniszewski
 """
 
 

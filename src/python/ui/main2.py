@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 """
+Entry point for the UI
 
+-------------------------
+author: erick daniszewski
 """
 import wx
 

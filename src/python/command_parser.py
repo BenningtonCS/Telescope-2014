@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 """
 Parser of srt command files
+
+-------------------------
+author: erick daniszewski
 """
 import re
 import logging

@@ -2,6 +2,9 @@
 """
 Serial Controller for the SPID Rot2Prog Controller
 http://spid.net.pl/en/rot2-2/
+
+-------------------------
+author: erick daniszewski
 """
 import serial
 import logging

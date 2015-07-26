@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
 """
 
+-------------------------
+author: erick daniszewski
 """
 
 
