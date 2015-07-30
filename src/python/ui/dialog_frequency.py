@@ -8,14 +8,17 @@ author: erick daniszewski
 import wx
 
 
-class FrequencyDialog(wx.Dialog):
+class FrequencyDialog(wx.TextEntryDialog):
     """
     Custom dialog for setting frequency
     """
-    def __init__(self, parent):
+    def __init__(self, parent, csm):
         """
         Constructor
         """
-        wx.Dialog.__init__(self, parent, -1)
+        message = 'Current Frequency:\t{}\n\nNew Frequency:'.format(csm.freq)
+        title = "Frequency"
+
+        wx.TextEntryDialog.__init__(self, parent, message, title)
 
         self.Centre(wx.BOTH)

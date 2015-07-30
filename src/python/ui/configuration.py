@@ -21,8 +21,6 @@ class ConfigStateManager(object):
         self.dflt_path = './.config/default.cfg'
         self.cfg_path = './.config/session.cfg'
 
-        self.cfg_file = self.cfg_path if os.path.isfile(self.cfg_path) else self.dflt_path
-
         # ======================================
         # UI STATE
         # ======================================
@@ -65,6 +63,9 @@ class ConfigStateManager(object):
         self.t_view_default = None
         self.t_view_night = None
 
+        # Dialogs
+        self.show_cancel_dialog = None
+
         # ======================================
         # SRT STATE
         # ======================================
@@ -88,6 +89,7 @@ class ConfigStateManager(object):
         self.sys_temp = None
         self.tcal = None
         self.nblock = None
+        self.location = None
 
     def save_session_state(self):
         """
@@ -108,8 +110,10 @@ class ConfigStateManager(object):
 
         :return:
         """
+        cfg_file = self.cfg_path if os.path.isfile(self.cfg_path) else self.dflt_path
+
         cfg = SafeConfigParser()
-        cfg.read(self.cfg_file)
+        cfg.read(cfg_file)
 
         self._load_ui_state(cfg)
         self._load_srt_state(cfg)
@@ -152,6 +156,8 @@ class ConfigStateManager(object):
         cfg.set(self.ui_section, 't_view_default', str(self.t_view_default))
         cfg.set(self.ui_section, 't_view_night', str(self.t_view_night))
 
+        cfg.set(self.ui_section, 'show_cancel_dialog', str(self.show_cancel_dialog))
+
     def _save_srt_state(self, cfg):
         """
         Save state related to srt configurations
@@ -177,6 +183,7 @@ class ConfigStateManager(object):
         cfg.set(self.srt_section, 'sys_temp', str(self.sys_temp))
         cfg.set(self.srt_section, 'tcal', str(self.tcal))
         cfg.set(self.srt_section, 'nblock', str(self.nblock))
+        cfg.set(self.srt_section, 'location', str(self.location))
 
     def _load_ui_state(self, cfg):
         """
@@ -223,6 +230,9 @@ class ConfigStateManager(object):
         self.t_view_default = cfg.getboolean(self.ui_section, 't_view_default')
         self.t_view_night   = cfg.getboolean(self.ui_section, 't_view_night')
 
+        # Dialogs
+        self.show_cancel_dialog = cfg.getboolean(self.ui_section, 'show_cancel_dialog')
+
     def _load_srt_state(self, cfg):
         """
         Load state related to srt configurations
@@ -249,6 +259,7 @@ class ConfigStateManager(object):
         self.sys_temp  = cfg.getfloat(self.srt_section, 'sys_temp')
         self.tcal      = cfg.getfloat(self.srt_section, 'tcal')
         self.nblock    = cfg.getint(self.srt_section, 'nblock')
+        self.location  = cfg.get(self.srt_section, 'location')
 
     def _write_state(self, cfg):
         """
@@ -263,10 +274,10 @@ class ConfigStateManager(object):
 
     def reset(self):
         """
-        Remove any existing session state, so next startup will use
-        the default configuration
+        Remove any existing session state and reload default state
 
         :return:
         """
         if os.path.isfile(self.cfg_path):
             os.remove(self.cfg_path)
+        self.load_session_state()

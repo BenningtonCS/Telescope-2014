@@ -42,3 +42,6 @@ class CancelDialog(wx.Dialog):
         main_sizer.Fit(self)
 
         self.Centre(wx.BOTH)
+
+    def GetCheckboxValue(self):
+        return self.checkbox.GetValue()

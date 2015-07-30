@@ -21,6 +21,7 @@ from dialog_npoint import NpointDialog
 from dialog_frequency import FrequencyDialog
 from command_interpreter import CommandInterpreter
 from window_log import LogWindow
+from ui_logging import UILogger
 
 from ui_utils import checked_menu_item, norm_menu_item, status_panel, status_label, status_value, \
     handle_window_update, hide_window
@@ -341,11 +342,13 @@ class MainFrame(wx.Frame):
     def __menu_config(self):
         self.m_config = wx.Menu()
 
-        self.m_config_editconfig = norm_menu_item(self.m_config, u"Edit Config File...", wx.EmptyString)
+        self.m_config_editconfig = norm_menu_item(self.m_config, u"Edit Configurations...", wx.EmptyString)
+        self.m_config_resetconfig = norm_menu_item(self.m_config, 'Reset to default', wx.EmptyString)
 
         self.__menu_config_update()
 
         self.m_config.AppendItem(self.m_config_editconfig)
+        self.m_config.AppendItem(self.m_config_resetconfig)
         self.m_config.AppendSubMenu(self.m_config_update, u"Update")
 
         self.menubar.Append(self.m_config, u"Configure")
@@ -394,7 +397,7 @@ class MainFrame(wx.Frame):
         # --------------------------------------------------
         self.m_pstatus_location = status_panel(self.status_window, wx.Size(-1, 12))
         self.status_location_lab = status_label(self.m_pstatus_location, u"location:")
-        self.status_location_val = status_value(self.m_pstatus_location, u"-- ")
+        self.status_location_val = status_value(self.m_pstatus_location, str(self.csm.location))
 
         loc_sizer = wx.BoxSizer(wx.HORIZONTAL)
         loc_sizer.Add(self.status_location_lab, 0, wx.LEFT | wx.RIGHT, 2)
@@ -426,7 +429,7 @@ class MainFrame(wx.Frame):
         # --------------------------------------------------
         self.m_pstatus_azel = status_panel(self.status_window, wx.Size(-1, 10))
         self.status_azel_lab = status_label(self.m_pstatus_azel, u"azel:")
-        self.status_azel_val = status_value(self.m_pstatus_azel, u"-- ")
+        self.status_azel_val = status_value(self.m_pstatus_azel, str(self.csm.azimuth) + ' ' + str(self.csm.elevation))
 
         azel_sizer = wx.BoxSizer(wx.HORIZONTAL)
         azel_sizer.Add(self.status_azel_lab, 0, wx.LEFT | wx.RIGHT, 2)
@@ -688,9 +691,9 @@ class MainFrame(wx.Frame):
         :return:
         """
         self.log_box = LogWindow(self)
-        # self.log_box = wx.TextCtrl(self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size(-1, 100),
-        #                            wx.TE_LEFT | wx.TE_MULTILINE | wx.TE_READONLY | wx.TE_WORDWRAP)
         self.log_box.Enable(False)
+
+        self.logger = UILogger(self.log_box)
 
         if self.csm.w_view_log:
             self.log_box.Show()
@@ -717,6 +720,8 @@ class MainFrame(wx.Frame):
         :return:
         """
         wx.EVT_MENU(self, self.m_file_quit.GetId(), self.on_application_quit)
+        wx.EVT_MENU(self, self.m_config_editconfig.GetId(), self.edit_config)
+        wx.EVT_MENU(self, self.m_config_resetconfig.GetId(), self.reset_config)
 
         self.cmd_input.Bind(wx.EVT_TEXT_ENTER, self.process_text_input)
         self.m_webcam_toggle.Bind(wx.EVT_TOGGLEBUTTON, self.toggle_webcam)
@@ -1024,10 +1029,15 @@ class MainFrame(wx.Frame):
         self.log_box.ClearAll()
 
     def cancel_tool_selected(self, event):
-        chgdep = CancelDialog(self, self.csm)
-        chgdep.ShowModal()
-        chgdep.Destroy()
-        event.Skip()
+        if self.csm.show_cancel_dialog:
+            cancel = CancelDialog(self, self.csm)
+            if cancel.ShowModal() == wx.ID_OK:
+                self.csm.show_cancel_dialog = not cancel.GetCheckboxValue()
+                # TODO: logic for canceling all current actions
+            cancel.Destroy()
+        else:
+            pass
+            # TODO: logic for canceling all current actions
 
     def stow_tool_selected(self, event):
         event.Skip()
@@ -1071,9 +1081,15 @@ class MainFrame(wx.Frame):
         :param event:
         :return:
         """
-        freq = FrequencyDialog(None)
+        freq = FrequencyDialog(None, self.csm)
         if freq.ShowModal() == wx.ID_OK:
-            pass
+            try:
+                new_freq = freq.GetValue().strip(' ')
+                if new_freq is not None and new_freq != '':
+                    self.csm.freq = float(new_freq)
+                    self.logger.info('Frequency set to: {}'.format(new_freq))
+            except ValueError:
+                self.logger.error('Invalid frequency value given: "{}". (must be an int or float)'.format(new_freq))
         freq.Destroy()
 
     def offset_tool_select(self, event):
@@ -1123,10 +1139,7 @@ class MainFrame(wx.Frame):
         :param event:
         :return:
         """
-        # TODO Disable main window before creation, Enable after del so
-        # cannot modify main window while editing properties
-        properties_window = Properties(None, self.csm)
-        properties_window.Show()
+        self.edit_config(event)
 
     def splitter_window_on_idle(self, event):
         """
@@ -1136,3 +1149,22 @@ class MainFrame(wx.Frame):
         """
         self.splitter_window.SetSashPosition(0)
         self.splitter_window.Unbind(wx.EVT_IDLE)
+
+    def edit_config(self, event):
+        """
+
+        :return:
+        """
+        # TODO Disable main window before creation, Enable after del so
+        # cannot modify main window while editing properties
+        properties_window = Properties(None, self.csm)
+        properties_window.Show()
+
+    def reset_config(self, event):
+        """
+
+        :return:
+        """
+        self.csm.reset()
+        self.logger.info('Reset configurations to default.')
+

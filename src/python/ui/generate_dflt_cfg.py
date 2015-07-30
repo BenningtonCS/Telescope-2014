@@ -37,6 +37,8 @@ cfg.set(sec, 's_view_resol', 'False')
 cfg.set(sec, 't_view_default', 'True')
 cfg.set(sec, 't_view_night', 'False')
 
+cfg.set(sec, 'show_cancel_dialog' 'True')
+
 srt_section = "SRT_SECTION"
 
 cfg.add_section(srt_section)
@@ -56,6 +58,7 @@ cfg.set(srt_section, 'beamwidth', str(5))
 cfg.set(srt_section, 'sys_temp', str(171))
 cfg.set(srt_section, 'tcal', str(290))
 cfg.set(srt_section, 'nblock', str(5))
+cfg.set(srt_section, 'nblock', 'unknown')
 
 
 # Writing our configuration file to 'example.cfg'
