@@ -1048,7 +1048,7 @@ class MainFrame(wx.Frame):
         :param event:
         :return:
         """
-        azel = AzelDialog(None)
+        azel = AzelDialog(None, self.csm)
         if azel.ShowModal() == wx.ID_OK:
             pass
         azel.Destroy()
