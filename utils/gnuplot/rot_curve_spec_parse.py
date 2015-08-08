@@ -1,9 +1,19 @@
-# This is a spectrum parsing file specific for rotation curve surveys. It averages all the spectra taken at a single
-# point in the galactic plane to produce an average spectrum for that point. Additionally, it prints the velocities
-# associated with frequencies red/blueshifted from the center freq of 1420.406 MHz in the second column. 
-# Undying gratitude to E.Daniszewski, guiding light of the development of this mini program.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+name: meta_parse
+date: 8 aug 2015
+authors: Evan Gall, Erick Daniszewski
+description:
+  Command line tool to format SRT spectrum output data files to a gnuplot-readable format.
+  The current output format is given by the example below:
 
-
+  freq       vel        spec       spec      ...
+  -----      -----      -----      -----
+  1419.403   211.9693   196.2521   195.4298  ...
+  1419.412   209.9866   204.5331   205.2500  ...
+    ...        ...        ...        ...     ...
+"""
 from argparse import ArgumentParser
 import time
 
@@ -33,10 +43,7 @@ def spectrum_parse(input_file, output_file):
     # generate all frequencies
     freqs = [(spacing * i) + fstart for i in range(freq_steps)]
 
-    # get the max string length in the freqs list (this is used for formatting when writing to file)
-    max_f = max(len(str(x)) for x in freqs)
-
-    #for HI spectra, generate a velocity corresponding to each frequency in freqs, for doppler shift
+    # for HI spectra, generate a velocity corresponding to each frequency in freqs, for doppler shift
     q = 1/1420.406
     c = 299970
     vels = []
@@ -68,7 +75,7 @@ def spectrum_parse(input_file, output_file):
             elif str(current_value) == 'G20':
                 specsG20.append(spec_line)
             elif str(current_value) == 'G30':
-                specsG30.apped(spec_line)
+                specsG30.append(spec_line)
             elif str(current_value) == 'G40':
                 specsG40.append(spec_line)
             elif str(current_value) == 'G50':
@@ -113,16 +120,19 @@ def spectrum_parse(input_file, output_file):
             f.write(formatter_string.format(*freq_pwrs))
 
 
-
 if __name__ == "__main__":
     # -----------------------
     # Argument Parser Setup
     # -----------------------
-    description = 'parser to format srtn spectrum data into a gnuplot-readable form'
+    description = 'parser to format srtn spectrum data into a gnuplot-readable form. this parses a file ' \
+                  'for rotation curve surveys. it averages all spectra taken at a single point in the ' \
+                  'galactic plane to produce an average spectrum for that point. the velocities associated ' \
+                  'with frequencies red/blueshifted from the center freq. of 1420.406 MHz are also calculated.'
+
     in_help = 'name of the file to parse'
     out_help = 'name of the output file. if unspecified, the file will be named in the format: YYYY_MM_DD.hh-mm-ss.txt'
 
-    dlft_out = 'spec_{}.txt'.format(time.strftime("%Y_%m_%d.%H-%M-%S"))
+    dlft_out = 'rot_curve_spec_{}.txt'.format(time.strftime("%Y_%m_%d.%H-%M-%S"))
 
     # Initialize instance of an argument parser
     parser = ArgumentParser(description=description)

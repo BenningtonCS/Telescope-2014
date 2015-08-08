@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Command line tool to format SRT spectrum output data files to a gnuplot-readable format. The
-current output format is given by the example below:
+name: meta_parse
+date: 8 aug 2015
+authors: Evan Gall, Erick Daniszewski
+description:
+  Command line tool to format SRT spectrum output data files to a gnuplot-readable format.
+  The current output format is given by the example below:
 
-freq     pwr1     pwr2     pwr3     pwr4      ...
------    -----    -----    -----    ----
-866.1    467.3    458.2    473.1    470.9     ...
-866.2    461.4    465.2    471.9    472.4     ...
- ...      ...      ...      ...      ...
-
+  freq     pwr1     pwr2     pwr3     pwr4      ...
+  -----    -----    -----    -----    ----
+  866.1    467.3    458.2    473.1    470.9     ...
+  866.2    461.4    465.2    471.9    472.4     ...
+   ...      ...      ...      ...      ...
 """
 from argparse import ArgumentParser
 import time
@@ -41,9 +44,6 @@ def spectrum_parse(input_file, output_file):
     # generate all frequencies
     freqs = [(spacing * i) + fstart for i in range(freq_steps)]
 
-    # get the max string length in the freqs list (this is used for formatting when writing to file)
-    max_f = max(len(str(x)) for x in freqs)
-
     # get the spectrum data from the data list
     spec_data = data[3::4]
 
@@ -68,7 +68,10 @@ if __name__ == "__main__":
     # -----------------------
     # Argument Parser Setup
     # -----------------------
-    description = 'parser to format srtn spectrum data into a gnuplot-readable form'
+    description = 'parser to format data into a gnuplot-readable form. spectrum_parse extracts the recorded ' \
+                  'spectrum power for each observed frequency. the output file it generates contains rows for ' \
+                  'every frequency observed with columns containing the observed power for each observation.'
+
     in_help = 'name of the file to parse'
     out_help = 'name of the output file. if unspecified, the file will be named in the format: YYYY_MM_DD.hh-mm-ss.txt'
 
@@ -90,4 +93,3 @@ if __name__ == "__main__":
     # Parse the data
     # -----------------------
     spectrum_parse(args.input_file, args.output)
-

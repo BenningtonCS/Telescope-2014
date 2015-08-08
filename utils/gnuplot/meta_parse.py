@@ -1,7 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Command line tool to format SRT output data files to a gnuplot-readable format.
+name: meta_parse
+date: 8 aug 2015
+authors: Evan Gall, Erick Daniszewski
+description:
+  Command line tool to format SRT spectrum output data files to a gnuplot-readable format.
+  The current output format is given by the example below:
+
+  date                  obsn     az       el       freq       ...
+  -----                 -----    -----    -----    ----
+  2015:208:19:08:13     0        0        60       1421.5000  ...
+  2015:208:19:08:26     1        0        60       1421.5000  ...
+        ...             ...      ...      ...      ...
 """
 from argparse import ArgumentParser
 import time
@@ -95,7 +106,12 @@ if __name__ == "__main__":
     # -----------------------
     # Argument Parser Setup
     # -----------------------
-    description = 'parser to format data into a gnuplot-readable form'
+    description = 'parser to format data into a gnuplot-readable form. meta_parse extracts the meta-information ' \
+                  'recorded for each observation in the data file. the output fileit generates contains rows ' \
+                  'for every observation with associated meta-information and columns corresponding to each bit ' \
+                  'of meta-information, e.g.: \n\n date, obsn, az, el, freq_MHz, Tsys, Tant, vlsr, glat, glon, ' \
+                  'source, Fstart, fstop, spacing, bw, fbw, nfreq, nsam, npoint, integ, sigma'
+
     in_help = 'name of the file to parse'
     out_help = 'name of the output file. if unspecified, the file will be named in the format: YYYY_MM_DD.hh-mm-ss.txt'
 

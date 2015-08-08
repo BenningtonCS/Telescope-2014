@@ -1,18 +1,18 @@
-# this is a spectrum parser for rotation curve surveys specifically -- it prints the column numbers
-# of the last spectrum taken before the telescope moved to the next point, and it prints the velocities associated with
-# the appropriate red/blueshifted frequency in the second column. None of this would have been possible without
-# the help and guidance of E.Daniszewski.
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Command line tool to format SRT spectrum output data files to a gnuplot-readable format. The
-current output format is given by the example below:
-freq     pwr1     pwr2     pwr3     pwr4      ...
------    -----    -----    -----    ----
-866.1    467.3    458.2    473.1    470.9     ...
-866.2    461.4    465.2    471.9    472.4     ...
- ...      ...      ...      ...      ...
+name: meta_parse
+date: 8 aug 2015
+authors: Evan Gall, Erick Daniszewski
+description:
+  Command line tool to format SRT spectrum output data files to a gnuplot-readable format.
+  The current output format is given by the example below:
+
+  freq       vel       spec1     spec2     spec3      ...
+  -----      -----     -----     -----     ----
+  1420.497   -19.216   334.744   284.689   258.400   ...
+  1420.506   -21.196   339.958   288.436   261.587   ...
+   ...         ...      ...       ...       ...      ...
 """
 from argparse import ArgumentParser
 import time
@@ -43,13 +43,10 @@ def spectrum_parse(input_file, output_file):
     # generate all frequencies
     freqs = [(spacing * i) + fstart for i in range(freq_steps)]
 
-    # get the max string length in the freqs list (this is used for formatting when writing to file)
-    max_f = max(len(str(x)) for x in freqs)
-
     # get the spectrum data from the data list
     spec_data = data[3::4]
 
-    #for HI spectra, generate a velocity corresponding to each frequency in freqs, for doppler shift
+    # for HI spectra, generate a velocity corresponding to each frequency in freqs, for doppler shift
     q = 1/1420.406
     c = 299970
     vels = []
@@ -103,7 +100,7 @@ def spectrum_parse(input_file, output_file):
         # add 1 to every number in values to get the correct column numbers in the parsed file
         nvalues = []
         for x in values:
-            x = x + 2
+            x += 2
             nvalues.append(x)
 
 
@@ -115,11 +112,15 @@ if __name__ == "__main__":
     # -----------------------
     # Argument Parser Setup
     # -----------------------
-    description = 'parser to format srtn spectrum data into a gnuplot-readable form'
+    description = 'parser to format srtn spectrum data into a gnuplot-readable form. this parses a file ' \
+                  'for rotation curve surveys. it prints the column numbers of the last spectrum taken before ' \
+                  'the telescope moved to the next point. the velocities associated with frequencies ' \
+                  'red/blueshifted from the center freq. of 1420.406 MHz are also calculated.'
+
     in_help = 'name of the file to parse'
     out_help = 'name of the output file. if unspecified, the file will be named in the format: YYYY_MM_DD.hh-mm-ss.txt'
 
-    dlft_out = 'spec_{}.txt'.format(time.strftime("%Y_%m_%d.%H-%M-%S"))
+    dlft_out = 'hi_spec_{}.txt'.format(time.strftime("%Y_%m_%d.%H-%M-%S"))
 
     # Initialize instance of an argument parser
     parser = ArgumentParser(description=description)
