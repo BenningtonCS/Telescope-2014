@@ -90,6 +90,8 @@ class ConfigStateManager(object):
         self.tcal = None
         self.nblock = None
         self.location = None
+        self.az_offset = None
+        self.el_offset = None
 
     def save_session_state(self):
         """
@@ -184,6 +186,8 @@ class ConfigStateManager(object):
         cfg.set(self.srt_section, 'tcal', str(self.tcal))
         cfg.set(self.srt_section, 'nblock', str(self.nblock))
         cfg.set(self.srt_section, 'location', str(self.location))
+        cfg.set(self.srt_section, 'az_offset', str(self.az_offset))
+        cfg.set(self.srt_section, 'el_offset', str(self.el_offset))
 
     def _load_ui_state(self, cfg):
         """
@@ -260,6 +264,8 @@ class ConfigStateManager(object):
         self.tcal      = cfg.getfloat(self.srt_section, 'tcal')
         self.nblock    = cfg.getint(self.srt_section, 'nblock')
         self.location  = cfg.get(self.srt_section, 'location')
+        self.az_offset = cfg.getfloat(self.srt_section, 'az_offset')
+        self.el_offset = cfg.getfloat(self.srt_section, 'el_offset')
 
     def _write_state(self, cfg):
         """

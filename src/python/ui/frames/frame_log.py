@@ -7,7 +7,8 @@ author: erick daniszewski
 """
 import wx
 from wx.stc import StyledTextCtrl
-from ui_logging import Level
+from ui.ui_logging import Level
+from ui.help_docs import start_msg
 
 
 class LogWindow(StyledTextCtrl):
@@ -27,18 +28,7 @@ class LogWindow(StyledTextCtrl):
         self._free = 1
 
         # Write initial message to window
-        msg = [
-            '==================================================',
-            'srt control software (v0.1):',
-            '__________________________________________________',
-            'To view the documentation for the control software see "Help > Documentation.."',
-            'Basic commands to get you started:',
-            '\t"LIST commands" -> lists the supported commands',
-            '\t"HELP <command>" -> view the usage information for the given command',
-            '=================================================='
-        ]
-
-        for item in msg:
+        for item in start_msg:
             self.write(item + '\n', Level.SYSTEM)
 
     def get_style(self, c='black'):

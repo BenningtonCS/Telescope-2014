@@ -8,26 +8,24 @@ import os
 
 import wx
 
-from configuration import ConfigStateManager
-
-from frame_properties import Properties
-from dialog_cancel import CancelDialog
-from dialog_calibrate import CalibrateDialog
-from dialog_offset import OffsetDialog
-from dialog_record import RecordDialog
-from dialog_azel import AzelDialog
-from dialog_beamswitch import BeamswitchDialog
-from dialog_npoint import NpointDialog
-from dialog_frequency import FrequencyDialog
-from command_interpreter import CommandInterpreter
-from window_log import LogWindow
-from ui_logging import UILogger
-
-from ui_utils import checked_menu_item, norm_menu_item, status_panel, status_label, status_value, \
+from ui.configuration import ConfigStateManager
+from window_properties import Properties
+from ui.dialogs.dialog_cancel import CancelDialog
+from ui.dialogs.dialog_calibrate import CalibrateDialog
+from ui.dialogs.dialog_offset import OffsetDialog
+from ui.dialogs.dialog_record import RecordDialog
+from ui.dialogs.dialog_azel import AzelDialog
+from ui.dialogs.dialog_beamswitch import BeamswitchDialog
+from ui.dialogs.dialog_npoint import NpointDialog
+from ui.dialogs.dialog_frequency import FrequencyDialog
+from ui.command_interpreter import CommandInterpreter
+from ui.frames.frame_log import LogWindow
+from ui.ui_logging import UILogger
+from ui.ui_utils import checked_menu_item, norm_menu_item, status_panel, status_label, status_value, \
     handle_window_update, hide_window
 
 
-class MainFrame(wx.Frame):
+class MainWindow(wx.Frame):
     def __init__(self, parent):
 
         # Get an instance of a configuration state manager and load in the existing configurations
@@ -1098,9 +1096,9 @@ class MainFrame(wx.Frame):
         :param event:
         :return:
         """
-        offset = OffsetDialog(None)
+        offset = OffsetDialog(None, self.csm)
         if offset.ShowModal() == wx.ID_OK:
-            pass
+            pass # TODO: same/similar logic as for azel/freq
         offset.Destroy()
 
     def record_tool_select(self, event):

@@ -6,8 +6,9 @@ Entry point for the UI
 author: erick daniszewski
 """
 import wx
+
 from srt_ui import MainFrame
-from frame_properties import Properties
+from ui.windows.window_properties import Properties
 
 
 class PrimaryFrame(MainFrame):

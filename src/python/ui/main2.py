@@ -7,15 +7,15 @@ author: erick daniszewski
 """
 import wx
 
-from frame_main import MainFrame
+from ui.windows.window_main import MainWindow
 
 
-class SRTFrame(MainFrame):
+class SRTWindow(MainWindow):
     """
 
     """
     def __init__(self, parent):
-        MainFrame.__init__(self, parent)
+        MainWindow.__init__(self, parent)
 
 
 class SRT(wx.App):
@@ -23,7 +23,7 @@ class SRT(wx.App):
 
     """
     def OnInit(self):
-        self.main_frame = SRTFrame(None)
+        self.main_frame = SRTWindow(None)
         self.main_frame.Show()
         self.SetTopWindow(self.main_frame)
         return True

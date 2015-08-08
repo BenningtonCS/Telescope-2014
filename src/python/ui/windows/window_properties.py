@@ -6,7 +6,7 @@ author: erick daniszewski
 """
 import wx
 
-from ui_utils import static_text_gen, radiobutton_gen
+from ui.ui_utils import static_text_gen, radiobutton_gen
 
 
 class Properties(wx.Frame):

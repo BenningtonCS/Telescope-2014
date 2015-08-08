@@ -11,6 +11,18 @@ window_names = ['graphs', 'log', 'skymap', 'webcam', 'status', 'cmd_input']
 commands = ['SHOW', 'HIDE', 'CLEAR', 'HELP', 'LIST']
 keywords = ['commands', 'windows']
 
+# message displayed at UI start
+start_msg = [
+    '==================================================',
+    'srt control software (v0.1):',
+    '__________________________________________________',
+    'To view the documentation for the control software see "Help > Documentation.."',
+    'Basic commands to get you started:',
+    '\t"LIST commands" -> lists the supported commands',
+    '\t"HELP <command>" -> view the usage information for the given command',
+    '=================================================='
+]
+
 # help message for 'show' command
 show_help = [
     '---------------------------------------------',
