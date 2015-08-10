@@ -8,20 +8,22 @@ import os
 
 import wx
 
-from ui.configuration import ConfigStateManager
-from window_properties import Properties
-from ui.dialogs.dialog_cancel import CancelDialog
-from ui.dialogs.dialog_calibrate import CalibrateDialog
-from ui.dialogs.dialog_offset import OffsetDialog
-from ui.dialogs.dialog_record import RecordDialog
-from ui.dialogs.dialog_azel import AzelDialog
-from ui.dialogs.dialog_beamswitch import BeamswitchDialog
-from ui.dialogs.dialog_npoint import NpointDialog
-from ui.dialogs.dialog_frequency import FrequencyDialog
-from ui.command_interpreter import CommandInterpreter
-from ui.frames.frame_log import LogWindow
-from ui.ui_logging import UILogger
-from ui.ui_utils import checked_menu_item, norm_menu_item, status_panel, status_label, status_value, \
+from src.python.ui.configuration import ConfigStateManager
+from src.python.ui.windows.window_properties import Properties
+
+from src.python.ui.dialogs.dialog_cancel import CancelDialog
+from src.python.ui.dialogs.dialog_calibrate import CalibrateDialog
+from src.python.ui.dialogs.dialog_offset import OffsetDialog
+from src.python.ui.dialogs.dialog_record import RecordDialog
+from src.python.ui.dialogs.dialog_azel import AzelDialog
+from src.python.ui.dialogs.dialog_beamswitch import BeamswitchDialog
+from src.python.ui.dialogs.dialog_npoint import NpointDialog
+from src.python.ui.dialogs.dialog_frequency import FrequencyDialog
+
+from src.python.ui.command_interpreter import CommandInterpreter
+from src.python.ui.frames.frame_log import LogWindow
+from src.python.ui.ui_logging import UILogger
+from src.python.ui.ui_utils import checked_menu_item, norm_menu_item, status_panel, status_label, status_value, \
     handle_window_update, hide_window
 
 

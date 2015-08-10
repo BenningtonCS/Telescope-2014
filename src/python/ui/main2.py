@@ -7,7 +7,7 @@ author: erick daniszewski
 """
 import wx
 
-from ui.windows.window_main import MainWindow
+from src.python.ui.windows.window_main import MainWindow
 
 
 class SRTWindow(MainWindow):

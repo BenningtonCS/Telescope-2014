@@ -7,8 +7,9 @@ author: erick daniszewski
 """
 import wx
 from wx.stc import StyledTextCtrl
-from ui.ui_logging import Level
-from ui.help_docs import start_msg
+
+from src.python.ui.ui_logging import Level
+from src.python.ui.help_docs import start_msg
 
 
 class LogWindow(StyledTextCtrl):
